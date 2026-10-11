@@ -37,10 +37,3 @@ uv run --with numpy --with matplotlib python <script>.py
 
 (or any venv with the same deps) — from the repo root; scripts expect `data/`
 and `results/` alongside.
-
-## Deploy
-
-The live poster is served from the `gh-pages` branch (`index.html` +
-`infographic-v4.html`). To update it, commit a fresh copy of the poster to that
-branch and push. (Only the poster file matters — analysis pushes to `main` don't
-redeploy the site.)
