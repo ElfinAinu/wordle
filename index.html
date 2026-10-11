@@ -1,0 +1,786 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wordle · Totality Field Guide</title>
+<style>
+/* design-systems/totality-festival/tokens.css
+ * Structured token bindings for Totality Festival.
+ * festival identity with cosmic dark surfaces, warm highlights, and event-program cards.
+ */
+:root {
+  --bg: #070711;
+  --surface: #111126;
+  --surface-warm: #1e1540;
+  --fg: #f8f7ff;
+  --fg-2: #d6ccff;
+  --muted: #9d8ad4;
+  --meta: #c084fc;
+  --border: #34265e;
+  --border-soft: #241c42;
+  --accent: #c084fc;
+  --accent-on: #13051f;
+  --accent-hover: color-mix(in oklab, var(--accent), black 8%);
+  --accent-active: color-mix(in oklab, var(--accent), black 14%);
+  --success: #39ff88;
+  --warn: #fff34d;
+  --danger: #ff4d8d;
+  --font-display: Inter, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: "SF Mono", ui-monospace, Menlo, monospace;
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 24px;
+  --text-2xl: 36px;
+  --text-3xl: 54px;
+  --text-4xl: 76px;
+  --leading-body: 1.52;
+  --leading-tight: 1.06;
+  --tracking-display: -0.025em;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --section-y-desktop: 96px;
+  --section-y-tablet: 68px;
+  --section-y-phone: 48px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 9999px;
+  --elev-flat: none;
+  --elev-ring: 0 0 0 1px var(--border);
+  --elev-raised: 0 24px 80px rgba(192, 132, 252, 0.22);
+  --focus-ring: 0 0 0 4px rgba(192, 132, 252, 0.32);
+  --motion-fast: 150ms;
+  --motion-base: 240ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --container-max: 1180px;
+  --container-gutter-desktop: 36px;
+  --container-gutter-tablet: 24px;
+  --container-gutter-phone: 16px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background:
+    radial-gradient(115% 85% at 50% -14%, color-mix(in oklab, var(--accent) 24%, transparent), transparent 58%),
+    radial-gradient(72% 56% at 88% 2%, color-mix(in oklab, var(--surface-warm) 80%, transparent), transparent 55%),
+    radial-gradient(60% 48% at 6% 100%, color-mix(in oklab, var(--accent) 12%, transparent), transparent 62%),
+    var(--bg);
+  background-attachment: fixed;
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; box-shadow: var(--focus-ring); }
+::selection { background: color-mix(in oklab, var(--accent) 50%, transparent); color: var(--fg); }
+h1, h2, h3 { text-wrap: balance; }
+p { text-wrap: pretty; }
+
+.container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-gutter-desktop); }
+.section { padding-block: clamp(40px, 5.5vw, 68px); }
+section[id] { scroll-margin-top: 84px; }
+
+/* ---- chrome ---- */
+.topnav { position: sticky; top: 0; z-index: 20; background: color-mix(in oklab, var(--bg) 72%, transparent); backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; gap: var(--space-5); padding-block: 13px; }
+.brand { font-family: var(--font-display); font-weight: 700; font-size: var(--text-lg); letter-spacing: -0.01em; }
+.brand i { font-style: normal; font-weight: 500; color: var(--accent); letter-spacing: 0.08em; }
+.topnav nav { display: flex; gap: var(--space-6); }
+.topnav nav a { font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); transition: color var(--motion-fast) var(--ease-standard); }
+.topnav nav a:hover { color: var(--fg); }
+.nav-note { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+@media (max-width: 900px) { .topnav nav, .nav-note { display: none; } }
+
+.pulse { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); margin-right: 7px; vertical-align: 1px; animation: pulse 2.6s ease-in-out infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+
+/* ---- hero ---- */
+.hero { position: relative; padding-block: clamp(48px, 7vw, 84px) clamp(36px, 5vw, 60px); overflow: hidden; }
+.hero-inner { position: relative; z-index: 2; }
+.mosaic {
+  position: absolute; top: 2px; right: 0;
+  width: min(44%, 380px);
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: clamp(6px, 0.9vw, 11px);
+  transform: rotate(-7deg);
+  z-index: -1; pointer-events: none;
+  -webkit-mask-image: radial-gradient(125% 125% at 74% 26%, black 42%, transparent 84%);
+  mask-image: radial-gradient(125% 125% at 74% 26%, black 42%, transparent 84%);
+  animation: mosaicIn 900ms var(--ease-standard) both;
+}
+.mosaic .tile { aspect-ratio: 1; border-radius: clamp(6px, 0.9vw, 11px);
+  background: color-mix(in oklab, var(--surface) 66%, transparent); border: 1px solid var(--border); }
+.mosaic .tile:nth-child(5n+2) { transform: translateY(-7%); }
+.mosaic .tile:nth-child(5n+3) { transform: translateY(8%); }
+.mosaic .tile:nth-child(5n+4) { transform: translateY(-5%); }
+.mosaic .tile:nth-child(5n+5) { transform: translateY(6%); }
+.mosaic .tile.g { background: color-mix(in oklab, var(--success) 86%, var(--bg));
+  border-color: color-mix(in oklab, var(--success) 74%, transparent);
+  box-shadow: 0 0 24px color-mix(in oklab, var(--success) 36%, transparent); }
+.mosaic .tile.y { background: color-mix(in oklab, var(--warn) 86%, var(--bg));
+  border-color: color-mix(in oklab, var(--warn) 74%, transparent);
+  box-shadow: 0 0 24px color-mix(in oklab, var(--warn) 34%, transparent); }
+@keyframes mosaicIn {
+  from { opacity: 0; transform: rotate(-7deg) translateY(20px) scale(0.95); }
+  to { opacity: 1; transform: rotate(-7deg) translateY(0) scale(1); }
+}
+@media (max-width: 900px) { .mosaic { width: 54%; opacity: 0.45; top: -12px; right: -4%; } }
+@media (max-width: 760px) { .mosaic { display: none; } }
+.hero-head { max-width: 760px; }
+.hero--led .eyebrow { margin: 0 0 clamp(28px, 4vw, 44px); }
+.eyebrow { font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent); margin: 0 0 var(--space-4); }
+.eyebrow::before { content: ""; display: inline-block; width: 22px; height: 1px; background: var(--accent); vertical-align: 4px; margin-right: 12px; }
+h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(38px, 6vw, var(--text-4xl)); line-height: var(--leading-tight); letter-spacing: var(--tracking-display); margin: 0; }
+h1 em { font-style: normal; color: var(--accent); text-shadow: 0 0 44px color-mix(in oklab, var(--accent) 60%, transparent); }
+.lead { font-size: var(--text-lg); line-height: 1.6; color: var(--muted); max-width: 60ch; margin: var(--space-5) 0 0; }
+.lead b { color: var(--fg); font-weight: 600; }
+.statband { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); margin-top: clamp(32px, 4vw, 52px); border-top: 1px solid var(--border); padding-top: var(--space-6); }
+.stat { min-width: 0; }
+.stat-num { font-family: var(--font-display); font-weight: 700; font-size: clamp(38px, 5vw, 62px); line-height: 0.94; letter-spacing: -0.04em; font-variant-numeric: tabular-nums; }
+.stat-num .u { font-size: 0.44em; color: var(--muted); margin-left: 2px; }
+.stat-label { margin: var(--space-2) 0 0; font-size: var(--text-sm); color: var(--muted); max-width: 30ch; line-height: 1.45; }
+
+.hero-line {
+  display: grid; margin: var(--space-3) 0 0; max-width: 26ch;
+}
+.hero-line__item {
+  grid-area: 1 / 1; opacity: 0; transform: translateY(0.42em);
+  transition: opacity 560ms var(--ease-standard), transform 560ms var(--ease-standard);
+  will-change: opacity, transform;
+}
+.hero-line__item.is-active { opacity: 1; transform: none; }
+
+/* stat-led hero */
+.statband--lead { gap: clamp(20px, 4vw, 56px); }
+.statband--lead .stat { border-top: 1px solid var(--border); padding-top: var(--space-5); container-type: inline-size; }
+.statband--lead .stat-num { font-size: clamp(40px, 30cqw, 118px); line-height: 0.84; animation: statRise 760ms var(--ease-standard) both; }
+.statband--lead .stat-num .u { font-size: 0.4em; }
+.statband--lead .stat-label { font-size: var(--text-base); max-width: 26ch; margin-top: var(--space-4); }
+.statband--lead .stat:nth-child(1) .stat-num { animation-delay: 120ms; }
+.statband--lead .stat:nth-child(2) .stat-num { animation-delay: 260ms; }
+.statband--lead .stat:nth-child(3) .stat-num { animation-delay: 400ms; }
+@keyframes statRise {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-line__item { transition: none; }
+  .statband--lead .stat-num { animation: none; }
+  .mosaic { animation: none; }
+}
+
+/* ---- section head ---- */
+.sec-head { display: flex; align-items: baseline; gap: var(--space-4); margin: 0 0 var(--space-5); border-bottom: 1px solid var(--border); padding-bottom: var(--space-3); }
+.roman { font-family: var(--font-mono); font-size: var(--text-sm); letter-spacing: 0.12em; color: var(--accent); }
+.sec-title { font-family: var(--font-display); font-weight: 600; font-size: var(--text-xl); letter-spacing: -0.015em; margin: 0; }
+.sec-meta { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-left: auto; text-align: right; }
+.fig-cap { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin: 0 0 var(--space-5); }
+
+/* ---- glass panels ---- */
+.panel {
+  background: color-mix(in oklab, var(--surface) 62%, transparent);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: inset 0 1px 0 color-mix(in oklab, white 8%, transparent), var(--elev-raised);
+  padding: clamp(20px, 3vw, 32px);
+}
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(16px, 2.4vw, 28px); align-items: start; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(14px, 2vw, 22px); }
+
+/* ---- method ---- */
+.method-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(28px, 4vw, 56px); align-items: center; }
+.opener-row { display: grid; grid-template-columns: 62px repeat(5, 1fr); gap: 8px; margin-bottom: 8px; }
+.opener-tag { display: flex; align-items: center; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; color: var(--muted); }
+.opener-tile { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; aspect-ratio: 1 / 1; border-radius: var(--radius-md); color: var(--fg); background: color-mix(in oklab, var(--accent) calc(var(--ink) * 0.6), var(--surface)); border: 1px solid var(--border-soft); }
+.opener-tile b { font-family: var(--font-display); font-weight: 700; font-size: clamp(20px, 2.5vw, 30px); line-height: 1; }
+.opener-tile i { font-style: normal; font-family: var(--font-mono); font-size: 10px; opacity: 0.82; }
+.scale-legend { display: flex; align-items: center; gap: 6px; margin-top: var(--space-4); font-family: var(--font-mono); font-size: 10px; color: var(--muted); }
+.scale-legend .sw { width: 26px; height: 12px; border-radius: 3px; background: color-mix(in oklab, var(--accent) calc(var(--v) * 0.6), var(--surface)); border: 1px solid var(--border-soft); }
+.scale-legend .cap { letter-spacing: 0.08em; text-transform: uppercase; }
+.note-line { font-size: var(--text-sm); color: var(--muted); margin: var(--space-4) 0 0; }
+.method-stats { border-top: 1px solid var(--border); }
+.mstat { display: grid; grid-template-columns: auto 1fr; gap: var(--space-5); align-items: baseline; padding: var(--space-4) 0; border-bottom: 1px solid var(--border-soft); }
+.mstat b { font-family: var(--font-display); font-weight: 700; font-size: 34px; letter-spacing: -0.03em; line-height: 1; color: var(--accent); font-variant-numeric: tabular-nums; }
+.mstat span { font-size: var(--text-sm); color: var(--muted); }
+
+.flow { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: clamp(28px, 4vw, 44px); border-top: 1px solid var(--border); }
+.flow-step { position: relative; padding: var(--space-5) var(--space-5) 0; border-right: 1px solid var(--border-soft); }
+.flow-step:last-child { border-right: 0; }
+.flow-step:not(:last-child)::after { content: "\2192"; position: absolute; top: 18px; right: -7px; font-family: var(--font-mono); font-size: 13px; color: var(--accent); background: color-mix(in oklab, var(--surface) 90%, transparent); padding: 0 3px; line-height: 1; }
+.flow-num { font-family: var(--font-display); font-weight: 700; font-size: clamp(30px, 4vw, 44px); line-height: 1; letter-spacing: -0.03em; }
+.flow-strat { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-2); margin-top: var(--space-4); }
+.flow-ex { font-family: var(--font-display); font-weight: 600; font-size: var(--text-lg); margin-top: var(--space-2); color: var(--accent); }
+.flow-note { font-size: 13px; color: var(--muted); margin-top: 6px; line-height: 1.45; }
+.flow-share { font-family: var(--font-mono); font-size: 10.5px; color: var(--muted); margin-top: var(--space-3); }
+
+/* ---- tables ---- */
+.dtable { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
+.dtable th { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 500; text-align: left; padding: 8px 9px; border-bottom: 1px solid var(--border); }
+.dtable td { padding: 9px; border-bottom: 1px solid var(--border-soft); vertical-align: baseline; }
+.dtable tbody tr:hover { background: color-mix(in oklab, var(--accent) 8%, transparent); }
+.dtable .num-col { font-family: var(--font-mono); font-variant-numeric: tabular-nums; text-align: right; }
+.dtable .big { font-family: var(--font-display); font-weight: 700; font-size: var(--text-lg); text-align: center; color: var(--accent); }
+.dtable .pat { font-family: var(--font-mono); letter-spacing: 2px; color: var(--muted); }
+.dtable .strat { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--fg-2); }
+.dtable .g3 { font-family: var(--font-display); font-weight: 600; font-size: var(--text-base); }
+.tree { margin-bottom: var(--space-6); border-left: 2px solid var(--accent); padding-left: var(--space-5); }
+.tree-node { font-family: var(--font-display); font-weight: 600; font-size: var(--text-base); margin: 0 0 var(--space-3); display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-2); }
+.tree-node span { font-family: var(--font-body); font-weight: 400; font-size: var(--text-xs); color: var(--muted); }
+.tree-node:last-child { margin-bottom: 0; }
+
+/* ---- distribution chart ---- */
+.chart-dist { display: grid; grid-template-columns: repeat(6, 1fr); gap: var(--space-3); margin-top: var(--space-4); }
+.dist-col { display: flex; flex-direction: column; align-items: center; }
+.dist-bar { width: 100%; height: 132px; display: flex; align-items: flex-end; }
+.dist-bar i { display: block; width: 100%; background: color-mix(in oklab, var(--accent) 50%, var(--surface)); border-radius: 3px 3px 0 0; min-height: 3px; }
+.dist-bar i.opt { background: var(--accent); box-shadow: 0 0 22px color-mix(in oklab, var(--accent) 55%, transparent); }
+.dist-val { font-family: var(--font-mono); font-size: 11px; margin-top: var(--space-2); font-variant-numeric: tabular-nums; }
+.dist-lab { font-family: var(--font-display); font-weight: 600; font-size: var(--text-sm); color: var(--muted); margin-top: 1px; }
+.chart-note { font-family: var(--font-mono); font-size: 10.5px; color: var(--muted); margin: var(--space-4) 0 0; line-height: 1.5; }
+
+/* ---- pattern cards ---- */
+.pat-legend { font-family: var(--font-mono); font-size: 11px; color: var(--muted); margin: var(--space-6) 0 var(--space-4); }
+.pat-legend b { color: var(--accent); }
+.pat-card { background: color-mix(in oklab, var(--surface) 55%, transparent); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-5); }
+.pat-card h3 { font-family: var(--font-display); font-weight: 600; font-size: var(--text-base); margin: 0; }
+.pat-card .pat-sub { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin: 3px 0 var(--space-4); }
+.pat-card table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.pat-card th { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-weight: 500; text-align: left; padding: 4px 4px; border-bottom: 1px solid var(--border); }
+.pat-card td { padding: 6px 4px; border-bottom: 1px solid var(--border-soft); }
+.pat-card tr:last-child td { border-bottom: 0; }
+.pat-card .pat { font-family: var(--font-mono); letter-spacing: 1.5px; color: var(--muted); }
+.pat-card .g3 { font-family: var(--font-display); font-weight: 600; }
+.pat-card .num-col { font-family: var(--font-mono); text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ---- ladder ---- */
+.chart-lad { margin-top: var(--space-4); }
+.lad-row { display: grid; grid-template-columns: 64px 1fr; grid-template-rows: auto auto; gap: 6px var(--space-4); align-items: center; padding: var(--space-4) 0; border-bottom: 1px solid var(--border-soft); }
+.lad-row:first-child { border-top: 1px solid var(--border); }
+.lad-num { grid-row: 1 / span 2; font-family: var(--font-display); font-weight: 700; font-size: 22px; font-variant-numeric: tabular-nums; }
+.lad-bar { grid-column: 2; grid-row: 1; height: 9px; background: color-mix(in oklab, var(--surface-warm) 70%, transparent); border-radius: var(--radius-pill); overflow: hidden; }
+.lad-bar i { display: block; height: 100%; background: color-mix(in oklab, var(--accent) 50%, var(--surface)); border-radius: var(--radius-pill); }
+.lad-bar i.opt { background: var(--accent); box-shadow: 0 0 18px color-mix(in oklab, var(--accent) 60%, transparent); }
+.lad-lab { grid-column: 2; grid-row: 2; font-size: var(--text-sm); color: var(--muted); }
+.star { color: var(--warn); font-style: normal; margin-left: 4px; }
+
+/* ---- heatmap ---- */
+.hm-row { display: grid; grid-template-columns: 30px repeat(5, 1fr); gap: 4px; margin-bottom: 4px; }
+.hm-lab { display: flex; align-items: center; font-family: var(--font-display); font-weight: 600; font-size: var(--text-sm); }
+.hm-cell { display: flex; align-items: center; justify-content: center; height: 28px; border-radius: 4px; font-family: var(--font-mono); font-size: 10px; font-variant-numeric: tabular-nums; color: var(--fg); background: color-mix(in oklab, var(--accent) calc(var(--ink) * 0.6), var(--surface)); border: 1px solid var(--border-soft); }
+.hm-head { display: grid; grid-template-columns: 30px repeat(5, 1fr); gap: 4px; margin-bottom: var(--space-2); }
+.hm-head span { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; color: var(--muted); text-align: center; }
+.hm-callout { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-5); }
+.hm-callout span { font-family: var(--font-mono); font-size: 11px; color: var(--muted); border: 1px solid var(--border); border-radius: var(--radius-pill); padding: 4px 12px; }
+.hm-callout b { color: var(--fg); }
+
+/* ---- shape ---- */
+.shape-card h3 { font-family: var(--font-display); font-weight: 600; font-size: var(--text-base); margin: 0 0 var(--space-3); }
+.shape-row { display: flex; justify-content: space-between; gap: var(--space-4); padding: 7px 0; border-bottom: 1px solid var(--border-soft); font-size: var(--text-sm); }
+.shape-row:last-child { border-bottom: 0; }
+.shape-row b { font-family: var(--font-display); font-weight: 700; font-variant-numeric: tabular-nums; color: var(--fg); }
+
+/* ---- do / don't ---- */
+.dodont { display: grid; grid-template-columns: 1fr 1fr; }
+.dd-col { padding: 0 var(--space-6); }
+.dd-col:first-child { padding-left: 0; }
+.dd-col:last-child { padding-right: 0; border-left: 1px solid var(--border); }
+.dd-h { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; margin: 0 0 var(--space-3); }
+.dd-col.dont .dd-h { color: var(--muted); }
+.dd-col.do .dd-h { color: var(--accent); }
+.dd-col ul { margin: 0; padding: 0; list-style: none; }
+.dd-col li { padding: var(--space-3) 0; border-bottom: 1px solid var(--border-soft); font-size: var(--text-sm); line-height: 1.5; }
+.dd-col li:last-child { border-bottom: 0; }
+.dd-col.dont li::before { content: "\2715  "; color: var(--muted); font-family: var(--font-mono); }
+.dd-col.do li::before { content: "\2713  "; color: var(--accent); font-family: var(--font-mono); }
+
+/* ---- footer ---- */
+.pagefoot { margin-top: clamp(40px, 5vw, 68px); border-top: 1px solid var(--border); padding: clamp(36px, 5vw, 60px) 0 var(--space-8); }
+.foot-top { display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-12); align-items: start; }
+.foot-top h3 { font-family: var(--font-display); font-weight: 700; font-size: var(--text-2xl); letter-spacing: -0.02em; margin: 0 0 var(--space-4); }
+.foot-src { font-size: var(--text-sm); color: var(--muted); line-height: 1.6; }
+.foot-src div { padding: 5px 0; border-bottom: 1px solid var(--border-soft); }
+.mega { font-family: var(--font-display); font-weight: 700; font-size: clamp(54px, 13vw, 178px); line-height: 0.86; letter-spacing: -0.05em; margin: var(--space-12) 0 0; }
+.mega i { font-style: normal; color: var(--accent); text-shadow: 0 0 60px color-mix(in oklab, var(--accent) 60%, transparent); }
+.foot-end { display: flex; justify-content: space-between; gap: var(--space-4); flex-wrap: wrap; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); border-top: 1px solid var(--border); padding-top: var(--space-4); margin-top: var(--space-6); }
+.foot-end .pulse { vertical-align: 0; }
+
+@media (max-width: 980px) {
+  .container { padding-inline: var(--container-gutter-tablet); }
+  .method-grid, .grid-2, .grid-3, .statband, .foot-top { grid-template-columns: 1fr; }
+  .statband--lead { grid-template-columns: repeat(3, 1fr); }
+  .method-grid { gap: var(--space-8); }
+  .flow { grid-template-columns: 1fr 1fr; }
+  .flow-step:nth-child(1), .flow-step:nth-child(2) { border-bottom: 1px solid var(--border-soft); padding-bottom: var(--space-5); }
+  .flow-step:nth-child(2) { border-right: 0; }
+  .flow-step:nth-child(3), .flow-step:nth-child(4) { padding-top: var(--space-5); }
+  .flow-step::after { display: none; }
+}
+@media (max-width: 620px) {
+  .section { padding-block: var(--section-y-phone); }
+  .container { padding-inline: var(--container-gutter-phone); }
+  .flow { grid-template-columns: 1fr; }
+  .flow-step { border-right: 0; padding-inline: 0; }
+  .flow-step:nth-child(1), .flow-step:nth-child(2), .flow-step:nth-child(3) { border-bottom: 1px solid var(--border-soft); padding-bottom: var(--space-5); }
+  .opener-row { grid-template-columns: 44px repeat(5, 1fr); gap: 5px; }
+  .hm-cell { font-size: 8.5px; height: 24px; }
+  .hm-row, .hm-head { grid-template-columns: 20px repeat(5, 1fr); }
+  .statband--lead { grid-template-columns: 1fr; gap: var(--space-6); }
+  .dodont { grid-template-columns: 1fr; }
+  .dd-col { padding: 0; }
+  .dd-col:last-child { border-left: 0; border-top: 1px solid var(--border); padding-top: var(--space-5); margin-top: var(--space-5); }
+  .dist-bar { height: 96px; }
+}
+</style>
+</head>
+<body>
+<header class="topnav" data-od-id="topnav">
+  <div class="container nav-inner">
+    <span class="brand">WORDLE <i>// STOP GUESSING</i></span>
+    <nav>
+      <a href="#method">Method</a>
+      <a href="#tree">Play tree</a>
+      <a href="#patterns">Patterns</a>
+      <a href="#grid">Grid</a>
+    </nav>
+    <span class="nav-note">Field guide · MMXXVI</span>
+  </div>
+</header>
+
+<main id="content">
+<section class="hero hero--led" data-od-id="hero">
+  <div class="container hero-inner">
+    <div class="mosaic" aria-hidden="true">
+      <span class="tile x"></span><span class="tile g"></span><span class="tile x"></span><span class="tile y"></span><span class="tile x"></span>
+      <span class="tile x"></span><span class="tile y"></span><span class="tile x"></span><span class="tile x"></span><span class="tile g"></span>
+      <span class="tile x"></span><span class="tile x"></span><span class="tile x"></span><span class="tile x"></span><span class="tile x"></span>
+    </div>
+    <p class="eyebrow">Fixed-opening strategy</p>
+    <h1 class="hero-line" id="heroLine">
+      <span class="hero-line__item is-active">Wordle is a <em>solvable</em> information problem.</span>
+      <span class="hero-line__item" aria-hidden="true">Letter identification seeds <em>accurate</em> final guesses.</span>
+      <span class="hero-line__item" aria-hidden="true"><em>65%</em> of the answer, already visible.</span>
+    </h1>
+    <p class="lead">Play <b>SOARE</b>, then <b>CLINT</b> — every game, no thinking. Count your hits to choose guess three; the answer is usually locked by the fourth.</p>
+    <div class="statband statband--lead">
+      <div class="stat">
+        <div class="stat-num">3.42</div>
+        <p class="stat-label">average guesses under optimal play — never more than five.</p>
+      </div>
+      <div class="stat">
+        <div class="stat-num">27.76<span class="u">%</span></div>
+        <p class="stat-label">of games are solved on the second guess alone.</p>
+      </div>
+      <div class="stat">
+        <div class="stat-num">65.4<span class="u">%</span></div>
+        <p class="stat-label">of answer letters are spotted by the two fixed openers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="method" data-od-id="method">
+  <div class="container">
+    <div class="sec-head"><span class="roman">I</span><h2 class="sec-title">The method</h2><span class="sec-meta">Two openers · one decision</span></div>
+    <div class="panel">
+      <div class="method-grid">
+        <div>
+          <p class="fig-cap">Fig. 01 — The two openers</p>
+          <div class="opener-row">
+            <span class="opener-tag">SOARE</span>
+            <span class="opener-tile" style="--ink:98%"><b>S</b><i>15.8%</i></span>
+            <span class="opener-tile" style="--ink:82%"><b>O</b><i>12.1%</i></span>
+            <span class="opener-tile" style="--ink:82%"><b>A</b><i>13.3%</i></span>
+            <span class="opener-tile" style="--ink:48%"><b>R</b><i>6.5%</i></span>
+            <span class="opener-tile" style="--ink:98%"><b>E</b><i>18.3%</i></span>
+          </div>
+          <div class="opener-row">
+            <span class="opener-tag">CLINT</span>
+            <span class="opener-tile" style="--ink:66%"><b>C</b><i>8.6%</i></span>
+            <span class="opener-tile" style="--ink:66%"><b>L</b><i>8.7%</i></span>
+            <span class="opener-tile" style="--ink:82%"><b>I</b><i>11.5%</i></span>
+            <span class="opener-tile" style="--ink:66%"><b>N</b><i>7.9%</i></span>
+            <span class="opener-tile" style="--ink:82%"><b>T</b><i>11.0%</i></span>
+          </div>
+          <div class="scale-legend">
+            <span class="cap">0%</span>
+            <span class="sw" style="--v:12%"></span>
+            <span class="sw" style="--v:30%"></span>
+            <span class="sw" style="--v:48%"></span>
+            <span class="sw" style="--v:66%"></span>
+            <span class="sw" style="--v:82%"></span>
+            <span class="sw" style="--v:98%"></span>
+            <span class="cap">18%+</span>
+          </div>
+          <p class="note-line">Each tile is shaded by how often that letter lands in that slot.</p>
+        </div>
+        <div class="method-stats">
+          <div class="mstat"><b>10</b><span>letters tested across the two openers, no overlap.</span></div>
+          <div class="mstat"><b>65.4%</b><span>of answer letters spotted before guess three begins.</span></div>
+          <div class="mstat"><b>4.37</b><span>candidates left on average after the two openers.</span></div>
+        </div>
+      </div>
+      <div class="flow">
+        <div class="flow-step">
+          <div class="flow-num">0</div>
+          <div class="flow-strat">Burn word</div>
+          <div class="flow-ex">DUMPY</div>
+          <p class="flow-note">Test five fresh letters; abandon hitting this turn.</p>
+          <div class="flow-share">0.6% of games · ~15.0 left</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">1</div>
+          <div class="flow-strat">Split candidates</div>
+          <div class="flow-ex">DEBUG</div>
+          <p class="flow-note">Play a max-entropy word to divide the remaining pool.</p>
+          <div class="flow-share">4.5% of games · ~5.4 left</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">2–4</div>
+          <div class="flow-strat">Guess candidate</div>
+          <div class="flow-ex">MATCH</div>
+          <p class="flow-note">Play the likeliest remaining word and let the board narrow.</p>
+          <div class="flow-share">90.4% of games · ~2.3 left</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">5</div>
+          <div class="flow-strat">Solved</div>
+          <div class="flow-ex">ABACK</div>
+          <p class="flow-note">Five hits means the answer is confirmed.</p>
+          <div class="flow-share">4.5% of games · ~1.0 left</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" id="tree" data-od-id="play-tree">
+  <div class="container">
+    <div class="sec-head"><span class="roman">II</span><h2 class="sec-title">The play tree</h2><span class="sec-meta">Guess by guess</span></div>
+    <div class="panel">
+      <div class="grid-2">
+        <div>
+          <div class="tree">
+            <div class="tree-node">Guess 1 — SOARE</div>
+            <div class="tree-node">Guess 2 — CLINT <span>(fixed, zero shared letters)</span></div>
+            <div class="tree-node">Guess 3 — count hits <span>(green + yellow letters from both guesses)</span></div>
+          </div>
+        </div>
+        <div>
+          <p class="chart-note" style="margin-top:0;">SOARE and CLINT share no letters, so together they interrogate ten positions. After that the only decision left is how many hits you hold — the hit count, not proximity, picks the next move.</p>
+        </div>
+      </div>
+      <table class="dtable" style="margin-top:var(--space-6);">
+        <thead>
+          <tr>
+            <th>Hits</th>
+            <th class="num-col">Share</th>
+            <th class="num-col">~Left</th>
+            <th>Strategy</th>
+            <th>Guess 3</th>
+            <th class="num-col">After</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="big">0</td><td class="num-col">0.6%</td><td class="num-col">~15.0</td><td class="strat">Burn word</td><td class="g3">DUMPY</td><td class="num-col">~1.4</td></tr>
+          <tr><td class="big">1</td><td class="num-col">4.5%</td><td class="num-col">~5.4</td><td class="strat">Split candidates</td><td class="g3">DEBUG</td><td class="num-col">~1.88</td></tr>
+          <tr><td class="big">2</td><td class="num-col">20.4%</td><td class="num-col">~3.5</td><td class="strat">Guess candidate</td><td class="g3">DUMPY</td><td class="num-col">~1.78</td></tr>
+          <tr><td class="big">3</td><td class="num-col">43.1%</td><td class="num-col">~2.3</td><td class="strat">Guess candidate</td><td class="g3">GAWKY</td><td class="num-col">~3.48</td></tr>
+          <tr><td class="big">4</td><td class="num-col">26.9%</td><td class="num-col">~1.5</td><td class="strat">Guess candidate</td><td class="g3">MATCH</td><td class="num-col">~1.44</td></tr>
+          <tr><td class="big">5</td><td class="num-col">4.5%</td><td class="num-col">~1.0</td><td class="strat">Solved</td><td class="g3">ABACK</td><td class="num-col">~1.0</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="reference" data-od-id="reference">
+  <div class="container">
+    <div class="sec-head"><span class="roman">III</span><h2 class="sec-title">Guess-3 reference</h2><span class="sec-meta">Hit-count table</span></div>
+    <div class="panel">
+      <div class="grid-2">
+        <div>
+          <p class="fig-cap">Table — candidates left by hits</p>
+          <table class="dtable">
+            <thead>
+              <tr>
+                <th>Hits</th>
+                <th class="num-col">Share</th>
+                <th class="num-col">Patterns</th>
+                <th class="num-col">Avg left</th>
+                <th class="num-col">Max left</th>
+                <th>Strategy</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="big">0</td><td class="num-col">0.6%</td><td class="num-col">1</td><td class="num-col">15.0</td><td class="num-col">15</td><td class="strat">Burn word</td></tr>
+              <tr><td class="big">1</td><td class="num-col">4.5%</td><td class="num-col">19</td><td class="num-col">5.4</td><td class="num-col">16</td><td class="strat">Split candidates</td></tr>
+              <tr><td class="big">2</td><td class="num-col">20.4%</td><td class="num-col">133</td><td class="num-col">3.5</td><td class="num-col">23</td><td class="strat">Guess candidate</td></tr>
+              <tr><td class="big">3</td><td class="num-col">43.1%</td><td class="num-col">426</td><td class="num-col">2.3</td><td class="num-col">25</td><td class="strat">Guess candidate</td></tr>
+              <tr><td class="big">4</td><td class="num-col">26.9%</td><td class="num-col">420</td><td class="num-col">1.5</td><td class="num-col">9</td><td class="strat">Guess candidate</td></tr>
+              <tr><td class="big">5</td><td class="num-col">4.5%</td><td class="num-col">102</td><td class="num-col">1.0</td><td class="num-col">2</td><td class="strat">Solved</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <p class="fig-cap">Fig. 02 — How games split by hit count</p>
+          <div class="chart-dist">
+            <div class="dist-col"><span class="dist-bar"><i style="height:2%"></i></span><span class="dist-val">0.6%</span><span class="dist-lab">0</span></div>
+            <div class="dist-col"><span class="dist-bar"><i style="height:10%"></i></span><span class="dist-val">4.5%</span><span class="dist-lab">1</span></div>
+            <div class="dist-col"><span class="dist-bar"><i style="height:47%"></i></span><span class="dist-val">20.4%</span><span class="dist-lab">2</span></div>
+            <div class="dist-col"><span class="dist-bar"><i class="opt" style="height:100%"></i></span><span class="dist-val">43.1%</span><span class="dist-lab">3</span></div>
+            <div class="dist-col"><span class="dist-bar"><i style="height:62%"></i></span><span class="dist-val">26.9%</span><span class="dist-lab">4</span></div>
+            <div class="dist-col"><span class="dist-bar"><i style="height:10%"></i></span><span class="dist-val">4.5%</span><span class="dist-lab">5</span></div>
+          </div>
+          <p class="chart-note">Share of games by number of hits after SOARE + CLINT. Bars scaled to the 43.1% mode.</p>
+          <p class="chart-note" style="margin-top:var(--space-3);">Three hits is the most common hand — and the messiest. It leaves the widest spread of candidates, so reach for the strategy, not a guess.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" id="patterns" data-od-id="patterns">
+  <div class="container">
+    <div class="sec-head"><span class="roman">IV</span><h2 class="sec-title">Guess-3 by pattern</h2><span class="sec-meta">X absent · G green · Y yellow</span></div>
+    <div class="grid-3">
+      <div class="pat-card">
+        <h3>0 hits — Burn word</h3>
+        <p class="pat-sub">0.6% of games · 1 pattern</p>
+        <table>
+          <thead><tr><th>G1</th><th>G2</th><th class="num-col">#</th><th>G3</th><th class="num-col">Left</th></tr></thead>
+          <tbody><tr><td class="pat">XXXXX</td><td class="pat">XXXXX</td><td class="num-col">15</td><td class="g3">DUMPY</td><td class="num-col">~1.4</td></tr></tbody>
+        </table>
+      </div>
+      <div class="pat-card">
+        <h3>1 hit — Split candidates</h3>
+        <p class="pat-sub">4.5% of games · 19 patterns</p>
+        <table>
+          <thead><tr><th>G1</th><th>G2</th><th class="num-col">#</th><th>G3</th><th class="num-col">Left</th></tr></thead>
+          <tbody>
+            <tr><td class="pat">XGXXX</td><td class="pat">XXXXX</td><td class="num-col">16</td><td class="g3">DEBUG</td><td class="num-col">~1.88</td></tr>
+            <tr><td class="pat">XXYXX</td><td class="pat">XXXXX</td><td class="num-col">15</td><td class="g3">PUDGY</td><td class="num-col">~1.27</td></tr>
+            <tr><td class="pat">XXXXX</td><td class="pat">XXYXX</td><td class="num-col">10</td><td class="g3">DUMPY</td><td class="num-col">~1.4</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="pat-card">
+        <h3>2 hits — Guess candidate</h3>
+        <p class="pat-sub">20.4% of games · 133 patterns</p>
+        <table>
+          <thead><tr><th>G1</th><th>G2</th><th class="num-col">#</th><th>G3</th><th class="num-col">Left</th></tr></thead>
+          <tbody>
+            <tr><td class="pat">XXXYY</td><td class="pat">XXXXX</td><td class="num-col">23</td><td class="g3">DUMPY</td><td class="num-col">~1.78</td></tr>
+            <tr><td class="pat">XXXXX</td><td class="pat">XYYXX</td><td class="num-col">14</td><td class="g3">DWELL</td><td class="num-col">~1.86</td></tr>
+            <tr><td class="pat">XGXXX</td><td class="pat">XYXXX</td><td class="num-col">14</td><td class="g3">DALLY</td><td class="num-col">~2.0</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="pat-card">
+        <h3>3 hits — Guess candidate</h3>
+        <p class="pat-sub">43.1% of games · 426 patterns</p>
+        <table>
+          <thead><tr><th>G1</th><th>G2</th><th class="num-col">#</th><th>G3</th><th class="num-col">Left</th></tr></thead>
+          <tbody>
+            <tr><td class="pat">XXYYY</td><td class="pat">XXXXX</td><td class="num-col">25</td><td class="g3">GAWKY</td><td class="num-col">~3.48</td></tr>
+            <tr><td class="pat">XGXYY</td><td class="pat">XXXXX</td><td class="num-col">14</td><td class="g3">WIMPY</td><td class="num-col">~3.14</td></tr>
+            <tr><td class="pat">XYYYX</td><td class="pat">XXXXX</td><td class="num-col">12</td><td class="g3">ARMOR</td><td class="num-col">~1.5</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="pat-card">
+        <h3>4 hits — Guess candidate</h3>
+        <p class="pat-sub">26.9% of games · 420 patterns</p>
+        <table>
+          <thead><tr><th>G1</th><th>G2</th><th class="num-col">#</th><th>G3</th><th class="num-col">Left</th></tr></thead>
+          <tbody>
+            <tr><td class="pat">XXYYY</td><td class="pat">XXXXY</td><td class="num-col">9</td><td class="g3">MATCH</td><td class="num-col">~1.44</td></tr>
+            <tr><td class="pat">XXYYY</td><td class="pat">XYXXX</td><td class="num-col">9</td><td class="g3">BAGGY</td><td class="num-col">~1.22</td></tr>
+            <tr><td class="pat">XYYYX</td><td class="pat">XXXYX</td><td class="num-col">6</td><td class="g3">BAGGY</td><td class="num-col">~1.0</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="pat-card">
+        <h3>5 hits — Solved</h3>
+        <p class="pat-sub">4.5% of games · 102 patterns</p>
+        <table>
+          <thead><tr><th>G1</th><th>G2</th><th class="num-col">#</th><th>G3</th><th class="num-col">Left</th></tr></thead>
+          <tbody>
+            <tr><td class="pat">YXYYG</td><td class="pat">XXGXX</td><td class="num-col">2</td><td class="g3">ABACK</td><td class="num-col">~1.0</td></tr>
+            <tr><td class="pat">YXXYY</td><td class="pat">XXYYX</td><td class="num-col">2</td><td class="g3">ABBEY</td><td class="num-col">~1.0</td></tr>
+            <tr><td class="pat">XYYGX</td><td class="pat">YXXYX</td><td class="num-col">1</td><td class="g3">ABACK</td><td class="num-col">~1.0</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" id="ladder" data-od-id="ladder">
+  <div class="container">
+    <div class="sec-head"><span class="roman">V</span><h2 class="sec-title">The ladder</h2><span class="sec-meta">What good looks like</span></div>
+    <div class="panel">
+      <div class="chart-lad">
+        <div class="lad-row"><span class="lad-num">3.42</span><span class="lad-bar"><i class="opt" style="width:26%"></i></span><span class="lad-lab">AI-optimal · SALET exact solution <em class="star">★</em></span></div>
+        <div class="lad-row"><span class="lad-num">3.75</span><span class="lad-bar"><i style="width:47%"></i></span><span class="lad-lab">WordleBot users · ~¼ guess better than average</span></div>
+        <div class="lad-row"><span class="lad-num">4.10</span><span class="lad-bar"><i style="width:69%"></i></span><span class="lad-lab">median human · NYT, 515M games</span></div>
+        <div class="lad-row"><span class="lad-num">4.50</span><span class="lad-bar"><i style="width:94%"></i></span><span class="lad-lab">struggling — losses cluster here</span></div>
+      </div>
+      <p class="chart-note">Average guesses per game. Bar length is proportional to guesses — shorter is better. Every six-guess win is a strategy failure, not a hard word; the gap to the median human is nearly three-quarters of a guess.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="grid" data-od-id="letter-grid">
+  <div class="container">
+    <div class="sec-head"><span class="roman">VI</span><h2 class="sec-title">The letter grid</h2><span class="sec-meta">Where letters live</span></div>
+    <div class="panel">
+      <div class="hm">
+        <div class="hm-head"><span></span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
+        <div class="hm-row"><span class="hm-lab">E</span><span class="hm-cell" style="--ink:30%" title="E @ pos 1: 3.1%">3.1</span><span class="hm-cell" style="--ink:66%" title="E @ pos 2: 10.4%">10.4</span><span class="hm-cell" style="--ink:66%" title="E @ pos 3: 7.7%">7.7</span><span class="hm-cell" style="--ink:82%" title="E @ pos 4: 13.8%">13.8</span><span class="hm-cell" style="--ink:98%" title="E @ pos 5: 18.3%">18.3</span></div>
+        <div class="hm-row"><span class="hm-lab">A</span><span class="hm-cell" style="--ink:48%" title="A @ pos 1: 6.1%">6.1</span><span class="hm-cell" style="--ink:82%" title="A @ pos 2: 13.2%">13.2</span><span class="hm-cell" style="--ink:82%" title="A @ pos 3: 13.3%">13.3</span><span class="hm-cell" style="--ink:66%" title="A @ pos 4: 7.0%">7.0</span><span class="hm-cell" style="--ink:30%" title="A @ pos 5: 2.7%">2.7</span></div>
+        <div class="hm-row"><span class="hm-lab">R</span><span class="hm-cell" style="--ink:48%" title="R @ pos 1: 4.5%">4.5</span><span class="hm-cell" style="--ink:82%" title="R @ pos 2: 11.6%">11.6</span><span class="hm-cell" style="--ink:66%" title="R @ pos 3: 7.1%">7.1</span><span class="hm-cell" style="--ink:48%" title="R @ pos 4: 6.5%">6.5</span><span class="hm-cell" style="--ink:66%" title="R @ pos 5: 9.2%">9.2</span></div>
+        <div class="hm-row"><span class="hm-lab">O</span><span class="hm-cell" style="--ink:30%" title="O @ pos 1: 1.8%">1.8</span><span class="hm-cell" style="--ink:82%" title="O @ pos 2: 12.1%">12.1</span><span class="hm-cell" style="--ink:82%" title="O @ pos 3: 10.5%">10.5</span><span class="hm-cell" style="--ink:48%" title="O @ pos 4: 5.7%">5.7</span><span class="hm-cell" style="--ink:30%" title="O @ pos 5: 2.5%">2.5</span></div>
+        <div class="hm-row"><span class="hm-lab">T</span><span class="hm-cell" style="--ink:48%" title="T @ pos 1: 6.5%">6.5</span><span class="hm-cell" style="--ink:30%" title="T @ pos 2: 3.3%">3.3</span><span class="hm-cell" style="--ink:48%" title="T @ pos 3: 4.8%">4.8</span><span class="hm-cell" style="--ink:48%" title="T @ pos 4: 6.0%">6.0</span><span class="hm-cell" style="--ink:82%" title="T @ pos 5: 11.0%">11.0</span></div>
+        <div class="hm-row"><span class="hm-lab">L</span><span class="hm-cell" style="--ink:30%" title="L @ pos 1: 3.8%">3.8</span><span class="hm-cell" style="--ink:66%" title="L @ pos 2: 8.7%">8.7</span><span class="hm-cell" style="--ink:48%" title="L @ pos 3: 4.9%">4.9</span><span class="hm-cell" style="--ink:66%" title="L @ pos 4: 7.0%">7.0</span><span class="hm-cell" style="--ink:48%" title="L @ pos 5: 6.7%">6.7</span></div>
+        <div class="hm-row"><span class="hm-lab">I</span><span class="hm-cell" style="--ink:30%" title="I @ pos 1: 1.5%">1.5</span><span class="hm-cell" style="--ink:66%" title="I @ pos 2: 8.7%">8.7</span><span class="hm-cell" style="--ink:82%" title="I @ pos 3: 11.5%">11.5</span><span class="hm-cell" style="--ink:48%" title="I @ pos 4: 6.8%">6.8</span><span class="hm-cell" style="--ink:12%" title="I @ pos 5: 0.5%">0.5</span></div>
+        <div class="hm-row"><span class="hm-lab">S</span><span class="hm-cell" style="--ink:98%" title="S @ pos 1: 15.8%">15.8</span><span class="hm-cell" style="--ink:12%" title="S @ pos 2: 0.7%">0.7</span><span class="hm-cell" style="--ink:30%" title="S @ pos 3: 3.5%">3.5</span><span class="hm-cell" style="--ink:66%" title="S @ pos 4: 7.4%">7.4</span><span class="hm-cell" style="--ink:30%" title="S @ pos 5: 1.6%">1.6</span></div>
+        <div class="hm-row"><span class="hm-lab">N</span><span class="hm-cell" style="--ink:30%" title="N @ pos 1: 1.6%">1.6</span><span class="hm-cell" style="--ink:30%" title="N @ pos 2: 3.8%">3.8</span><span class="hm-cell" style="--ink:48%" title="N @ pos 3: 5.9%">5.9</span><span class="hm-cell" style="--ink:66%" title="N @ pos 4: 7.9%">7.9</span><span class="hm-cell" style="--ink:48%" title="N @ pos 5: 5.6%">5.6</span></div>
+        <div class="hm-row"><span class="hm-lab">C</span><span class="hm-cell" style="--ink:66%" title="C @ pos 1: 8.6%">8.6</span><span class="hm-cell" style="--ink:30%" title="C @ pos 2: 1.7%">1.7</span><span class="hm-cell" style="--ink:30%" title="C @ pos 3: 2.4%">2.4</span><span class="hm-cell" style="--ink:48%" title="C @ pos 4: 6.5%">6.5</span><span class="hm-cell" style="--ink:12%" title="C @ pos 5: 1.3%">1.3</span></div>
+        <div class="hm-row"><span class="hm-lab">U</span><span class="hm-cell" style="--ink:12%" title="U @ pos 1: 1.4%">1.4</span><span class="hm-cell" style="--ink:66%" title="U @ pos 2: 8.0%">8.0</span><span class="hm-cell" style="--ink:66%" title="U @ pos 3: 7.1%">7.1</span><span class="hm-cell" style="--ink:30%" title="U @ pos 4: 3.6%">3.6</span><span class="hm-cell" style="--ink:12%" title="U @ pos 5: 0.0%">·</span></div>
+        <div class="hm-row"><span class="hm-lab">Y</span><span class="hm-cell" style="--ink:12%" title="Y @ pos 1: 0.3%">0.3</span><span class="hm-cell" style="--ink:12%" title="Y @ pos 2: 1.0%">1.0</span><span class="hm-cell" style="--ink:12%" title="Y @ pos 3: 1.3%">1.3</span><span class="hm-cell" style="--ink:12%" title="Y @ pos 4: 0.1%">0.1</span><span class="hm-cell" style="--ink:98%" title="Y @ pos 5: 15.8%">15.8</span></div>
+        <div class="hm-row"><span class="hm-lab">D</span><span class="hm-cell" style="--ink:48%" title="D @ pos 1: 4.8%">4.8</span><span class="hm-cell" style="--ink:12%" title="D @ pos 2: 0.9%">0.9</span><span class="hm-cell" style="--ink:30%" title="D @ pos 3: 3.2%">3.2</span><span class="hm-cell" style="--ink:30%" title="D @ pos 4: 3.0%">3.0</span><span class="hm-cell" style="--ink:48%" title="D @ pos 5: 5.1%">5.1</span></div>
+        <div class="hm-row"><span class="hm-lab">H</span><span class="hm-cell" style="--ink:30%" title="H @ pos 1: 3.0%">3.0</span><span class="hm-cell" style="--ink:48%" title="H @ pos 2: 6.2%">6.2</span><span class="hm-cell" style="--ink:12%" title="H @ pos 3: 0.4%">0.4</span><span class="hm-cell" style="--ink:12%" title="H @ pos 4: 1.2%">1.2</span><span class="hm-cell" style="--ink:48%" title="H @ pos 5: 5.9%">5.9</span></div>
+        <div class="hm-row"><span class="hm-lab">P</span><span class="hm-cell" style="--ink:48%" title="P @ pos 1: 6.1%">6.1</span><span class="hm-cell" style="--ink:30%" title="P @ pos 2: 2.6%">2.6</span><span class="hm-cell" style="--ink:30%" title="P @ pos 3: 2.5%">2.5</span><span class="hm-cell" style="--ink:30%" title="P @ pos 4: 2.2%">2.2</span><span class="hm-cell" style="--ink:30%" title="P @ pos 5: 2.4%">2.4</span></div>
+        <div class="hm-row"><span class="hm-lab">M</span><span class="hm-cell" style="--ink:48%" title="M @ pos 1: 4.6%">4.6</span><span class="hm-cell" style="--ink:30%" title="M @ pos 2: 1.6%">1.6</span><span class="hm-cell" style="--ink:30%" title="M @ pos 3: 2.6%">2.6</span><span class="hm-cell" style="--ink:30%" title="M @ pos 4: 2.9%">2.9</span><span class="hm-cell" style="--ink:30%" title="M @ pos 5: 1.8%">1.8</span></div>
+        <div class="hm-row"><span class="hm-lab">G</span><span class="hm-cell" style="--ink:48%" title="G @ pos 1: 5.0%">5.0</span><span class="hm-cell" style="--ink:12%" title="G @ pos 2: 0.5%">0.5</span><span class="hm-cell" style="--ink:30%" title="G @ pos 3: 2.9%">2.9</span><span class="hm-cell" style="--ink:30%" title="G @ pos 4: 3.3%">3.3</span><span class="hm-cell" style="--ink:30%" title="G @ pos 5: 1.8%">1.8</span></div>
+        <div class="hm-row"><span class="hm-lab">B</span><span class="hm-cell" style="--ink:66%" title="B @ pos 1: 7.5%">7.5</span><span class="hm-cell" style="--ink:12%" title="B @ pos 2: 0.7%">0.7</span><span class="hm-cell" style="--ink:30%" title="B @ pos 3: 2.4%">2.4</span><span class="hm-cell" style="--ink:12%" title="B @ pos 4: 1.0%">1.0</span><span class="hm-cell" style="--ink:12%" title="B @ pos 5: 0.5%">0.5</span></div>
+        <div class="hm-row"><span class="hm-lab">F</span><span class="hm-cell" style="--ink:48%" title="F @ pos 1: 5.8%">5.8</span><span class="hm-cell" style="--ink:12%" title="F @ pos 2: 0.3%">0.3</span><span class="hm-cell" style="--ink:12%" title="F @ pos 3: 1.1%">1.1</span><span class="hm-cell" style="--ink:30%" title="F @ pos 4: 1.5%">1.5</span><span class="hm-cell" style="--ink:12%" title="F @ pos 5: 1.1%">1.1</span></div>
+        <div class="hm-row"><span class="hm-lab">K</span><span class="hm-cell" style="--ink:12%" title="K @ pos 1: 0.9%">0.9</span><span class="hm-cell" style="--ink:12%" title="K @ pos 2: 0.4%">0.4</span><span class="hm-cell" style="--ink:12%" title="K @ pos 3: 0.5%">0.5</span><span class="hm-cell" style="--ink:30%" title="K @ pos 4: 2.4%">2.4</span><span class="hm-cell" style="--ink:48%" title="K @ pos 5: 4.9%">4.9</span></div>
+        <div class="hm-row"><span class="hm-lab">W</span><span class="hm-cell" style="--ink:30%" title="W @ pos 1: 3.6%">3.6</span><span class="hm-cell" style="--ink:30%" title="W @ pos 2: 1.9%">1.9</span><span class="hm-cell" style="--ink:12%" title="W @ pos 3: 1.1%">1.1</span><span class="hm-cell" style="--ink:12%" title="W @ pos 4: 1.1%">1.1</span><span class="hm-cell" style="--ink:12%" title="W @ pos 5: 0.7%">0.7</span></div>
+        <div class="hm-row"><span class="hm-lab">V</span><span class="hm-cell" style="--ink:30%" title="V @ pos 1: 1.9%">1.9</span><span class="hm-cell" style="--ink:12%" title="V @ pos 2: 0.6%">0.6</span><span class="hm-cell" style="--ink:30%" title="V @ pos 3: 2.1%">2.1</span><span class="hm-cell" style="--ink:30%" title="V @ pos 4: 1.9%">1.9</span><span class="hm-cell" style="--ink:12%" title="V @ pos 5: 0.0%">·</span></div>
+        <div class="hm-row"><span class="hm-lab">Z</span><span class="hm-cell" style="--ink:12%" title="Z @ pos 1: 0.1%">0.1</span><span class="hm-cell" style="--ink:12%" title="Z @ pos 2: 0.1%">0.1</span><span class="hm-cell" style="--ink:12%" title="Z @ pos 3: 0.5%">0.5</span><span class="hm-cell" style="--ink:12%" title="Z @ pos 4: 0.9%">0.9</span><span class="hm-cell" style="--ink:12%" title="Z @ pos 5: 0.2%">0.2</span></div>
+        <div class="hm-row"><span class="hm-lab">X</span><span class="hm-cell" style="--ink:12%" title="X @ pos 1: 0.0%">·</span><span class="hm-cell" style="--ink:12%" title="X @ pos 2: 0.6%">0.6</span><span class="hm-cell" style="--ink:12%" title="X @ pos 3: 0.5%">0.5</span><span class="hm-cell" style="--ink:12%" title="X @ pos 4: 0.1%">0.1</span><span class="hm-cell" style="--ink:12%" title="X @ pos 5: 0.3%">0.3</span></div>
+        <div class="hm-row"><span class="hm-lab">Q</span><span class="hm-cell" style="--ink:12%" title="Q @ pos 1: 1.0%">1.0</span><span class="hm-cell" style="--ink:12%" title="Q @ pos 2: 0.2%">0.2</span><span class="hm-cell" style="--ink:12%" title="Q @ pos 3: 0.0%">·</span><span class="hm-cell" style="--ink:12%" title="Q @ pos 4: 0.0%">·</span><span class="hm-cell" style="--ink:12%" title="Q @ pos 5: 0.0%">·</span></div>
+        <div class="hm-row"><span class="hm-lab">J</span><span class="hm-cell" style="--ink:12%" title="J @ pos 1: 0.9%">0.9</span><span class="hm-cell" style="--ink:12%" title="J @ pos 2: 0.1%">0.1</span><span class="hm-cell" style="--ink:12%" title="J @ pos 3: 0.1%">0.1</span><span class="hm-cell" style="--ink:12%" title="J @ pos 4: 0.1%">0.1</span><span class="hm-cell" style="--ink:12%" title="J @ pos 5: 0.0%">·</span></div>
+      </div>
+      <div class="hm-callout">
+        <span><b>E @ 5</b> · 18.3% — the single busiest cell</span>
+        <span><b>S @ 1</b> · 15.8% — the strongest opening letter</span>
+        <span><b>Y @ 5</b> · 15.8% — almost never appears elsewhere</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="shape" data-od-id="shape-grammar">
+  <div class="container">
+    <div class="sec-head"><span class="roman">VII</span><h2 class="sec-title">Shape &amp; mistakes</h2><span class="sec-meta">Vowels · starts · ends</span></div>
+    <div class="grid-2">
+      <div class="panel">
+        <div class="grid-3">
+          <div class="shape-card">
+            <h3>Vowels</h3>
+            <div class="shape-row"><span>two vowels in the word</span><b>58%</b></div>
+            <div class="shape-row"><span>vowels in slots 2 &amp; 4</span><b>31%</b></div>
+            <div class="shape-row"><span>one vowel — in slot 3</span><b>52%</b></div>
+            <div class="shape-row"><span>one vowel — in slot 2</span><b>41%</b></div>
+          </div>
+          <div class="shape-card">
+            <h3>Starts</h3>
+            <div class="shape-row"><span>S</span><b>15.8%</b></div>
+            <div class="shape-row"><span>C</span><b>8.6%</b></div>
+            <div class="shape-row"><span>B</span><b>7.5%</b></div>
+            <div class="shape-row"><span>vowel starts</span><b>rare</b></div>
+          </div>
+          <div class="shape-card">
+            <h3>Ends</h3>
+            <div class="shape-row"><span>E</span><b>18.3%</b></div>
+            <div class="shape-row"><span>Y</span><b>15.8%</b></div>
+            <div class="shape-row"><span>T</span><b>11.0%</b></div>
+            <div class="shape-row"><span>R</span><b>9.2%</b></div>
+          </div>
+        </div>
+      </div>
+      <div class="panel">
+        <p class="fig-cap">Fig. 03 — Costly mistakes</p>
+        <div class="dodont">
+          <div class="dd-col dont">
+            <p class="dd-h">Avoid</p>
+            <ul>
+              <li>Tunnel vision on a single candidate.</li>
+              <li>Reusing letters the board already marked gray.</li>
+              <li>Changing your opener from game to game.</li>
+            </ul>
+          </div>
+          <div class="dd-col do">
+            <p class="dd-h">Do</p>
+            <ul>
+              <li>Split candidates with a deliberate burn word.</li>
+              <li>Treat every gray as free information.</li>
+              <li>Watch the -E / -ER / -Y endings and doubles (14.7%).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="pagefoot" data-od-id="footer">
+  <div class="container">
+    <div class="foot-top">
+      <div>
+        <h3>Pick an opener today and never change it.</h3>
+        <p class="lead">A fixed opening turns a guessing game into a small, repeatable procedure. The thinking happens once, at the start; the rest is arithmetic.</p>
+      </div>
+      <div>
+        <p class="fig-cap">Sources</p>
+        <div class="foot-src">
+          <div>MIT / OR — exact Wordle solution</div>
+          <div>NYT WordleBot &amp; 515M-game analysis</div>
+          <div>3Blue1Brown — opener entropy</div>
+          <div>Local analysis of 2309 past answers</div>
+        </div>
+      </div>
+    </div>
+    <div class="mega">Stop guessing<i>.</i></div>
+    <div class="foot-end">
+      <span><i class="pulse"></i>Stop guessing · 2,309 answers analysed</span>
+      <span>Cosmic edition · v4.0 · EN</span>
+      <span>FIN.</span>
+    </div>
+  </div>
+</footer>
+<script>
+(function () {
+  var h = document.getElementById('heroLine');
+  if (!h) return;
+  var items = h.querySelectorAll('.hero-line__item');
+  if (items.length < 2) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var i = 0;
+  window.setInterval(function () {
+    items[i].classList.remove('is-active');
+    items[i].setAttribute('aria-hidden', 'true');
+    i = (i + 1) % items.length;
+    items[i].classList.add('is-active');
+    items[i].removeAttribute('aria-hidden');
+  }, 4200);
+})();
+</script>
+</body>
+</html>
