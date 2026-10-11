@@ -45,9 +45,15 @@ pairs). No compression for phone scrolling.
 - Opener table with avg guesses: **SALET** (optimal) → **TRACE / CRATE / SLATE**
   (near-identical, real words).
 
-### 4. Guesses 2–3: eliminate, don't solve
+### 4. Guesses 1–2 spot letters; guess 3+ solves
 
-- Rule of thumb: each guess should cross off the largest possible share of
+- Strategy principle: guesses 1–2 are a **disjoint pair** (no shared letters),
+  testing 10 distinct letters to spot which are present — not to reuse or
+  solve. Best pairs: **SALON+TRICE**, **CRISE+TALON**, **SCONE+TRAIL**
+  (spot ~65% of the answer's letters, leave ~4.4 candidates).
+- Alternative for thinkers: adaptive reuse (ROATE tree, leaves ~3.2) —
+  stronger raw info, costs a feedback read per game.
+- From guess 3: each guess should cross off the largest possible share of
   remaining words.
 - Cover the remaining vowels early.
 - Treat grays as free information, not waste.

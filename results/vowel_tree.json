@@ -1,0 +1,107 @@
+[
+  {
+    "vowels": "AE",
+    "share_pct": 14.0,
+    "candidates": 323,
+    "guess3": "terse",
+    "expected_remaining": 19.4
+  },
+  {
+    "vowels": "A",
+    "share_pct": 13.0,
+    "candidates": 301,
+    "guess3": "slant",
+    "expected_remaining": 12.08
+  },
+  {
+    "vowels": "E",
+    "share_pct": 13.0,
+    "candidates": 301,
+    "guess3": "reset",
+    "expected_remaining": 9.37
+  },
+  {
+    "vowels": "O",
+    "share_pct": 11.2,
+    "candidates": 259,
+    "guess3": "truly",
+    "expected_remaining": 11.82
+  },
+  {
+    "vowels": "I",
+    "share_pct": 9.7,
+    "candidates": 225,
+    "guess3": "spilt",
+    "expected_remaining": 10.67
+  },
+  {
+    "vowels": "EI",
+    "share_pct": 8.6,
+    "candidates": 198,
+    "guess3": "rinse",
+    "expected_remaining": 10.19
+  },
+  {
+    "vowels": "EO",
+    "share_pct": 7.9,
+    "candidates": 182,
+    "guess3": "roost",
+    "expected_remaining": 11.23
+  },
+  {
+    "vowels": "NONE",
+    "share_pct": 6.8,
+    "candidates": 157,
+    "guess3": "plush",
+    "expected_remaining": 7.09
+  },
+  {
+    "vowels": "AO",
+    "share_pct": 5.4,
+    "candidates": 124,
+    "guess3": "color",
+    "expected_remaining": 6.66
+  },
+  {
+    "vowels": "AI",
+    "share_pct": 4.8,
+    "candidates": 110,
+    "guess3": "train",
+    "expected_remaining": 5.25
+  },
+  {
+    "vowels": "IO",
+    "share_pct": 3.0,
+    "candidates": 70,
+    "guess3": "snort",
+    "expected_remaining": 4.6
+  },
+  {
+    "vowels": "AEI",
+    "share_pct": 1.0,
+    "candidates": 22,
+    "guess3": "alarm",
+    "expected_remaining": 1.91
+  },
+  {
+    "vowels": "AEO",
+    "share_pct": 0.7,
+    "candidates": 16,
+    "guess3": "drone",
+    "expected_remaining": 1.62
+  },
+  {
+    "vowels": "EIO",
+    "share_pct": 0.5,
+    "candidates": 11,
+    "guess3": "ovine",
+    "expected_remaining": 1.18
+  },
+  {
+    "vowels": "AIO",
+    "share_pct": 0.4,
+    "candidates": 10,
+    "guess3": "adopt",
+    "expected_remaining": 1.2
+  }
+]

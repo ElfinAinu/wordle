@@ -1,0 +1,352 @@
+[
+  {
+    "first": "carse",
+    "second": "doilt",
+    "expected_remaining": 4.281,
+    "solved_on_two_pct": 25.47,
+    "spot_rate_pct": 63.9
+  },
+  {
+    "first": "riant",
+    "second": "socle",
+    "expected_remaining": 4.304,
+    "solved_on_two_pct": 26.76,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "clast",
+    "second": "rione",
+    "expected_remaining": 4.339,
+    "solved_on_two_pct": 26.55,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "close",
+    "second": "riant",
+    "expected_remaining": 4.339,
+    "solved_on_two_pct": 26.55,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "salon",
+    "second": "trice",
+    "expected_remaining": 4.355,
+    "solved_on_two_pct": 26.16,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "cline",
+    "second": "roast",
+    "expected_remaining": 4.357,
+    "solved_on_two_pct": 26.94,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "clint",
+    "second": "soare",
+    "expected_remaining": 4.367,
+    "solved_on_two_pct": 27.76,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "clote",
+    "second": "sarin",
+    "expected_remaining": 4.369,
+    "solved_on_two_pct": 26.98,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "crine",
+    "second": "loast",
+    "expected_remaining": 4.371,
+    "solved_on_two_pct": 27.07,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "lance",
+    "second": "roist",
+    "expected_remaining": 4.372,
+    "solved_on_two_pct": 26.89,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "doilt",
+    "second": "sacre",
+    "expected_remaining": 4.375,
+    "solved_on_two_pct": 24.82,
+    "spot_rate_pct": 63.9
+  },
+  {
+    "first": "socle",
+    "second": "train",
+    "expected_remaining": 4.379,
+    "solved_on_two_pct": 26.03,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "carne",
+    "second": "toils",
+    "expected_remaining": 4.385,
+    "solved_on_two_pct": 26.98,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "carns",
+    "second": "toile",
+    "expected_remaining": 4.385,
+    "solved_on_two_pct": 26.98,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "sonce",
+    "second": "trail",
+    "expected_remaining": 4.386,
+    "solved_on_two_pct": 27.07,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "cairn",
+    "second": "stole",
+    "expected_remaining": 4.398,
+    "solved_on_two_pct": 26.12,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "crise",
+    "second": "talon",
+    "expected_remaining": 4.409,
+    "solved_on_two_pct": 25.73,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "slice",
+    "second": "toran",
+    "expected_remaining": 4.42,
+    "solved_on_two_pct": 25.94,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "doilt",
+    "second": "ranse",
+    "expected_remaining": 4.423,
+    "solved_on_two_pct": 25.64,
+    "spot_rate_pct": 64.8
+  },
+  {
+    "first": "ceorl",
+    "second": "saint",
+    "expected_remaining": 4.425,
+    "solved_on_two_pct": 27.33,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "colin",
+    "second": "tarse",
+    "expected_remaining": 4.425,
+    "solved_on_two_pct": 26.63,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "crost",
+    "second": "liane",
+    "expected_remaining": 4.427,
+    "solved_on_two_pct": 26.55,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "drole",
+    "second": "saint",
+    "expected_remaining": 4.431,
+    "solved_on_two_pct": 24.69,
+    "spot_rate_pct": 64.8
+  },
+  {
+    "first": "crane",
+    "second": "toils",
+    "expected_remaining": 4.434,
+    "solved_on_two_pct": 27.11,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "coals",
+    "second": "trine",
+    "expected_remaining": 4.434,
+    "solved_on_two_pct": 27.11,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "crans",
+    "second": "toile",
+    "expected_remaining": 4.434,
+    "solved_on_two_pct": 27.11,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "crone",
+    "second": "tails",
+    "expected_remaining": 4.451,
+    "solved_on_two_pct": 26.5,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "loast",
+    "second": "rince",
+    "expected_remaining": 4.455,
+    "solved_on_two_pct": 26.38,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "clone",
+    "second": "sitar",
+    "expected_remaining": 4.455,
+    "solved_on_two_pct": 25.21,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "coles",
+    "second": "riant",
+    "expected_remaining": 4.456,
+    "solved_on_two_pct": 25.08,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "salic",
+    "second": "trone",
+    "expected_remaining": 4.463,
+    "solved_on_two_pct": 24.38,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "since",
+    "second": "tolar",
+    "expected_remaining": 4.464,
+    "solved_on_two_pct": 24.82,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "liart",
+    "second": "sonce",
+    "expected_remaining": 4.478,
+    "solved_on_two_pct": 27.07,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "crine",
+    "second": "salto",
+    "expected_remaining": 4.478,
+    "solved_on_two_pct": 25.94,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "close",
+    "second": "train",
+    "expected_remaining": 4.479,
+    "solved_on_two_pct": 26.2,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "rance",
+    "second": "toils",
+    "expected_remaining": 4.482,
+    "solved_on_two_pct": 25.86,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "caron",
+    "second": "stile",
+    "expected_remaining": 4.485,
+    "solved_on_two_pct": 25.51,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "cored",
+    "second": "slant",
+    "expected_remaining": 4.488,
+    "solved_on_two_pct": 24.47,
+    "spot_rate_pct": 62.9
+  },
+  {
+    "first": "clone",
+    "second": "stair",
+    "expected_remaining": 4.491,
+    "solved_on_two_pct": 24.86,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "canst",
+    "second": "drole",
+    "expected_remaining": 4.494,
+    "solved_on_two_pct": 25.12,
+    "spot_rate_pct": 62.9
+  },
+  {
+    "first": "carte",
+    "second": "noils",
+    "expected_remaining": 4.497,
+    "solved_on_two_pct": 25.38,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "clied",
+    "second": "roast",
+    "expected_remaining": 4.498,
+    "solved_on_two_pct": 24.21,
+    "spot_rate_pct": 63.9
+  },
+  {
+    "first": "scran",
+    "second": "toile",
+    "expected_remaining": 4.501,
+    "solved_on_two_pct": 24.38,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "solan",
+    "second": "trice",
+    "expected_remaining": 4.51,
+    "solved_on_two_pct": 24.64,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "clast",
+    "second": "noire",
+    "expected_remaining": 4.511,
+    "solved_on_two_pct": 26.16,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "clart",
+    "second": "noise",
+    "expected_remaining": 4.511,
+    "solved_on_two_pct": 26.16,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "narcs",
+    "second": "toile",
+    "expected_remaining": 4.511,
+    "solved_on_two_pct": 24.9,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "crate",
+    "second": "noils",
+    "expected_remaining": 4.517,
+    "solved_on_two_pct": 26.03,
+    "spot_rate_pct": 65.4
+  },
+  {
+    "first": "diact",
+    "second": "sorel",
+    "expected_remaining": 4.517,
+    "solved_on_two_pct": 23.73,
+    "spot_rate_pct": 63.9
+  },
+  {
+    "first": "diact",
+    "second": "soler",
+    "expected_remaining": 4.522,
+    "solved_on_two_pct": 23.04,
+    "spot_rate_pct": 63.9
+  }
+]

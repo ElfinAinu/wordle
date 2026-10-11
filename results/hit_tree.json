@@ -1,0 +1,212 @@
+[
+  {
+    "hits": 0,
+    "share_pct": 0.6,
+    "answers": 15,
+    "patterns": 1,
+    "avg_candidates": 15.0,
+    "max_candidates": 15,
+    "strategy": "Burn word",
+    "top_patterns": [
+      {
+        "g1": "SOARE",
+        "g1_pattern": "XXXXX",
+        "g2": "CLINT",
+        "g2_pattern": "XXXXX",
+        "candidates": 15,
+        "guess3": "dumpy",
+        "expected_remaining": 1.4
+      }
+    ]
+  },
+  {
+    "hits": 1,
+    "share_pct": 4.5,
+    "answers": 103,
+    "patterns": 19,
+    "avg_candidates": 5.4,
+    "max_candidates": 16,
+    "strategy": "Split candidates",
+    "top_patterns": [
+      {
+        "g1": "SOARE",
+        "g1_pattern": "XGXXX",
+        "g2": "CLINT",
+        "g2_pattern": "XXXXX",
+        "candidates": 16,
+        "guess3": "debug",
+        "expected_remaining": 1.88
+      },
+      {
+        "g1": "SOARE",
+        "g1_pattern": "XXYXX",
+        "g2": "CLINT",
+        "g2_pattern": "XXXXX",
+        "candidates": 15,
+        "guess3": "pudgy",
+        "expected_remaining": 1.27
+      },
+      {
+        "g1": "SOARE",
+        "g1_pattern": "XXXXX",
+        "g2": "CLINT",
+        "g2_pattern": "XXYXX",
+        "candidates": 10,
+        "guess3": "dumpy",
+        "expected_remaining": 1.4
+      }
+    ]
+  },
+  {
+    "hits": 2,
+    "share_pct": 20.4,
+    "answers": 470,
+    "patterns": 133,
+    "avg_candidates": 3.5,
+    "max_candidates": 23,
+    "strategy": "Guess candidate",
+    "top_patterns": [
+      {
+        "g1": "SOARE",
+        "g1_pattern": "XXXYY",
+        "g2": "CLINT",
+        "g2_pattern": "XXXXX",
+        "candidates": 23,
+        "guess3": "dumpy",
+        "expected_remaining": 1.78
+      },
+      {
+        "g1": "SOARE",
+        "g1_pattern": "XXXXX",
+        "g2": "CLINT",
+        "g2_pattern": "XYYXX",
+        "candidates": 14,
+        "guess3": "dwell",
+        "expected_remaining": 1.86
+      },
+      {
+        "g1": "SOARE",
+        "g1_pattern": "XGXXX",
+        "g2": "CLINT",
+        "g2_pattern": "XYXXX",
+        "candidates": 14,
+        "guess3": "dally",
+        "expected_remaining": 2.0
+      }
+    ]
+  },
+  {
+    "hits": 3,
+    "share_pct": 43.1,
+    "answers": 996,
+    "patterns": 426,
+    "avg_candidates": 2.3,
+    "max_candidates": 25,
+    "strategy": "Guess candidate",
+    "top_patterns": [
+      {
+        "g1": "SOARE",
+        "g1_pattern": "XXYYY",
+        "g2": "CLINT",
+        "g2_pattern": "XXXXX",
+        "candidates": 25,
+        "guess3": "gawky",
+        "expected_remaining": 3.48
+      },
+      {
+        "g1": "SOARE",
+        "g1_pattern": "XGXYY",
+        "g2": "CLINT",
+        "g2_pattern": "XXXXX",
+        "candidates": 14,
+        "guess3": "wimpy",
+        "expected_remaining": 3.14
+      },
+      {
+        "g1": "SOARE",
+        "g1_pattern": "XYYYX",
+        "g2": "CLINT",
+        "g2_pattern": "XXXXX",
+        "candidates": 12,
+        "guess3": "armor",
+        "expected_remaining": 1.5
+      }
+    ]
+  },
+  {
+    "hits": 4,
+    "share_pct": 26.9,
+    "answers": 621,
+    "patterns": 420,
+    "avg_candidates": 1.5,
+    "max_candidates": 9,
+    "strategy": "Guess candidate",
+    "top_patterns": [
+      {
+        "g1": "SOARE",
+        "g1_pattern": "XXYYY",
+        "g2": "CLINT",
+        "g2_pattern": "XXXXY",
+        "candidates": 9,
+        "guess3": "match",
+        "expected_remaining": 1.44
+      },
+      {
+        "g1": "SOARE",
+        "g1_pattern": "XXYYY",
+        "g2": "CLINT",
+        "g2_pattern": "XYXXX",
+        "candidates": 9,
+        "guess3": "baggy",
+        "expected_remaining": 1.22
+      },
+      {
+        "g1": "SOARE",
+        "g1_pattern": "XYYYX",
+        "g2": "CLINT",
+        "g2_pattern": "XXXYX",
+        "candidates": 6,
+        "guess3": "baggy",
+        "expected_remaining": 1.0
+      }
+    ]
+  },
+  {
+    "hits": 5,
+    "share_pct": 4.5,
+    "answers": 104,
+    "patterns": 102,
+    "avg_candidates": 1.0,
+    "max_candidates": 2,
+    "strategy": "Solved",
+    "top_patterns": [
+      {
+        "g1": "SOARE",
+        "g1_pattern": "YXYYG",
+        "g2": "CLINT",
+        "g2_pattern": "XXGXX",
+        "candidates": 2,
+        "guess3": "aback",
+        "expected_remaining": 1.0
+      },
+      {
+        "g1": "SOARE",
+        "g1_pattern": "YXXYY",
+        "g2": "CLINT",
+        "g2_pattern": "XXYYX",
+        "candidates": 2,
+        "guess3": "abbey",
+        "expected_remaining": 1.0
+      },
+      {
+        "g1": "SOARE",
+        "g1_pattern": "XYYGX",
+        "g2": "CLINT",
+        "g2_pattern": "YXXYX",
+        "candidates": 1,
+        "guess3": "aback",
+        "expected_remaining": 1.0
+      }
+    ]
+  }
+]
