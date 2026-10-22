@@ -1,0 +1,363 @@
+{
+  "answers": {
+    "total": 2309,
+    "distinct_pct": {
+      "2": 0.0,
+      "3": 2.5,
+      "4": 29.8,
+      "5": 67.6
+    },
+    "any_repeat_pct": 32.4,
+    "adjacent_word_pct": 14.7,
+    "vowel_apart_word_pct": 10.3,
+    "repeat_instances": {
+      "vowel": 356,
+      "consonant": 422,
+      "y": 8
+    },
+    "adjacent_instances": {
+      "consonant": 222,
+      "vowel": 118
+    },
+    "repeat_instance_pct": {
+      "vowel": 45.3,
+      "consonant": 53.7,
+      "y": 1.0
+    },
+    "baseline_letter_pct": {
+      "vowel": 35.5,
+      "consonant": 60.9,
+      "y": 3.7
+    },
+    "top_repeated_letters": [
+      [
+        "e",
+        172
+      ],
+      [
+        "o",
+        81
+      ],
+      [
+        "l",
+        71
+      ],
+      [
+        "a",
+        69
+      ],
+      [
+        "t",
+        61
+      ],
+      [
+        "r",
+        60
+      ],
+      [
+        "s",
+        49
+      ],
+      [
+        "c",
+        29
+      ],
+      [
+        "i",
+        24
+      ],
+      [
+        "n",
+        23
+      ],
+      [
+        "f",
+        22
+      ],
+      [
+        "d",
+        22
+      ]
+    ],
+    "triple_plus": 20,
+    "two_pairs": 38,
+    "y_repeat_words": [
+      "coyly",
+      "dryly",
+      "gayly",
+      "gypsy",
+      "pygmy",
+      "shyly",
+      "slyly",
+      "wryly"
+    ]
+  },
+  "allowed-only": {
+    "total": 12546,
+    "distinct_pct": {
+      "2": 0.1,
+      "3": 4.2,
+      "4": 33.5,
+      "5": 62.2
+    },
+    "any_repeat_pct": 37.8,
+    "adjacent_word_pct": 14.1,
+    "vowel_apart_word_pct": 14.5,
+    "repeat_instances": {
+      "vowel": 2503,
+      "consonant": 2600,
+      "y": 45
+    },
+    "adjacent_instances": {
+      "vowel": 680,
+      "consonant": 1101
+    },
+    "repeat_instance_pct": {
+      "vowel": 48.6,
+      "consonant": 50.5,
+      "y": 0.9
+    },
+    "baseline_letter_pct": {
+      "vowel": 36.7,
+      "consonant": 60.2,
+      "y": 3.2
+    },
+    "top_repeated_letters": [
+      [
+        "e",
+        872
+      ],
+      [
+        "a",
+        790
+      ],
+      [
+        "s",
+        720
+      ],
+      [
+        "o",
+        561
+      ],
+      [
+        "t",
+        240
+      ],
+      [
+        "l",
+        222
+      ],
+      [
+        "r",
+        216
+      ],
+      [
+        "i",
+        195
+      ],
+      [
+        "n",
+        180
+      ],
+      [
+        "d",
+        150
+      ],
+      [
+        "p",
+        145
+      ],
+      [
+        "m",
+        124
+      ]
+    ],
+    "triple_plus": 142,
+    "two_pairs": 392,
+    "y_repeat_words": [
+      "ayaya",
+      "azygy",
+      "boyey",
+      "boyly",
+      "boysy",
+      "byway",
+      "doyly",
+      "dykey",
+      "feyly",
+      "flyby",
+      "gynny",
+      "gyppy",
+      "hayey",
+      "hyphy",
+      "layby",
+      "myopy",
+      "mythy",
+      "rhymy",
+      "ryijy",
+      "skyey",
+      "stymy",
+      "thymy",
+      "tyiyn",
+      "typey",
+      "xylyl",
+      "yabby",
+      "yampy",
+      "yandy",
+      "yappy",
+      "yawey",
+      "yawny",
+      "yayas",
+      "yechy",
+      "yesty",
+      "yeuky",
+      "yippy",
+      "yobby",
+      "yohay",
+      "yolky",
+      "yonny",
+      "yoyos",
+      "yucky",
+      "yukky",
+      "yummy",
+      "yuppy"
+    ]
+  },
+  "all valid": {
+    "total": 14855,
+    "distinct_pct": {
+      "2": 0.1,
+      "3": 3.9,
+      "4": 33.0,
+      "5": 63.0
+    },
+    "any_repeat_pct": 37.0,
+    "adjacent_word_pct": 14.2,
+    "vowel_apart_word_pct": 13.9,
+    "repeat_instances": {
+      "vowel": 2859,
+      "consonant": 3022,
+      "y": 53
+    },
+    "adjacent_instances": {
+      "vowel": 798,
+      "consonant": 1323
+    },
+    "repeat_instance_pct": {
+      "vowel": 48.2,
+      "consonant": 50.9,
+      "y": 0.9
+    },
+    "baseline_letter_pct": {
+      "vowel": 36.5,
+      "consonant": 60.3,
+      "y": 3.2
+    },
+    "top_repeated_letters": [
+      [
+        "e",
+        1044
+      ],
+      [
+        "a",
+        859
+      ],
+      [
+        "s",
+        769
+      ],
+      [
+        "o",
+        642
+      ],
+      [
+        "t",
+        301
+      ],
+      [
+        "l",
+        293
+      ],
+      [
+        "r",
+        276
+      ],
+      [
+        "i",
+        219
+      ],
+      [
+        "n",
+        203
+      ],
+      [
+        "d",
+        172
+      ],
+      [
+        "p",
+        163
+      ],
+      [
+        "m",
+        139
+      ]
+    ],
+    "triple_plus": 162,
+    "two_pairs": 430,
+    "y_repeat_words": [
+      "ayaya",
+      "azygy",
+      "boyey",
+      "boyly",
+      "boysy",
+      "byway",
+      "coyly",
+      "doyly",
+      "dryly",
+      "dykey",
+      "feyly",
+      "flyby",
+      "gayly",
+      "gynny",
+      "gyppy",
+      "gypsy",
+      "hayey",
+      "hyphy",
+      "layby",
+      "myopy",
+      "mythy",
+      "pygmy",
+      "rhymy",
+      "ryijy",
+      "shyly",
+      "skyey",
+      "slyly",
+      "stymy",
+      "thymy",
+      "tyiyn",
+      "typey",
+      "wryly",
+      "xylyl",
+      "yabby",
+      "yampy",
+      "yandy",
+      "yappy",
+      "yawey",
+      "yawny",
+      "yayas",
+      "yechy",
+      "yesty",
+      "yeuky",
+      "yippy",
+      "yobby",
+      "yohay",
+      "yolky",
+      "yonny",
+      "yoyos",
+      "yucky",
+      "yukky",
+      "yummy",
+      "yuppy"
+    ]
+  }
+}

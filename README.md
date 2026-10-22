@@ -25,7 +25,7 @@ the write-up; this repo just produces it.
 | `hit_tree.py` | hit-count play tree → `results/hit_tree.*`     |
 
 One-off explorations (also in `results/`): `exhaustive.py`, `heatmaps.py`,
-`shapes.py`, `vowel_tree.py`, `after_gray.py`, `compare.py`.
+`shapes.py`, `duplicates.py`, `vowel_tree.py`, `after_gray.py`, `compare.py`.
 
 ## Run
 
