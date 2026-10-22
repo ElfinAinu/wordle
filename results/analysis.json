@@ -1,23 +1,23 @@
 {
   "letters": {
-    "total_answers": 2315,
+    "total_answers": 2309,
     "overall_contain_pct": {
       "e": 45.6,
-      "a": 39.3,
+      "a": 39.2,
       "r": 36.2,
       "o": 29.1,
-      "t": 28.8,
-      "l": 28.0,
-      "i": 27.9,
+      "t": 28.9,
+      "i": 28.0,
+      "l": 27.9,
       "s": 26.7,
-      "n": 23.8,
+      "n": 23.7,
       "u": 19.7,
-      "c": 19.4,
+      "c": 19.3,
       "y": 18.0,
-      "h": 16.4,
+      "h": 16.3,
       "d": 16.0,
       "p": 14.9,
-      "g": 13.0,
+      "g": 12.9,
       "m": 12.9,
       "b": 11.5,
       "f": 8.9,
@@ -34,15 +34,15 @@
         "s": 15.8,
         "c": 8.6,
         "b": 7.5,
-        "t": 6.4,
+        "t": 6.5,
         "p": 6.1,
         "a": 6.1
       },
       {
-        "a": 13.1,
+        "a": 13.2,
         "o": 12.1,
-        "r": 11.5,
-        "e": 10.5,
+        "r": 11.6,
+        "e": 10.4,
         "i": 8.7,
         "l": 8.7
       },
@@ -50,35 +50,35 @@
         "a": 13.3,
         "i": 11.5,
         "o": 10.5,
-        "e": 7.6,
+        "e": 7.7,
         "u": 7.1,
-        "r": 7.0
+        "r": 7.1
       },
       {
-        "e": 13.7,
+        "e": 13.8,
         "n": 7.9,
         "s": 7.4,
-        "a": 7.0,
         "l": 7.0,
+        "a": 7.0,
         "i": 6.8
       },
       {
         "e": 18.3,
-        "y": 15.7,
-        "t": 10.9,
+        "y": 15.8,
+        "t": 11.0,
         "r": 9.2,
         "l": 6.7,
-        "h": 6.0
+        "h": 5.9
       }
     ],
     "first_letter_pct": {
       "s": 15.8,
       "c": 8.6,
       "b": 7.5,
-      "t": 6.4,
+      "t": 6.5,
       "p": 6.1,
       "a": 6.1,
-      "f": 5.9,
+      "f": 5.8,
       "g": 5.0,
       "d": 4.8,
       "m": 4.6,
@@ -100,15 +100,15 @@
     },
     "last_letter_pct": {
       "e": 18.3,
-      "y": 15.7,
-      "t": 10.9,
+      "y": 15.8,
+      "t": 11.0,
       "r": 9.2,
       "l": 6.7,
-      "h": 6.0,
+      "h": 5.9,
       "n": 5.6,
       "d": 5.1,
       "k": 4.9,
-      "a": 2.8,
+      "a": 2.7,
       "o": 2.5,
       "p": 2.4,
       "m": 1.8,
@@ -125,10 +125,10 @@
     },
     "last_bigram_top": {
       "er": 6.1,
-      "ch": 2.5,
       "ly": 2.4,
-      "se": 2.2,
-      "al": 2.2,
+      "ch": 2.4,
+      "se": 2.3,
+      "al": 2.1,
       "ck": 2.0,
       "ty": 2.0,
       "te": 1.7,
@@ -138,192 +138,193 @@
       "dy": 1.6
     },
     "vowel_count_pct": {
-      "0": 0.6,
+      "0": 0.5,
       "1": 31.7,
-      "2": 57.8,
+      "2": 57.9,
       "3": 9.8,
       "4": 0.1
     },
-    "double_letter_pct": 14.7
+    "repeat_letter_pct": 32.4,
+    "adjacent_double_pct": 14.7
   },
   "openers": {
     "top": [
       {
+        "word": "tarse",
+        "entropy": 5.948974509955521,
+        "expected_remaining": 65.72845387613685
+      },
+      {
+        "word": "tiare",
+        "entropy": 5.929954222313509,
+        "expected_remaining": 60.686444348202684
+      },
+      {
         "word": "soare",
-        "entropy": 5.885960110378856,
-        "expected_remaining": 62.30107991360691
+        "entropy": 5.885202744292757,
+        "expected_remaining": 62.05846686877436
       },
       {
         "word": "roate",
-        "entropy": 5.882779324291971,
-        "expected_remaining": 60.42462203023758
+        "entropy": 5.884856313732009,
+        "expected_remaining": 60.13209181463837
       },
       {
         "word": "raise",
-        "entropy": 5.877909690821481,
-        "expected_remaining": 61.00086393088553
-      },
-      {
-        "word": "raile",
-        "entropy": 5.865709709951878,
-        "expected_remaining": 61.33088552915767
+        "entropy": 5.8783029564931715,
+        "expected_remaining": 60.7444781290602
       },
       {
         "word": "reast",
-        "entropy": 5.865457142861991,
-        "expected_remaining": 71.76544276457884
+        "entropy": 5.8677380208435626,
+        "expected_remaining": 71.42789086184496
+      },
+      {
+        "word": "raile",
+        "entropy": 5.865153829041267,
+        "expected_remaining": 61.19402338674751
       },
       {
         "word": "slate",
-        "entropy": 5.855775376955966,
-        "expected_remaining": 71.57278617710583
-      },
-      {
-        "word": "crate",
-        "entropy": 5.834874004263521,
-        "expected_remaining": 72.89978401727862
+        "entropy": 5.855819244109516,
+        "expected_remaining": 71.28150714595063
       },
       {
         "word": "salet",
-        "entropy": 5.834581525865648,
-        "expected_remaining": 71.27213822894169
+        "entropy": 5.836022782092481,
+        "expected_remaining": 70.9402338674751
+      },
+      {
+        "word": "crate",
+        "entropy": 5.835215982633285,
+        "expected_remaining": 72.80684278908619
       },
       {
         "word": "irate",
-        "entropy": 5.831396980440789,
-        "expected_remaining": 63.7792656587473
+        "entropy": 5.8327988809409055,
+        "expected_remaining": 63.49198787353833
       },
       {
         "word": "trace",
-        "entropy": 5.830548713859443,
-        "expected_remaining": 74.02030237580993
+        "entropy": 5.830429108079757,
+        "expected_remaining": 73.9458640103941
+      },
+      {
+        "word": "sater",
+        "entropy": 5.824433603243967,
+        "expected_remaining": 68.5781723689909
       },
       {
         "word": "arise",
-        "entropy": 5.820939700886004,
-        "expected_remaining": 63.72570194384449
+        "entropy": 5.821023459282913,
+        "expected_remaining": 63.46860112602858
       },
       {
         "word": "orate",
-        "entropy": 5.817161175806048,
-        "expected_remaining": 63.89071274298056
+        "entropy": 5.818944424934236,
+        "expected_remaining": 63.61325249025552
       },
       {
         "word": "stare",
-        "entropy": 5.807280035160929,
-        "expected_remaining": 71.29460043196545
+        "entropy": 5.806888622249771,
+        "expected_remaining": 71.0467734950195
       },
       {
         "word": "carte",
-        "entropy": 5.794557247295694,
-        "expected_remaining": 73.5157667386609
+        "entropy": 5.7951073349138795,
+        "expected_remaining": 73.41403204850585
       },
       {
         "word": "raine",
-        "entropy": 5.78670982745623,
-        "expected_remaining": 67.0561555075594
+        "entropy": 5.786193355790539,
+        "expected_remaining": 66.93070593330447
+      },
+      {
+        "word": "ranse",
+        "entropy": 5.778303349748774,
+        "expected_remaining": 68.3538328280641
       },
       {
         "word": "caret",
-        "entropy": 5.776713196624419,
-        "expected_remaining": 75.59956803455724
+        "entropy": 5.778206935929555,
+        "expected_remaining": 75.44434820268515
       },
       {
         "word": "ariel",
-        "entropy": 5.775166510376184,
-        "expected_remaining": 65.28768898488121
+        "entropy": 5.7745567185431845,
+        "expected_remaining": 65.18882633174535
       },
       {
         "word": "taler",
-        "entropy": 5.770612389804922,
-        "expected_remaining": 67.73693304535637
+        "entropy": 5.77310019209081,
+        "expected_remaining": 67.45907319185795
       },
       {
         "word": "carle",
-        "entropy": 5.77047907196642,
-        "expected_remaining": 74.68034557235421
+        "entropy": 5.769364406731746,
+        "expected_remaining": 74.66825465569511
       },
       {
         "word": "slane",
-        "entropy": 5.770181104822019,
-        "expected_remaining": 73.98574514038877
+        "entropy": 5.768957321758764,
+        "expected_remaining": 73.85578172368992
       },
       {
         "word": "snare",
-        "entropy": 5.770088860457003,
-        "expected_remaining": 71.09762419006479
-      },
-      {
-        "word": "artel",
-        "entropy": 5.768294956015331,
-        "expected_remaining": 67.49589632829374
-      },
-      {
-        "word": "arose",
-        "entropy": 5.767796702404354,
-        "expected_remaining": 66.02116630669546
-      },
-      {
-        "word": "strae",
-        "entropy": 5.767280625543758,
-        "expected_remaining": 71.84578833693304
-      },
-      {
-        "word": "carse",
-        "entropy": 5.765363510284161,
-        "expected_remaining": 74.83239740820734
+        "entropy": 5.76867815732596,
+        "expected_remaining": 71.0155911650065
       }
     ],
     "notable": {
       "salet": {
-        "rank": 8,
-        "entropy": 5.834581525865648,
-        "expected_remaining": 71.27213822894169
+        "rank": 9,
+        "entropy": 5.836022782092481,
+        "expected_remaining": 70.9402338674751
       },
       "trace": {
-        "rank": 10,
-        "entropy": 5.830548713859443,
-        "expected_remaining": 74.02030237580993
+        "rank": 12,
+        "entropy": 5.830429108079757,
+        "expected_remaining": 73.9458640103941
       },
       "crate": {
-        "rank": 7,
-        "entropy": 5.834874004263521,
-        "expected_remaining": 72.89978401727862
+        "rank": 10,
+        "entropy": 5.835215982633285,
+        "expected_remaining": 72.80684278908619
       },
       "slate": {
-        "rank": 6,
-        "entropy": 5.855775376955966,
-        "expected_remaining": 71.57278617710583
+        "rank": 8,
+        "entropy": 5.855819244109516,
+        "expected_remaining": 71.28150714595063
       },
       "crane": {
-        "rank": 31,
-        "entropy": 5.742781744697182,
-        "expected_remaining": 78.74168466522679
+        "rank": 36,
+        "entropy": 5.741011320165297,
+        "expected_remaining": 78.68644434820268
       },
       "audio": {
-        "rank": 5499,
-        "entropy": 4.589641536467359,
-        "expected_remaining": 183.71274298056156
+        "rank": 6107,
+        "entropy": 4.590283746704057,
+        "expected_remaining": 183.21567778258986
       },
       "stare": {
-        "rank": 13,
-        "entropy": 5.807280035160929,
-        "expected_remaining": 71.29460043196545
+        "rank": 16,
+        "entropy": 5.806888622249771,
+        "expected_remaining": 71.0467734950195
       },
       "raise": {
-        "rank": 3,
-        "entropy": 5.877909690821481,
-        "expected_remaining": 61.00086393088553
+        "rank": 5,
+        "entropy": 5.8783029564931715,
+        "expected_remaining": 60.7444781290602
       },
       "adieu": {
-        "rank": 3090,
-        "entropy": 4.8788273990950835,
-        "expected_remaining": 123.69546436285097
+        "rank": 3396,
+        "entropy": 4.879188954960185,
+        "expected_remaining": 123.4365526201819
       },
       "louie": {
-        "rank": 657,
-        "entropy": 5.308300918375161,
-        "expected_remaining": 91.49416846652268
+        "rank": 725,
+        "entropy": 5.3073806534067876,
+        "expected_remaining": 91.3005630142919
       }
     }
   }

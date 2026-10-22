@@ -126,6 +126,7 @@ def letter_stats(answer_words: list[str]) -> dict:
     last_bigrams = Counter()
     vowel_counts = Counter()
     doubles = 0
+    repeats = 0
 
     for word in answer_words:
         overall.update(set(word))
@@ -137,6 +138,8 @@ def letter_stats(answer_words: list[str]) -> dict:
         vowel_counts[sum(1 for ch in word if ch in VOWELS)] += 1
         if any(word[i] == word[i + 1] for i in range(POSITIONS - 1)):
             doubles += 1
+        if len(set(word)) < POSITIONS:
+            repeats += 1
 
     return {
         "total_answers": total,
@@ -166,7 +169,8 @@ def letter_stats(answer_words: list[str]) -> dict:
         "vowel_count_pct": {
             str(k): round(100 * v / total, 1) for k, v in sorted(vowel_counts.items())
         },
-        "double_letter_pct": round(100 * doubles / total, 1),
+        "repeat_letter_pct": round(100 * repeats / total, 1),
+        "adjacent_double_pct": round(100 * doubles / total, 1),
     }
 
 
@@ -207,7 +211,10 @@ def write_markdown(stats: dict, openers: dict, path: Path) -> None:
         f"{count} vowels: {pct}%" for count, pct in stats["vowel_count_pct"].items()
     )
     lines.append(f"{vowels}")
-    lines.append(f"Contains a double letter: {stats['double_letter_pct']}%")
+    lines.append(
+        f"Repeats a letter: {stats['repeat_letter_pct']}% "
+        f"(adjacent double: {stats['adjacent_double_pct']}%)"
+    )
     lines.append("")
 
     lines.append("## Opener ranking (entropy over all answers)")
