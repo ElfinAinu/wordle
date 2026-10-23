@@ -23,6 +23,7 @@ the write-up; this repo just produces it.
 | `coverage.py` | opener-pair scoring → `results/coverage.*`     |
 | `pairs.py`    | best disjoint letter pairs → `results/pairs.*` |
 | `hit_tree.py` | hit-count play tree → `results/hit_tree.*`     |
+| `simulate_method.py` | taught fixed-opening simulation → `results/simulate_method.*` |
 
 One-off explorations (also in `results/`): `exhaustive.py`, `heatmaps.py`,
 `shapes.py`, `duplicates.py`, `vowel_tree.py`, `after_gray.py`, `compare.py`.

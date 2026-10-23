@@ -1,0 +1,72 @@
+{
+  "method": {
+    "openers": [
+      "soare",
+      "clint"
+    ],
+    "guess_3_rule": "Count your hits to find the candidate pool, then play the word that leaves the fewest expected candidates: a candidate if that word is still possible, otherwise a split word that reuses a hit letter or a burn word that tests only fresh letters.",
+    "continuation": "After guess 3 the same expected-candidates-minimising rule is applied each turn, excluding words already played.",
+    "guess_universe": "data/answers.txt (2,309 words), the same pool hit_tree.py scores; data/allowed.txt was not used.",
+    "substitutions": "None: no stronger solver or candidate-only policy was substituted. Later guesses reuse the guess-3 rule rather than playing an exact optimal policy.",
+    "feedback": "hit_tree.pattern_codes"
+  },
+  "total_games": 2309,
+  "average_guesses": 3.6146,
+  "worst_case_guesses": 6,
+  "guess_distribution": [
+    {
+      "guess": 1,
+      "count": 0,
+      "share_pct": 0.0,
+      "cumulative_pct": 0.0
+    },
+    {
+      "guess": 2,
+      "count": 0,
+      "share_pct": 0.0,
+      "cumulative_pct": 0.0
+    },
+    {
+      "guess": 3,
+      "count": 1004,
+      "share_pct": 43.48,
+      "cumulative_pct": 43.48
+    },
+    {
+      "guess": 4,
+      "count": 1192,
+      "share_pct": 51.62,
+      "cumulative_pct": 95.11
+    },
+    {
+      "guess": 5,
+      "count": 112,
+      "share_pct": 4.85,
+      "cumulative_pct": 99.96
+    },
+    {
+      "guess": 6,
+      "count": 1,
+      "share_pct": 0.04,
+      "cumulative_pct": 100.0
+    }
+  ],
+  "failed_count": 0,
+  "failed_pct": 0.0,
+  "six_or_fail_count": 1,
+  "six_or_fail_pct": 0.04,
+  "hard_paths": [
+    {
+      "answer": "joker",
+      "guesses": 6,
+      "path": [
+        "SOARE XGXYY",
+        "CLINT XXXXX",
+        "WIMPY XXXXX",
+        "ROVER XGXGG",
+        "BOXER XGXGG",
+        "JOKER GGGGG"
+      ]
+    }
+  ]
+}
