@@ -25,8 +25,10 @@ ROOT = Path(__file__).resolve().parents[3]
 POSTER_PATH = ROOT / "infographic-v4.html"
 HIT_TREE_JSON = ROOT / "results" / "hit_tree.json"
 ANSWERS_PATH = ROOT / "data" / "answers.txt"
+ALLOWED_PATH = ROOT / "data" / "allowed.txt"
 PAIR = ("soare", "clint")
 ACTION_ORDER = ["Candidate", "Split word", "Burn word"]
+WORD_RE = re.compile(r"\b[A-Z]{5}\b")
 # Guess words the poster used to name one per band; none may survive.
 BANNED_WORDS = ["dumpy", "debug", "reedy", "gawky", "match", "resin"]
 MIX_RE = re.compile(
@@ -238,6 +240,13 @@ def main() -> int:
         for line in ANSWERS_PATH.read_text().splitlines()
         if line.strip()
     ]
+    vocabulary = set(answers)
+    if ALLOWED_PATH.exists():
+        vocabulary |= {
+            word.strip().lower()
+            for word in ALLOWED_PATH.read_text().split()
+            if word.strip()
+        }
     bands = recompute_bands(answers)
     overall_left = (
         sum(band["games"] * band["left"] for band in bands.values()) / len(answers)
@@ -352,6 +361,22 @@ def main() -> int:
         if row["hits"] == 5 and not re.search(r"anagram|tie", got_actions, re.IGNORECASE):
             failures.append("section III five-hit row lost its anagram-tie caveat")
 
+    # Section III is band-level, so only its rows may name a word. A guess word
+    # in a heading escapes the section I/II publish guard, so catch it here.
+    reference_headings = " ".join(
+        clean(match.group(1))
+        for match in re.finditer(
+            r"<(?:h2|h3|th)[^>]*>(.*?)</(?:h2|h3|th)>", reference, re.DOTALL
+        )
+    )
+    for word in sorted(
+        {w.lower() for w in WORD_RE.findall(reference_headings)} & vocabulary
+    ):
+        failures.append(
+            f"section III heading names the guess word {word.upper()}: "
+            f"{reference_headings!r}"
+        )
+
     # Section IV keeps its per-pattern cards.
     cards = parse_cards(get_section(html, "patterns"))
     if len(cards) != len(rows):
@@ -367,6 +392,13 @@ def main() -> int:
             failures.append(
                 f"section IV {row['hits']} hits: title still names an action: "
                 f"{card['heading']!r}"
+            )
+        for word in sorted(
+            {w.lower() for w in WORD_RE.findall(card["heading"])} & vocabulary
+        ):
+            failures.append(
+                f"section IV {row['hits']} hits: card heading names the guess word "
+                f"{word.upper()}: {card['heading']!r}"
             )
         if "largest" not in card["sub"].lower():
             failures.append(

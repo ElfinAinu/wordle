@@ -24,14 +24,13 @@ from pathlib import Path
 
 import numpy as np
 
-from analyze import pattern_codes, sum_sq
+from analyze import decode_pattern, pattern_codes, sum_sq
 
 ROOT = Path(__file__).parent
 ANSWERS_PATH = ROOT / "data" / "answers.txt"
 RESULTS_DIR = ROOT / "results"
 
 PAIR = ("soare", "clint")
-STATE_CHARS = {0: "X", 1: "Y", 2: "G"}
 TOP_N = 3
 ALPHABET = 26
 
@@ -60,14 +59,6 @@ def letter_counts(codes: np.ndarray) -> np.ndarray:
     for position in range(codes.shape[1]):
         counts[np.arange(codes.shape[0]), codes[:, position]] += 1
     return counts
-
-
-def decode_pattern(code: int) -> str:
-    chars = []
-    for _ in range(5):
-        chars.append(STATE_CHARS[code % 3])
-        code //= 3
-    return "".join(chars)
 
 
 def hits_for(p1: int, p2: int) -> int:

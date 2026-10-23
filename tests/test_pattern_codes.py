@@ -60,14 +60,6 @@ HANDWRITTEN_CASES = [
 ]
 
 
-def load_answers() -> list[str]:
-    return [
-        line.strip().lower()
-        for line in ANSWERS_PATH.read_text().splitlines()
-        if line.strip()
-    ]
-
-
 def reference_feedback(guess: str, answer: str) -> str:
     """Standard Wordle feedback: greens first, then yellows left to right."""
     result = ["X"] * 5
@@ -108,14 +100,6 @@ def old_feedback(guess: str, answer: str) -> str:
     return "".join(result)
 
 
-def decode_pattern(code: int) -> str:
-    chars = []
-    for _ in range(5):
-        chars.append("XYG"[code % 3])
-        code //= 3
-    return "".join(chars)
-
-
 def assert_single_implementation() -> None:
     assert hit_tree.pattern_codes is analyze.pattern_codes, (
         "hit_tree keeps a private feedback implementation"
@@ -139,7 +123,7 @@ def assert_handwritten_cases() -> None:
             analyze.encode([answer]),
             analyze.letter_counts(analyze.encode([answer])),
         )[0]
-        got = decode_pattern(int(got_code))
+        got = analyze.decode_pattern(int(got_code))
         assert got == expected, f"shared feedback {guess}/{answer}: {got} != {expected}"
 
 
@@ -150,7 +134,7 @@ def assert_every_repeated_guess_over_all_answers(answers: list[str]) -> None:
         guess_code = analyze.encode([guess])[0]
         got_codes = analyze.pattern_codes(guess_code, codes, counts)
         for index, answer in enumerate(answers):
-            got = decode_pattern(int(got_codes[index]))
+            got = analyze.decode_pattern(int(got_codes[index]))
             want = reference_feedback(guess, answer)
             assert got == want, (
                 f"feedback mismatch for {guess}/{answer}: {got} != {want}"
@@ -170,7 +154,7 @@ def assert_old_implementation_fails(answers: list[str]) -> None:
 
 
 def main() -> int:
-    answers = load_answers()
+    answers = analyze.load_words(ANSWERS_PATH)
     assert_single_implementation()
     assert_handwritten_cases()
     assert_every_repeated_guess_over_all_answers(answers)

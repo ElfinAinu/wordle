@@ -18,6 +18,11 @@ ANSWERS_PATH = ROOT / "data" / "answers.txt"
 ALLOWED_PATH = ROOT / "data" / "allowed.txt"
 RESULTS_DIR = ROOT / "results"
 
+# Cap the (guesses, answers, alphabet) int8 scratch array built by the core.
+PATTERN_SCRATCH_CELLS = 4_000_000
+
+STATE_CHARS = "XYG"
+
 VOWELS = set("aeiou")
 POSITIONS = 5
 ALPHABET = 26
@@ -39,6 +44,14 @@ def load_words(path: Path) -> list[str]:
     return [
         line.strip().lower() for line in path.read_text().splitlines() if line.strip()
     ]
+
+
+def decode_pattern(code: int) -> str:
+    chars = []
+    for _ in range(POSITIONS):
+        chars.append(STATE_CHARS[code % 3])
+        code //= 3
+    return "".join(chars)
 
 
 def encode(words: list[str]) -> np.ndarray:
@@ -90,8 +103,7 @@ def pattern_codes(
     """
     single = guess.ndim == 1
     guess_codes = np.atleast_2d(guess)
-    # Bound the (guesses, answers, alphabet) scratch array used by the core.
-    chunk = max(1, 4_000_000 // (answer_codes.shape[0] * ALPHABET))
+    chunk = max(1, PATTERN_SCRATCH_CELLS // (answer_codes.shape[0] * ALPHABET))
     powers = 3 ** np.arange(POSITIONS)
     parts = [
         _pattern_state(

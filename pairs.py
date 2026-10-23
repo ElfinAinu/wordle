@@ -17,6 +17,7 @@ from analyze import (
     ALLOWED_PATH,
     ANSWERS_PATH,
     RESULTS_DIR,
+    decode_pattern,
     encode,
     letter_counts,
     load_words,
@@ -25,16 +26,7 @@ from analyze import (
     sum_sq_batch,
 )
 
-STATE_CHARS = {0: "X", 1: "Y", 2: "G"}
 TOP_OPENERS = 8
-
-
-def decode_pattern(code: int) -> str:
-    digits = []
-    for _ in range(5):
-        digits.append(code % 3)
-        code //= 3
-    return "".join(STATE_CHARS[d] for d in digits)
 
 
 def group_candidates(opener: str, answer_codes: np.ndarray, answer_counts: np.ndarray):
