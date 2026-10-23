@@ -12,8 +12,7 @@ the write-up; this repo just produces it.
   guesses)
 - `*.py` — one analysis question per script
 - `results/` — generated outputs (`*.md` + `*.json`)
-- `infographic-v4.html` — the shipped poster (static, self-contained)
-- `poster.py` — regenerates the legacy `infographic.html` from results
+- `infographic-v4.html` — the shipped poster (static, self-contained); this is the only poster
 - `.scratch/poster-fixes/checks/` — per-ticket acceptance checks that
   re-derive the poster's figures from committed inputs
 
