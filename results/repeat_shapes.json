@@ -1,0 +1,263 @@
+{
+  "universe": {
+    "path": "data/answers.txt",
+    "words": 2309,
+    "description": "the committed Wordle answer list"
+  },
+  "opening": {
+    "pair": [
+      "SOARE",
+      "CLINT"
+    ],
+    "letters": "aceilnorst",
+    "description": "the poster's fixed two-opener; its ten letters are tested"
+  },
+  "repeat_words": 747,
+  "repeat_word_pct": 32.4,
+  "repeated_letter_instances": 786,
+  "repeat_pairs": 826,
+  "slot_pairs": {
+    "denominator": 826,
+    "denominator_note": "repeat pairs: a letter used n times contributes n(n-1)/2",
+    "rows": [
+      {
+        "pair": "3-4",
+        "slots": [
+          3,
+          4
+        ],
+        "count": 198,
+        "share_pct": 24.0,
+        "touching": true
+      },
+      {
+        "pair": "1-4",
+        "slots": [
+          1,
+          4
+        ],
+        "count": 95,
+        "share_pct": 11.5,
+        "touching": false
+      },
+      {
+        "pair": "1-5",
+        "slots": [
+          1,
+          5
+        ],
+        "count": 95,
+        "share_pct": 11.5,
+        "touching": false
+      },
+      {
+        "pair": "2-5",
+        "slots": [
+          2,
+          5
+        ],
+        "count": 92,
+        "share_pct": 11.1,
+        "touching": false
+      },
+      {
+        "pair": "2-4",
+        "slots": [
+          2,
+          4
+        ],
+        "count": 82,
+        "share_pct": 9.9,
+        "touching": false
+      },
+      {
+        "pair": "1-3",
+        "slots": [
+          1,
+          3
+        ],
+        "count": 78,
+        "share_pct": 9.4,
+        "touching": false
+      },
+      {
+        "pair": "4-5",
+        "slots": [
+          4,
+          5
+        ],
+        "count": 72,
+        "share_pct": 8.7,
+        "touching": true
+      },
+      {
+        "pair": "2-3",
+        "slots": [
+          2,
+          3
+        ],
+        "count": 68,
+        "share_pct": 8.2,
+        "touching": true
+      },
+      {
+        "pair": "3-5",
+        "slots": [
+          3,
+          5
+        ],
+        "count": 44,
+        "share_pct": 5.3,
+        "touching": false
+      },
+      {
+        "pair": "1-2",
+        "slots": [
+          1,
+          2
+        ],
+        "count": 2,
+        "share_pct": 0.2,
+        "touching": true
+      }
+    ]
+  },
+  "shapes": {
+    "denominator": 786,
+    "denominator_note": "repeated-letter instances: one per repeated letter per word",
+    "rows": [
+      {
+        "slots": "3,4",
+        "count": 186,
+        "touching": true
+      },
+      {
+        "slots": "1,5",
+        "count": 91,
+        "touching": false
+      },
+      {
+        "slots": "2,5",
+        "count": 87,
+        "touching": false
+      },
+      {
+        "slots": "1,4",
+        "count": 81,
+        "touching": false
+      },
+      {
+        "slots": "2,4",
+        "count": 80,
+        "touching": false
+      },
+      {
+        "slots": "4,5",
+        "count": 68,
+        "touching": true
+      },
+      {
+        "slots": "2,3",
+        "count": 66,
+        "touching": true
+      },
+      {
+        "slots": "1,3",
+        "count": 65,
+        "touching": false
+      },
+      {
+        "slots": "3,5",
+        "count": 41,
+        "touching": false
+      },
+      {
+        "slots": "1,3,4",
+        "count": 12,
+        "touching": true
+      },
+      {
+        "slots": "1,4,5",
+        "count": 2,
+        "touching": true
+      },
+      {
+        "slots": "2,3,5",
+        "count": 2,
+        "touching": true
+      },
+      {
+        "slots": "2,4,5",
+        "count": 2,
+        "touching": true
+      },
+      {
+        "slots": "1,2",
+        "count": 1,
+        "touching": true
+      },
+      {
+        "slots": "1,2,5",
+        "count": 1,
+        "touching": true
+      },
+      {
+        "slots": "1,3,5",
+        "count": 1,
+        "touching": false
+      }
+    ]
+  },
+  "class_split": {
+    "denominator": 786,
+    "denominator_note": "repeated-letter instances",
+    "touching": {
+      "denominator": 340,
+      "by_class": {
+        "vowel": {
+          "count": 118,
+          "share_pct": 34.7
+        },
+        "consonant": {
+          "count": 222,
+          "share_pct": 65.3
+        },
+        "y": {
+          "count": 0,
+          "share_pct": 0.0
+        }
+      }
+    },
+    "separated": {
+      "denominator": 446,
+      "by_class": {
+        "vowel": {
+          "count": 238,
+          "share_pct": 53.4
+        },
+        "consonant": {
+          "count": 200,
+          "share_pct": 44.8
+        },
+        "y": {
+          "count": 8,
+          "share_pct": 1.8
+        }
+      }
+    }
+  },
+  "visibility": {
+    "denominator": 786,
+    "denominator_note": "repeated-letter instances",
+    "tested": {
+      "count": 639,
+      "share_pct": 81.3,
+      "description": "repeat a letter the opening tests: one copy can show, the count cannot be read"
+    },
+    "untested": {
+      "count": 147,
+      "share_pct": 18.7,
+      "description": "repeat a letter the opening never tests: nothing shows at all"
+    }
+  }
+}
