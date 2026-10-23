@@ -60,7 +60,8 @@ uv run --with numpy python tests/test_pattern_codes.py
 | `simulate_method.py` | taught fixed-opening simulation → `results/simulate_method.*` |
 
 One-off explorations (also in `results/`): `exhaustive.py`, `heatmaps.py`,
-`shapes.py`, `duplicates.py`, `vowel_tree.py`, `after_gray.py`, `compare.py`.
+`shapes.py`, `duplicates.py`, `repeat_shapes.py`, `vowel_tree.py`,
+`after_gray.py`, `compare.py`.
 
 ## Run
 
