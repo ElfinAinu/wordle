@@ -5,12 +5,14 @@
 
 Recomputes the repeat figures from data/answers.txt and asserts the deployed
 poster infographic-v4.html carries them, separates adjacent doubles from
-repeats overall, states the two-copy rule, and gives a worked vowel-apart
-example that the fixed two-opener cannot see.
+repeats overall, keeps the two-copy rule in section VIII with section VII
+cross-referencing it, and gives a worked vowel-apart example that the fixed
+two-opener cannot see.
 
 Run: python3 .scratch/poster-fixes/checks/05-doubles-guidance.py
 """
 
+import re
 from collections import Counter
 from pathlib import Path
 
@@ -20,6 +22,17 @@ POSTER = ROOT / "infographic-v4.html"
 
 VOWELS = set("aeiou")
 WORD_LENGTH = 5
+
+
+def get_section(html: str, anchor_id: str) -> str:
+    at = html.index(f'id="{anchor_id}"')
+    start = html.rindex("<section", 0, at)
+    return html[start : html.index("</section>", start)]
+
+
+def clean(text: str) -> str:
+    text = re.sub(r"<[^>]+>", " ", text)
+    return re.sub(r"\s+", " ", text).strip()
 
 
 def vowel_apart_repeat(word: str) -> bool:
@@ -60,13 +73,24 @@ def main():
         assert quoted in html, f"poster is missing quoted figure {quoted}"
     assert "adjacent" in lowered, "poster does not name the adjacent kind"
 
-    # The two-copy rule is stated as an action.
-    assert "twice" in lowered, "two-copy rule missing 'twice'"
-    assert "non-gray" in lowered, "two-copy rule missing the non-gray count"
-    assert "copies in the answer" in lowered, "two-copy rule missing the count meaning"
+    # The two-copy rule now lives in section VIII (ticket 03), stated as an
+    # action; section VII points at it instead of restating it.
+    repeats = get_section(html, "repeats")
+    repeats_lowered = repeats.lower()
+    shape = get_section(html, "shape")
+    shape_text = clean(shape).lower()
+    assert "twice" in repeats_lowered, "two-copy rule missing 'twice'"
+    assert "non-gray" in repeats_lowered, "two-copy rule missing the non-gray count"
+    assert (
+        "copies in the answer" in repeats_lowered
+    ), "two-copy rule missing the count meaning"
+    assert "viii" in shape_text, "section VII does not cross-reference section VIII"
+    assert (
+        "copies in the answer" not in shape_text
+    ), "section VII still restates the two-copy rule"
 
     # One worked example that is real and really is an invisible vowel-apart repeat.
-    examples = [w for w in ("radar", "tenet") if w in words and w in lowered]
+    examples = [w for w in ("radar", "tenet") if w in words and w in repeats_lowered]
     assert examples, "no verified worked vowel-apart example in the poster"
     for word in examples:
         assert vowel_apart_repeat(word), f"{word} is not a vowel-apart repeat"
