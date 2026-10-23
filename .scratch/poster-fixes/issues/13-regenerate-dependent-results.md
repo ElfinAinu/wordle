@@ -15,11 +15,11 @@ repeats a letter)
 
 **Status:** ready-for-agent
 
-- [ ] Every result file whose computation touched a repeated-letter guess is
+- [x] Every result file whose computation touched a repeated-letter guess is
       regenerated.
-- [ ] Each regenerated file is diffed against its previous version, with the
+- [x] Each regenerated file is diffed against its previous version, with the
       movement explained per file.
-- [ ] Any published poster figure that moves is reported explicitly, and the
+- [x] Any published poster figure that moves is reported explicitly, and the
       poster is corrected only if the movement is real.
-- [ ] The full check suite passes, and regenerating twice produces identical
+- [x] The full check suite passes, and regenerating twice produces identical
       output.

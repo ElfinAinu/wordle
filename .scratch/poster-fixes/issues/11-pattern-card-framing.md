@@ -18,12 +18,12 @@ reconcile with an independent recomputation.
 
 **Status:** ready-for-agent
 
-- [ ] No card title names an action; titles are the hit count only.
-- [ ] Every card states that it shows the band's largest pools, with how many it
+- [x] No card title names an action; titles are the hit count only.
+- [x] Every card states that it shows the band's largest pools, with how many it
       shows and how many the band has.
-- [ ] Each row's ACTION label still matches that row's pattern, and every word,
+- [x] Each row's ACTION label still matches that row's pattern, and every word,
       candidate count and `Left` still reconciles with a recomputation from the
       answer list.
-- [ ] The acceptance check no longer requires an action name in a card title,
+- [x] The acceptance check no longer requires an action name in a card title,
       and fails if one returns; every check in the suite still passes.
-- [ ] Deployment happens once for the whole spec, not from this ticket.
+- [x] Deployment happens once for the whole spec, not from this ticket.

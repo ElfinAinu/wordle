@@ -15,14 +15,14 @@ any result output here; that is the next ticket.
 
 **Status:** ready-for-agent
 
-- [ ] The shared function agrees with the game's rules for duplicated guess
+- [x] The shared function agrees with the game's rules for duplicated guess
       letters, duplicated answer letters, greens that consume an answer's
       letter, and letters absent from the guess.
-- [ ] A regression check covers every answer for repeated-letter guesses plus
+- [x] A regression check covers every answer for repeated-letter guesses plus
       hand-written edge cases, and fails against the previous implementation.
-- [ ] No module keeps a private feedback implementation; the shared one is the
+- [x] No module keeps a private feedback implementation; the shared one is the
       only one.
-- [ ] Every published figure on the poster is unchanged: the distinct-letter and
+- [x] Every published figure on the poster is unchanged: the distinct-letter and
       tiles-lit coverage rates, the candidates-left headline, the per-band
       mixes, and the simulation's average and worst case.
-- [ ] The full check suite passes.
+- [x] The full check suite passes.

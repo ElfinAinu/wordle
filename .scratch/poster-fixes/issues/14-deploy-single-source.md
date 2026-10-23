@@ -13,12 +13,14 @@ cannot recur, and leave the source of every served file unambiguous.
 
 **Status:** ready-for-agent
 
-- [ ] A single documented step produces the served page from the default branch
+- [x] A single documented step produces the served page from the default branch
       and refuses to publish when a guard fails.
-- [ ] The guards cover the retracted claims, guess words inside hit-count bands,
+- [x] The guards cover the retracted claims, guess words inside hit-count bands,
       and a source/served mismatch.
 - [ ] The served branch no longer carries a duplicate copy of the poster beside
       the file it serves.
-- [ ] Running the step twice in a row is a no-op the second time.
+- [x] Running the step twice in a row is a no-op the second time.
 - [ ] The served page still loads, and the live URL is re-verified after the
       change.
+
+_Pending publication: the duplicate-copy removal and the live-URL re-verification complete when this spec is published._
