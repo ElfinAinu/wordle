@@ -45,17 +45,24 @@ HISTORICAL_BAND_WORDS = ("dumpy", "debug", "reedy", "gawky", "match", "resin")
 
 SOURCE_PATH = "infographic-v4.html"
 SERVED_PATH = "index.html"
-DUPLICATE_PATH = "infographic-v4.html"
+DUPLICATE_PATH = SOURCE_PATH
 VOCAB_PATHS = ("data/allowed.txt", "data/answers.txt")
+
+WORD_LENGTH = 5
+WORD_RE = re.compile(rf"\b[A-Z]{{{WORD_LENGTH}}}\b")
 
 
 class PublishError(Exception):
     """A guard failed or the publish could not complete."""
 
 
-def git(
-    repo: Path, *args: str, input: bytes | None = None, env: dict | None = None
-) -> bytes:
+def run_git(
+    repo: Path,
+    *args: str,
+    input: bytes | None = None,
+    env: dict | None = None,
+    check: bool = True,
+) -> subprocess.CompletedProcess:
     result = subprocess.run(
         ["git", *args],
         cwd=repo,
@@ -64,34 +71,35 @@ def git(
         stderr=subprocess.PIPE,
         env=env,
     )
-    if result.returncode != 0:
+    if check and result.returncode != 0:
         detail = (
             result.stderr.decode(errors="replace").strip()
             or result.stdout.decode(errors="replace").strip()
         )
         raise PublishError(f"git {' '.join(args)} failed: {detail}")
-    return result.stdout
+    return result
+
+
+def git(
+    repo: Path, *args: str, input: bytes | None = None, env: dict | None = None
+) -> bytes:
+    return run_git(repo, *args, input=input, env=env).stdout
 
 
 def git_text(repo: Path, *args: str, env: dict | None = None) -> str:
     return git(repo, *args, env=env).decode(errors="replace").strip()
 
 
-def git_text_or(repo: Path, *args: str, default: str = "") -> str:
-    result = subprocess.run(
-        ["git", *args], cwd=repo, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL
-    )
+def git_text_or_default(repo: Path, *args: str, default: str = "") -> str:
+    result = run_git(repo, *args, check=False)
     if result.returncode != 0:
         return default
     return result.stdout.decode(errors="replace").strip()
 
 
 def ref_exists(repo: Path, ref: str) -> bool:
-    result = subprocess.run(
-        ["git", "rev-parse", "--verify", "--quiet", f"{ref}^{{commit}}"],
-        cwd=repo,
-        stdout=subprocess.DEVNULL,
-        stderr=subprocess.DEVNULL,
+    result = run_git(
+        repo, "rev-parse", "--verify", "--quiet", f"{ref}^{{commit}}", check=False
     )
     return result.returncode == 0
 
@@ -105,16 +113,8 @@ def read_blob(repo: Path, ref: str, path: str) -> bytes:
 
 
 def has_blob(repo: Path, ref: str, path: str) -> bool:
-    result = subprocess.run(
-        ["git", "cat-file", "-e", f"{ref}:{path}"],
-        cwd=repo,
-        stdout=subprocess.DEVNULL,
-        stderr=subprocess.DEVNULL,
-    )
+    result = run_git(repo, "cat-file", "-e", f"{ref}:{path}", check=False)
     return result.returncode == 0
-
-
-# --- guards -----------------------------------------------------------------
 
 
 def clean_html(text: str) -> str:
@@ -129,7 +129,13 @@ def get_section(html: str, anchor_id: str) -> str:
 
 
 def band_strategies(html: str) -> list[tuple[str, str]]:
-    """The strategy text of every hit-count band in sections I and II."""
+    """The strategy text of every band-level hit-count row in sections I and II.
+
+    Only sections I and II are band-level: each row is a hit count whose
+    Strategy cell must state a mix, so a guess word there is a bug. Sections
+    III and IV name a word per pattern by design — that word is the answer to
+    the row — so they are not parsed as bands.
+    """
     bands: list[tuple[str, str]] = []
     method = get_section(html, "method")
     for match in re.finditer(r'<div class="flow-strat">(.*?)</div>', method, re.DOTALL):
@@ -151,7 +157,9 @@ def load_vocabulary(repo: Path, source_ref: str) -> set[str]:
         raise PublishError(
             f"no guess vocabulary found on {source_ref}: expected {' or '.join(VOCAB_PATHS)}"
         )
-    return {word.lower() for word in words if word.isalpha() and len(word) == 5}
+    return {
+        word.lower() for word in words if word.isalpha() and len(word) == WORD_LENGTH
+    }
 
 
 def guard_source(repo: Path, source_ref: str, poster: bytes) -> None:
@@ -168,7 +176,7 @@ def guard_source(repo: Path, source_ref: str, poster: bytes) -> None:
 
     vocabulary = load_vocabulary(repo, source_ref)
     for section, strategy in band_strategies(text):
-        tokens = {t.lower() for t in re.findall(r"\b[A-Z]{5}\b", strategy)}
+        tokens = {t.lower() for t in WORD_RE.findall(strategy)}
         for word in sorted(tokens & vocabulary):
             failures.append(
                 f"section {section} band names the guess word {word.upper()}: {strategy!r}"
@@ -183,9 +191,6 @@ def guard_source(repo: Path, source_ref: str, poster: bytes) -> None:
 
     if failures:
         raise PublishError("source guards failed:\n  - " + "\n  - ".join(failures))
-
-
-# --- publish ----------------------------------------------------------------
 
 
 def build_tree(repo: Path, served_ref: str, poster: bytes) -> tuple[str, str]:
@@ -225,11 +230,15 @@ def commit(repo: Path, tree: str, parent: str, message: str) -> str:
     env = dict(os.environ)
     env.setdefault(
         "GIT_AUTHOR_NAME",
-        git_text_or(repo, "config", "--get", "user.name", default="poster-publish"),
+        git_text_or_default(
+            repo, "config", "--get", "user.name", default="poster-publish"
+        ),
     )
     env.setdefault(
         "GIT_AUTHOR_EMAIL",
-        git_text_or(repo, "config", "--get", "user.email", default="poster-publish@localhost"),
+        git_text_or_default(
+            repo, "config", "--get", "user.email", default="poster-publish@localhost"
+        ),
     )
     env.setdefault("GIT_COMMITTER_NAME", env["GIT_AUTHOR_NAME"])
     env.setdefault("GIT_COMMITTER_EMAIL", env["GIT_AUTHOR_EMAIL"])
@@ -240,22 +249,45 @@ def commit(repo: Path, tree: str, parent: str, message: str) -> str:
     )
 
 
-def publish(args: argparse.Namespace) -> int:
-    repo = repo_root(Path(args.repo))
-    source_ref = args.source
-    served_ref = args.served_branch
-
+def validate_source_and_served(repo: Path, source_ref: str, served_ref: str) -> None:
     if not has_blob(repo, source_ref, SOURCE_PATH):
         raise PublishError(f"{source_ref} has no {SOURCE_PATH}")
     if not ref_exists(repo, served_ref):
         raise PublishError(f"served branch {served_ref!r} does not exist")
 
+
+def clean_source(repo: Path, source_ref: str) -> bytes:
     poster = read_blob(repo, source_ref, SOURCE_PATH)
     guard_source(repo, source_ref, poster)
+    bands = band_strategies(poster.decode(errors="replace"))
     print(
-        f"guards: source {source_ref}:{SOURCE_PATH} is clean "
-        f"({len(band_strategies(poster.decode(errors='replace')))} bands checked)"
+        f"guards: source {source_ref}:{SOURCE_PATH} is clean ({len(bands)} bands checked)"
     )
+    return poster
+
+
+def move_served_ref(
+    repo: Path, served_ref: str, new_tree: str, parent: str, message: str, poster: bytes
+) -> str:
+    """Commit the new tree, move the served ref, and roll back if it fails to verify."""
+    verify_served(repo, new_tree, poster)
+    commit_sha = commit(repo, new_tree, parent, message)
+    git(repo, "update-ref", f"refs/heads/{served_ref}", commit_sha, parent)
+    try:
+        verify_served(repo, served_ref, poster)
+    except PublishError:
+        git(repo, "update-ref", f"refs/heads/{served_ref}", parent, commit_sha)
+        raise
+    return commit_sha
+
+
+def publish(args: argparse.Namespace) -> int:
+    repo = repo_root(Path(args.repo))
+    source_ref = args.source
+    served_ref = args.served_branch
+
+    validate_source_and_served(repo, source_ref, served_ref)
+    poster = clean_source(repo, source_ref)
     if args.check:
         print("check-only: guards passed, nothing written")
         return 0
@@ -267,16 +299,9 @@ def publish(args: argparse.Namespace) -> int:
         )
         return 0
 
-    verify_served(repo, new_tree, poster)
     parent = git_text(repo, "rev-parse", served_ref)
     message = args.message or f"chore(pages): publish poster from {source_ref}"
-    commit_sha = commit(repo, new_tree, parent, message)
-    git(repo, "update-ref", f"refs/heads/{served_ref}", commit_sha, parent)
-    try:
-        verify_served(repo, served_ref, poster)
-    except PublishError:
-        git(repo, "update-ref", f"refs/heads/{served_ref}", parent, commit_sha)
-        raise
+    commit_sha = move_served_ref(repo, served_ref, new_tree, parent, message, poster)
 
     print(f"published: {served_ref} now {commit_sha[:12]} (was {parent[:12]})")
     print(f"  {SERVED_PATH} <- {source_ref}:{SOURCE_PATH}")

@@ -16,6 +16,7 @@ the write-up; this repo just produces it.
 - `publish_poster.py` — the guarded one-step deploy to the served branch (see Publish)
 - `.scratch/poster-fixes/checks/` — per-ticket acceptance checks that
   re-derive the poster's figures from committed inputs
+- `tests/` — regression checks for shared analysis code (see Test)
 
 ## Publish
 
@@ -25,9 +26,27 @@ duplicate poster there. It runs the guards and refuses to write if a retracted
 claim survives, a hit-count band names a guess word, or the served copy does
 not match the source afterwards. It is idempotent and never pushes.
 
+The band guard reads sections I and II only. Those are the band-level panels:
+each row is a hit count whose Strategy cell must state a mix, so a guess word
+there is a bug. Sections III and IV name the recommended word per pattern,
+which is the point of the row, so they are not guarded as bands; the
+acceptance check covers a word leaking into a section III or IV heading.
+
 ```
 python3 publish_poster.py            # run the guards, then publish
 python3 publish_poster.py --check    # run the guards only
+```
+
+## Test
+
+`tests/test_pattern_codes.py` is the regression check for the one shared
+Wordle feedback function (`analyze.pattern_codes`). It compares the shared
+function against an independent pure-Python reference over every answer and a
+set of guesses that repeat a letter, and pins the previous implementation's
+known mismatch counts.
+
+```
+uv run --with numpy python tests/test_pattern_codes.py
 ```
 
 ## Core pipeline
