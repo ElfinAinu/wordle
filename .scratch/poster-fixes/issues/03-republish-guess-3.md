@@ -11,10 +11,10 @@ should reach the printed word and the printed candidate count.
 
 **Status:** ready-for-agent
 
-- [ ] Every row in the rebuilt section comes from the derived rule's output,
+- [x] Every row in the rebuilt section comes from the derived rule's output,
       with no word or count transcribed by hand.
-- [ ] The section's prose states the rule the tables follow.
-- [ ] Recomputing the tables from committed inputs reproduces every displayed
+- [x] The section's prose states the rule the tables follow.
+- [x] Recomputing the tables from committed inputs reproduces every displayed
       candidate count and candidates-left-after figure.
-- [ ] The section's tier names no longer promise an action the shown word does
+- [x] The section's tier names no longer promise an action the shown word does
       not perform.

@@ -1,34 +1,36 @@
 [
   {
     "opener": "roate",
-    "expected_remaining_after_two": 3.16,
-    "solved_on_two_pct": 0.99,
+    "expected_remaining_after_two": 3.14,
+    "solved_on_two_pct": 1.0,
+    "universe": "data/answers.txt (2,309 past answers)",
+    "second_guess_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
     "tree": [
       {
         "pattern": "XXXXX",
-        "candidates": 195,
-        "share_pct": 8.42,
+        "candidates": 194,
+        "share_pct": 8.4,
         "best_second": "slimy",
-        "expected_remaining": 5.63
+        "expected_remaining": 5.65
       },
       {
         "pattern": "XXYXX",
-        "candidates": 112,
-        "share_pct": 4.84,
+        "candidates": 111,
+        "share_pct": 4.81,
         "best_second": "lysin",
-        "expected_remaining": 5.14
+        "expected_remaining": 5.07
       },
       {
         "pattern": "XXXXY",
-        "candidates": 106,
-        "share_pct": 4.58,
+        "candidates": 105,
+        "share_pct": 4.55,
         "best_second": "lenes",
-        "expected_remaining": 3.91
+        "expected_remaining": 3.88
       },
       {
         "pattern": "YXXXY",
         "candidates": 102,
-        "share_pct": 4.41,
+        "share_pct": 4.42,
         "best_second": "feued",
         "expected_remaining": 7.04
       },
@@ -56,35 +58,35 @@
       {
         "pattern": "XYXXX",
         "candidates": 66,
-        "share_pct": 2.85,
+        "share_pct": 2.86,
         "best_second": "snool",
         "expected_remaining": 2.76
       },
       {
         "pattern": "YXXXX",
         "candidates": 63,
-        "share_pct": 2.72,
+        "share_pct": 2.73,
         "best_second": "sculk",
         "expected_remaining": 2.9
       },
       {
         "pattern": "XXXYX",
         "candidates": 63,
-        "share_pct": 2.72,
+        "share_pct": 2.73,
         "best_second": "shunt",
         "expected_remaining": 3.06
       },
       {
         "pattern": "YYXXX",
         "candidates": 57,
-        "share_pct": 2.46,
+        "share_pct": 2.47,
         "best_second": "croon",
         "expected_remaining": 4.58
       },
       {
         "pattern": "XXXYY",
         "candidates": 56,
-        "share_pct": 2.42,
+        "share_pct": 2.43,
         "best_second": "sleet",
         "expected_remaining": 2.57
       },
@@ -98,51 +100,51 @@
       {
         "pattern": "YXGXX",
         "candidates": 51,
-        "share_pct": 2.2,
-        "best_second": "dicks",
-        "expected_remaining": 3.9
+        "share_pct": 2.21,
+        "best_second": "scind",
+        "expected_remaining": 3.24
       },
       {
         "pattern": "XXYYX",
         "candidates": 50,
-        "share_pct": 2.16,
+        "share_pct": 2.17,
         "best_second": "clint",
         "expected_remaining": 3.4
       },
       {
         "pattern": "XXYXG",
         "candidates": 45,
-        "share_pct": 1.94,
-        "best_second": "mauls",
-        "expected_remaining": 3.22
+        "share_pct": 1.95,
+        "best_second": "galis",
+        "expected_remaining": 3.18
       },
       {
         "pattern": "YXYXY",
         "candidates": 42,
-        "share_pct": 1.81,
+        "share_pct": 1.82,
         "best_second": "balms",
         "expected_remaining": 5.14
       },
       {
         "pattern": "XXGXG",
-        "candidates": 42,
-        "share_pct": 1.81,
-        "best_second": "slump",
-        "expected_remaining": 3.67
+        "candidates": 41,
+        "share_pct": 1.78,
+        "best_second": "plish",
+        "expected_remaining": 3.73
       },
       {
         "pattern": "YXXXG",
-        "candidates": 39,
-        "share_pct": 1.68,
+        "candidates": 38,
+        "share_pct": 1.65,
         "best_second": "piums",
-        "expected_remaining": 2.69
+        "expected_remaining": 2.68
       },
       {
         "pattern": "YXYXX",
         "candidates": 35,
-        "share_pct": 1.51,
-        "best_second": "carrs",
-        "expected_remaining": 2.71
+        "share_pct": 1.52,
+        "best_second": "mirah",
+        "expected_remaining": 2.43
       },
       {
         "pattern": "XYYXX",
@@ -161,35 +163,35 @@
       {
         "pattern": "YXXYX",
         "candidates": 29,
-        "share_pct": 1.25,
+        "share_pct": 1.26,
         "best_second": "scuft",
         "expected_remaining": 1.62
       },
       {
         "pattern": "YXXYY",
         "candidates": 29,
-        "share_pct": 1.25,
+        "share_pct": 1.26,
         "best_second": "enter",
         "expected_remaining": 2.17
       },
       {
         "pattern": "YYYXX",
-        "candidates": 28,
-        "share_pct": 1.21,
+        "candidates": 27,
+        "share_pct": 1.17,
         "best_second": "macon",
-        "expected_remaining": 2.71
+        "expected_remaining": 2.63
       },
       {
         "pattern": "XYXYX",
         "candidates": 26,
-        "share_pct": 1.12,
+        "share_pct": 1.13,
         "best_second": "punch",
         "expected_remaining": 2.0
       },
       {
         "pattern": "XGXYX",
         "candidates": 26,
-        "share_pct": 1.12,
+        "share_pct": 1.13,
         "best_second": "cumin",
         "expected_remaining": 1.85
       },
@@ -203,14 +205,14 @@
       {
         "pattern": "XXGYX",
         "candidates": 23,
-        "share_pct": 0.99,
+        "share_pct": 1.0,
         "best_second": "slink",
         "expected_remaining": 1.78
       },
       {
         "pattern": "YXGXG",
         "candidates": 23,
-        "share_pct": 0.99,
+        "share_pct": 1.0,
         "best_second": "crags",
         "expected_remaining": 3.17
       },
@@ -252,14 +254,14 @@
       {
         "pattern": "YXGYX",
         "candidates": 20,
-        "share_pct": 0.86,
+        "share_pct": 0.87,
         "best_second": "crims",
         "expected_remaining": 2.2
       },
       {
         "pattern": "YGXXY",
         "candidates": 20,
-        "share_pct": 0.86,
+        "share_pct": 0.87,
         "best_second": "mawks",
         "expected_remaining": 3.8
       },
@@ -294,21 +296,21 @@
       {
         "pattern": "XYYYX",
         "candidates": 17,
-        "share_pct": 0.73,
+        "share_pct": 0.74,
         "best_second": "aboil",
         "expected_remaining": 1.35
       },
       {
         "pattern": "YXYYY",
         "candidates": 17,
-        "share_pct": 0.73,
+        "share_pct": 0.74,
         "best_second": "tweel",
         "expected_remaining": 2.06
       },
       {
         "pattern": "XXXYG",
         "candidates": 17,
-        "share_pct": 0.73,
+        "share_pct": 0.74,
         "best_second": "cuish",
         "expected_remaining": 1.35
       },
@@ -323,8 +325,8 @@
         "pattern": "GXYXX",
         "candidates": 15,
         "share_pct": 0.65,
-        "best_second": "child",
-        "expected_remaining": 1.4
+        "best_second": "haldi",
+        "expected_remaining": 1.27
       },
       {
         "pattern": "YXYYX",
@@ -428,7 +430,7 @@
         "pattern": "XGXYY",
         "candidates": 7,
         "share_pct": 0.3,
-        "best_second": "milch",
+        "best_second": "melch",
         "expected_remaining": 1.0
       },
       {
@@ -617,14 +619,14 @@
         "pattern": "YYXYG",
         "candidates": 3,
         "share_pct": 0.13,
-        "best_second": "alaps",
+        "best_second": "aapas",
         "expected_remaining": 1.0
       },
       {
         "pattern": "XXYYG",
         "candidates": 3,
         "share_pct": 0.13,
-        "best_second": "abash",
+        "best_second": "abaht",
         "expected_remaining": 1.0
       },
       {
@@ -680,7 +682,7 @@
         "pattern": "YXYGX",
         "candidates": 2,
         "share_pct": 0.09,
-        "best_second": "abamp",
+        "best_second": "aapas",
         "expected_remaining": 1.0
       },
       {
@@ -722,44 +724,58 @@
         "pattern": "XYXGG",
         "candidates": 2,
         "share_pct": 0.09,
-        "best_second": "abacs",
+        "best_second": "aapas",
         "expected_remaining": 1.0
       }
     ]
   },
   {
     "opener": "slate",
-    "expected_remaining_after_two": 3.17,
-    "solved_on_two_pct": 1.25
+    "expected_remaining_after_two": 3.14,
+    "solved_on_two_pct": 1.21,
+    "universe": "data/answers.txt (2,309 past answers)",
+    "second_guess_universe": "all valid guesses (data/answers.txt + data/allowed.txt)"
+  },
+  {
+    "opener": "tarse",
+    "expected_remaining_after_two": 3.15,
+    "solved_on_two_pct": 1.26,
+    "universe": "data/answers.txt (2,309 past answers)",
+    "second_guess_universe": "all valid guesses (data/answers.txt + data/allowed.txt)"
   },
   {
     "opener": "raile",
-    "expected_remaining_after_two": 3.2,
-    "solved_on_two_pct": 0.95
+    "expected_remaining_after_two": 3.19,
+    "solved_on_two_pct": 0.95,
+    "universe": "data/answers.txt (2,309 past answers)",
+    "second_guess_universe": "all valid guesses (data/answers.txt + data/allowed.txt)"
   },
   {
-    "opener": "salet",
+    "opener": "tiare",
     "expected_remaining_after_two": 3.21,
-    "solved_on_two_pct": 1.47
+    "solved_on_two_pct": 1.26,
+    "universe": "data/answers.txt (2,309 past answers)",
+    "second_guess_universe": "all valid guesses (data/answers.txt + data/allowed.txt)"
   },
   {
     "opener": "soare",
-    "expected_remaining_after_two": 3.3,
-    "solved_on_two_pct": 0.95
-  },
-  {
-    "opener": "crate",
-    "expected_remaining_after_two": 3.31,
-    "solved_on_two_pct": 1.3
+    "expected_remaining_after_two": 3.29,
+    "solved_on_two_pct": 0.95,
+    "universe": "data/answers.txt (2,309 past answers)",
+    "second_guess_universe": "all valid guesses (data/answers.txt + data/allowed.txt)"
   },
   {
     "opener": "reast",
-    "expected_remaining_after_two": 3.34,
-    "solved_on_two_pct": 1.25
+    "expected_remaining_after_two": 3.29,
+    "solved_on_two_pct": 1.26,
+    "universe": "data/answers.txt (2,309 past answers)",
+    "second_guess_universe": "all valid guesses (data/answers.txt + data/allowed.txt)"
   },
   {
     "opener": "raise",
     "expected_remaining_after_two": 3.37,
-    "solved_on_two_pct": 1.21
+    "solved_on_two_pct": 1.21,
+    "universe": "data/answers.txt (2,309 past answers)",
+    "second_guess_universe": "all valid guesses (data/answers.txt + data/allowed.txt)"
   }
 ]

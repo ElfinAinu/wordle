@@ -83,7 +83,6 @@ def main() -> int:
     data = recompute()
     failures: list[str] = []
 
-    # --- figures recomputed from data/answers.txt -------------------------
     if data["total"] != 2309:
         failures.append(f"answer pool is {data['total']}, expected 2309")
     if data["has_soare"]:

@@ -29,8 +29,19 @@ RESULTS_DIR = ROOT / "results"
 OPENERS = hit_tree.PAIR
 PATTERN_SPACE = 3**5
 GREEN_CODE = PATTERN_SPACE - 1
-SEARCH_LIMIT = 12
 RESULTS_STEM = "simulate_method"
+
+# The real Wordle rule: a game gets six guesses.
+GAME_GUESS_LIMIT = 6
+# Search ceiling for this simulation only. It sits above the game rule so the
+# walk can report failures instead of silently truncating at six.
+SEARCH_LIMIT = 12
+# Cost assigned to already-played words so the minimiser never picks them.
+UNREACHABLE_PENALTY = 10**18
+
+
+def step_label(guess_name: str, code: int) -> str:
+    return f"{guess_name.upper()} {hit_tree.decode_pattern(code)}"
 
 
 def build_pattern_table(
@@ -62,6 +73,8 @@ def simulate(answers: list[str]) -> dict:
 
     @cache
     def choose(pool_index: tuple[int, ...], used: tuple[int, ...]) -> int:
+        """hit_tree.best_word's sum-of-squares minimisation, batched over the
+        whole answer list; the vectorised form is what keeps the walk tractable."""
         pool = np.array(pool_index, dtype=np.int64)
         patterns = pattern_table[:, pool]
         keys = group_base + patterns
@@ -70,7 +83,7 @@ def simulate(answers: list[str]) -> dict:
         )
         sum_squares = (counts.astype(np.int64) ** 2).sum(axis=1)
         if used:
-            sum_squares[list(used)] = 10**18
+            sum_squares[list(used)] = UNREACHABLE_PENALTY
         in_pool = np.ones(total, dtype=np.int8)
         in_pool[pool] = 0
         order = np.lexsort((np.arange(total), in_pool, sum_squares))
@@ -99,12 +112,12 @@ def simulate(answers: list[str]) -> dict:
         solved_count = int(is_solved.sum())
         if solved_count:
             solved[depth + 1] += solved_count
-            if depth + 1 >= 6:
+            if depth + 1 >= GAME_GUESS_LIMIT:
                 hard_paths.append(
                     {
                         "answer": answers[int(pool[is_solved][0])],
                         "guesses": depth + 1,
-                        "path": path + [f"{guess_name.upper()} GGGGG"],
+                        "path": path + [step_label(guess_name, GREEN_CODE)],
                     }
                 )
 
@@ -122,8 +135,10 @@ def simulate(answers: list[str]) -> dict:
                         "guesses": None,
                         "path": path
                         + [
-                            f"{guess_name.upper()} "
-                            f"{hit_tree.decode_pattern(int(patterns[pool == answer_index][0]))}"
+                            step_label(
+                                guess_name,
+                                int(patterns[pool == answer_index][0]),
+                            )
                         ],
                     }
                 )
@@ -142,7 +157,7 @@ def simulate(answers: list[str]) -> dict:
 
     failed = solved["failed"]
     max_solved = max((guess for guess in solved if guess != "failed"), default=0)
-    last_guess = max(6, max_solved)
+    last_guess = max(GAME_GUESS_LIMIT, max_solved)
     distribution = []
     cumulative = 0
     for guess in range(1, last_guess + 1):

@@ -3,6 +3,9 @@
 Distinct-letter share counts each answer's distinct letters; tiles-lit
 share counts the five board tiles a single copy of each opener letter
 can reveal. Every repeated-letter answer scores lower on tiles-lit.
+First guesses: any valid guess. Second guesses: data/answers.txt
+(2,309 past answers) only; CLINT is guess-only, so the fixed pair
+SOARE+CLINT is outside this scan's search space.
 
 | # | Pair | Expected remaining after 2 | Distinct-letter share | Tiles-lit share |
 |---|---|---|---|---|

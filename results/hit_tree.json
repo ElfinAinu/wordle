@@ -10,7 +10,8 @@
     "actions": [
       "Candidate"
     ],
-    "rule": "Count your hits to find the candidate pool, then play the word that leaves the fewest expected candidates: a candidate if that word is still possible, otherwise a split word that reuses a hit letter or a burn word that tests only fresh letters.",
+    "rule": "Count your hits to find the candidate pool, then play the word that leaves the fewest expected candidates: a candidate if that word is still possible, otherwise a split word that reuses a hit letter or a burn word that carries no hit letter.",
+    "universe": "data/answers.txt (2,309 past answers)",
     "top_patterns": [
       {
         "g1": "SOARE",
@@ -38,7 +39,8 @@
     "actions": [
       "Burn word"
     ],
-    "rule": "Count your hits to find the candidate pool, then play the word that leaves the fewest expected candidates: a candidate if that word is still possible, otherwise a split word that reuses a hit letter or a burn word that tests only fresh letters.",
+    "rule": "Count your hits to find the candidate pool, then play the word that leaves the fewest expected candidates: a candidate if that word is still possible, otherwise a split word that reuses a hit letter or a burn word that carries no hit letter.",
+    "universe": "data/answers.txt (2,309 past answers)",
     "top_patterns": [
       {
         "g1": "SOARE",
@@ -93,7 +95,8 @@
       "Candidate",
       "Split word"
     ],
-    "rule": "Count your hits to find the candidate pool, then play the word that leaves the fewest expected candidates: a candidate if that word is still possible, otherwise a split word that reuses a hit letter or a burn word that tests only fresh letters.",
+    "rule": "Count your hits to find the candidate pool, then play the word that leaves the fewest expected candidates: a candidate if that word is still possible, otherwise a split word that reuses a hit letter or a burn word that carries no hit letter.",
+    "universe": "data/answers.txt (2,309 past answers)",
     "top_patterns": [
       {
         "g1": "SOARE",
@@ -149,7 +152,8 @@
       "Split word",
       "Burn word"
     ],
-    "rule": "Count your hits to find the candidate pool, then play the word that leaves the fewest expected candidates: a candidate if that word is still possible, otherwise a split word that reuses a hit letter or a burn word that tests only fresh letters.",
+    "rule": "Count your hits to find the candidate pool, then play the word that leaves the fewest expected candidates: a candidate if that word is still possible, otherwise a split word that reuses a hit letter or a burn word that carries no hit letter.",
+    "universe": "data/answers.txt (2,309 past answers)",
     "top_patterns": [
       {
         "g1": "SOARE",
@@ -204,7 +208,8 @@
       "Candidate",
       "Split word"
     ],
-    "rule": "Count your hits to find the candidate pool, then play the word that leaves the fewest expected candidates: a candidate if that word is still possible, otherwise a split word that reuses a hit letter or a burn word that tests only fresh letters.",
+    "rule": "Count your hits to find the candidate pool, then play the word that leaves the fewest expected candidates: a candidate if that word is still possible, otherwise a split word that reuses a hit letter or a burn word that carries no hit letter.",
+    "universe": "data/answers.txt (2,309 past answers)",
     "top_patterns": [
       {
         "g1": "SOARE",
@@ -258,7 +263,8 @@
     "actions": [
       "Candidate"
     ],
-    "rule": "Count your hits to find the candidate pool, then play the word that leaves the fewest expected candidates: a candidate if that word is still possible, otherwise a split word that reuses a hit letter or a burn word that tests only fresh letters.",
+    "rule": "Count your hits to find the candidate pool, then play the word that leaves the fewest expected candidates: a candidate if that word is still possible, otherwise a split word that reuses a hit letter or a burn word that carries no hit letter.",
+    "universe": "data/answers.txt (2,309 past answers)",
     "top_patterns": [
       {
         "g1": "SOARE",

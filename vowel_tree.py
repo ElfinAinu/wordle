@@ -56,6 +56,8 @@ def main() -> None:
                 "candidates": len(words),
                 "guess3": best_word,
                 "expected_remaining": round(best_remaining, 2),
+                "universe": "data/answers.txt (2,309 past answers)",
+                "pair": list(PAIR),
             }
         )
 
@@ -65,6 +67,8 @@ def main() -> None:
 
     lines = [
         f"# Guess-3 tree after {'+'.join(PAIR).upper()}, branched on vowel hits",
+        "",
+        "Candidates: 2,309 past answers (`data/answers.txt`).",
         "",
         "| Vowels hit | Share | Candidates | Guess 3 | Left after |",
         "|---|---|---|---|---|",

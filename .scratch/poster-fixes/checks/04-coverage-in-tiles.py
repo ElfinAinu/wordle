@@ -88,7 +88,6 @@ def main() -> int:
     if tiles_pct >= distinct_pct:
         failures.append("tiles-lit share should be below the distinct-letter share")
 
-    # --- the two grid exceptions, from the raw answers -------------------
     for (letter, pos), word in EXPECTED_EXCEPTIONS.items():
         hits = [w for w in answers if w[pos] == letter]
         if hits != [word]:
@@ -110,7 +109,6 @@ def main() -> int:
             f"expected {set(EXPECTED_EXCEPTIONS)}"
         )
 
-    # --- coverage analysis reports both numbers --------------------------
     if not COVERAGE_JSON.exists():
         failures.append("results/coverage.json is missing")
     else:
@@ -152,7 +150,6 @@ def main() -> int:
         if "tile" not in header:
             failures.append("coverage.md header does not name the tiles-lit figure")
 
-    # --- the shipped poster names the metric it uses ---------------------
     html = POSTER_PATH.read_text()
     hero = section(html, '<section class="hero')
     method = section(html, '<section class="section" id="method"')
@@ -165,7 +162,6 @@ def main() -> int:
         if "65.4" not in chunk:
             failures.append(f"{name} does not name the distinct-letter figure (65.4%)")
 
-    # --- no possible slot is drawn as the impossible glyph ---------------
     grid = section(html, '<section class="section" id="grid"')
     cells = parse_cells(grid)
     for letter in range(26):

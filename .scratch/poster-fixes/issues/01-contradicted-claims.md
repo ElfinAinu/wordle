@@ -14,9 +14,9 @@ pick between the two.
 
 **Status:** ready-for-agent
 
-- [ ] No poster sentence claims a game can be won on guess two under the fixed
+- [x] No poster sentence claims a game can be won on guess two under the fixed
       opening.
-- [ ] The five-hit section states that a small share of five-hit games still
+- [x] The five-hit section states that a small share of five-hit games still
       holds two anagrams, and names them.
-- [ ] Every claim in the hero and the hit-count panels agrees with the hit-count
+- [x] Every claim in the hero and the hit-count panels agrees with the hit-count
       table on the same page.

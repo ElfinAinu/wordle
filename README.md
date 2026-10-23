@@ -14,6 +14,8 @@ the write-up; this repo just produces it.
 - `results/` — generated outputs (`*.md` + `*.json`)
 - `infographic-v4.html` — the shipped poster (static, self-contained)
 - `poster.py` — regenerates the legacy `infographic.html` from results
+- `.scratch/poster-fixes/checks/` — per-ticket acceptance checks that
+  re-derive the poster's figures from committed inputs
 
 ## Core pipeline
 

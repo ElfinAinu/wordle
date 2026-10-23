@@ -2,7 +2,7 @@
 
 Policy: play **SOARE**, then **CLINT**, then apply the guess-3 rule from `results/hit_tree.md` on every later turn.
 
-> Count your hits to find the candidate pool, then play the word that leaves the fewest expected candidates: a candidate if that word is still possible, otherwise a split word that reuses a hit letter or a burn word that tests only fresh letters.
+> Count your hits to find the candidate pool, then play the word that leaves the fewest expected candidates: a candidate if that word is still possible, otherwise a split word that reuses a hit letter or a burn word that carries no hit letter.
 
 - Feedback: `hit_tree.pattern_codes` (standard greens-first Wordle feedback; each yellow consumes one answer copy).
 - Guess words: data/answers.txt (2,309 words), the same pool hit_tree.py scores; data/allowed.txt was not used.

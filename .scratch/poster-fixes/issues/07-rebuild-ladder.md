@@ -12,8 +12,8 @@ median, which a count of guesses cannot be.
 
 **Status:** ready-for-agent
 
-- [ ] Every rung's number matches a named source that states it, cited on the
+- [x] Every rung's number matches a named source that states it, cited on the
       panel.
-- [ ] No rung is labelled a median.
-- [ ] The gaps between rungs agree with the claims the panel makes about them.
-- [ ] The taught method appears on the ladder with its simulated average.
+- [x] No rung is labelled a median.
+- [x] The gaps between rungs agree with the claims the panel makes about them.
+- [x] The taught method appears on the ladder with its simulated average.

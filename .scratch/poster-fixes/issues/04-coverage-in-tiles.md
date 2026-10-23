@@ -13,8 +13,8 @@ one answer puts that letter in that slot, once in the pool.
 
 **Status:** ready-for-agent
 
-- [ ] The coverage analysis reports both the distinct-letter share and the
+- [x] The coverage analysis reports both the distinct-letter share and the
       tiles-lit share.
-- [ ] The hero and the opener figure name the metric they use, in words.
-- [ ] No letter-grid cell is rendered as impossible while an answer does put
+- [x] The hero and the opener figure name the metric they use, in words.
+- [x] No letter-grid cell is rendered as impossible while an answer does put
       that letter in that slot; the one-word exceptions are visible.

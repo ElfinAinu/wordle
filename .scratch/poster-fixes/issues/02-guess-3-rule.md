@@ -14,13 +14,13 @@ true of the word shown, plus the one-sentence rule a player applies.
 
 **Status:** ready-for-agent
 
-- [ ] Every recommended word's action label is true of that word: a word
+- [x] Every recommended word's action label is true of that word: a word
       labelled candidate is in that pattern's candidate pool; a word labelled
       burn or split is not.
-- [ ] Where the label says candidate, the recommended word is no worse in
+- [x] Where the label says candidate, the recommended word is no worse in
       candidates-left-after than the best in-pool word.
-- [ ] The rule is stated in one sentence a player can apply mid-game.
-- [ ] The rows displayed are the largest candidate pools for their hit count,
+- [x] The rule is stated in one sentence a player can apply mid-game.
+- [x] The rows displayed are the largest candidate pools for their hit count,
       not a hand-picked subset.
-- [ ] The analysis that produces the table emits the action label next to each
+- [x] The analysis that produces the table emits the action label next to each
       word, so the poster cannot drift from it.

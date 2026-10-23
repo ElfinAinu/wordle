@@ -13,8 +13,8 @@ blind to.
 
 **Status:** ready-for-agent
 
-- [ ] The quoted repeat figures match the duplicate analysis, with adjacent
+- [x] The quoted repeat figures match the duplicate analysis, with adjacent
       doubles distinguished from repeats overall.
-- [ ] The panel gives the two-copy rule as an action, not a warning.
-- [ ] One worked example of a vowel-apart repeat that a two-opener fixed opening
+- [x] The panel gives the two-copy rule as an action, not a warning.
+- [x] One worked example of a vowel-apart repeat that a two-opener fixed opening
       cannot see.

@@ -123,6 +123,10 @@ def analyze_opener(
         "opener": opener,
         "expected_remaining_after_two": round(expected_after_two, 2),
         "solved_on_two_pct": round(100 * solved_on_two, 2),
+        "universe": "data/answers.txt (2,309 past answers)",
+        "second_guess_universe": (
+            "all valid guesses (data/answers.txt + data/allowed.txt)"
+        ),
     }
     if want_tree:
         tree.sort(key=lambda row: -row["candidates"])
@@ -136,6 +140,10 @@ def write_tree_markdown(report: dict, path: Path) -> None:
         "",
         f"Solved on guess 2: **{report['solved_on_two_pct']}%** of games. "
         f"Expected candidates left after guess 2: **{report['expected_remaining_after_two']}**.",
+        "",
+        "Candidates: 2,309 past answers (`data/answers.txt`). Second guesses:",
+        "any valid guess (answers + `data/allowed.txt`). This scan's opener is",
+        f"{report['opener'].upper()}, not the poster's fixed SOARE+CLINT pair.",
         "",
     ]
     groups: dict[tuple[int, int], list[dict]] = {}

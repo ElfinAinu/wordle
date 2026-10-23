@@ -5,7 +5,9 @@
     "expected_remaining": 4.35,
     "solved_on_two_pct": 26.16,
     "spot_rate_pct": 65.4,
-    "tiles_lit_pct": 60.9
+    "tiles_lit_pct": 60.9,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "crise",
@@ -13,7 +15,9 @@
     "expected_remaining": 4.41,
     "solved_on_two_pct": 25.73,
     "spot_rate_pct": 65.4,
-    "tiles_lit_pct": 60.9
+    "tiles_lit_pct": 60.9,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "scone",
@@ -21,7 +25,9 @@
     "expected_remaining": 4.57,
     "solved_on_two_pct": 25.08,
     "spot_rate_pct": 65.4,
-    "tiles_lit_pct": 60.9
+    "tiles_lit_pct": 60.9,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "droit",
@@ -29,7 +35,9 @@
     "expected_remaining": 4.59,
     "solved_on_two_pct": 24.69,
     "spot_rate_pct": 64.8,
-    "tiles_lit_pct": 60.3
+    "tiles_lit_pct": 60.3,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "liart",
@@ -37,7 +45,9 @@
     "expected_remaining": 4.63,
     "solved_on_two_pct": 25.42,
     "spot_rate_pct": 65.4,
-    "tiles_lit_pct": 60.9
+    "tiles_lit_pct": 60.9,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "carte",
@@ -45,7 +55,9 @@
     "expected_remaining": 4.65,
     "solved_on_two_pct": 23.47,
     "spot_rate_pct": 63.9,
-    "tiles_lit_pct": 59.4
+    "tiles_lit_pct": 59.4,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "crise",
@@ -53,7 +65,9 @@
     "expected_remaining": 4.67,
     "solved_on_two_pct": 25.29,
     "spot_rate_pct": 65.4,
-    "tiles_lit_pct": 60.9
+    "tiles_lit_pct": 60.9,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "crate",
@@ -61,7 +75,9 @@
     "expected_remaining": 4.75,
     "solved_on_two_pct": 23.43,
     "spot_rate_pct": 63.9,
-    "tiles_lit_pct": 59.4
+    "tiles_lit_pct": 59.4,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "solid",
@@ -69,7 +85,9 @@
     "expected_remaining": 4.76,
     "solved_on_two_pct": 23.65,
     "spot_rate_pct": 63.9,
-    "tiles_lit_pct": 59.4
+    "tiles_lit_pct": 59.4,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "carle",
@@ -77,7 +95,9 @@
     "expected_remaining": 4.78,
     "solved_on_two_pct": 26.98,
     "spot_rate_pct": 62.9,
-    "tiles_lit_pct": 58.6
+    "tiles_lit_pct": 58.6,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "caret",
@@ -85,7 +105,9 @@
     "expected_remaining": 4.81,
     "solved_on_two_pct": 24.69,
     "spot_rate_pct": 63.9,
-    "tiles_lit_pct": 59.4
+    "tiles_lit_pct": 59.4,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "carle",
@@ -93,7 +115,9 @@
     "expected_remaining": 4.82,
     "solved_on_two_pct": 26.12,
     "spot_rate_pct": 63.2,
-    "tiles_lit_pct": 58.8
+    "tiles_lit_pct": 58.8,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "scald",
@@ -101,7 +125,9 @@
     "expected_remaining": 4.83,
     "solved_on_two_pct": 22.3,
     "spot_rate_pct": 62.9,
-    "tiles_lit_pct": 58.5
+    "tiles_lit_pct": 58.5,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "sonic",
@@ -109,7 +135,9 @@
     "expected_remaining": 4.84,
     "solved_on_two_pct": 23.6,
     "spot_rate_pct": 65.4,
-    "tiles_lit_pct": 60.9
+    "tiles_lit_pct": 60.9,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "ronte",
@@ -117,7 +145,9 @@
     "expected_remaining": 4.84,
     "solved_on_two_pct": 22.48,
     "spot_rate_pct": 62.9,
-    "tiles_lit_pct": 58.5
+    "tiles_lit_pct": 58.5,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "scald",
@@ -125,7 +155,9 @@
     "expected_remaining": 4.85,
     "solved_on_two_pct": 22.17,
     "spot_rate_pct": 62.9,
-    "tiles_lit_pct": 58.5
+    "tiles_lit_pct": 58.5,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "carle",
@@ -133,7 +165,9 @@
     "expected_remaining": 4.86,
     "solved_on_two_pct": 25.21,
     "spot_rate_pct": 63.7,
-    "tiles_lit_pct": 59.3
+    "tiles_lit_pct": 59.3,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "scold",
@@ -141,7 +175,9 @@
     "expected_remaining": 4.87,
     "solved_on_two_pct": 22.69,
     "spot_rate_pct": 63.9,
-    "tiles_lit_pct": 59.4
+    "tiles_lit_pct": 59.4,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "raine",
@@ -149,7 +185,9 @@
     "expected_remaining": 4.87,
     "solved_on_two_pct": 25.55,
     "spot_rate_pct": 64.8,
-    "tiles_lit_pct": 60.3
+    "tiles_lit_pct": 60.3,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "droit",
@@ -157,7 +195,9 @@
     "expected_remaining": 4.87,
     "solved_on_two_pct": 23.73,
     "spot_rate_pct": 63.9,
-    "tiles_lit_pct": 59.4
+    "tiles_lit_pct": 59.4,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "plain",
@@ -165,7 +205,9 @@
     "expected_remaining": 4.91,
     "solved_on_two_pct": 24.77,
     "spot_rate_pct": 64.5,
-    "tiles_lit_pct": 60.1
+    "tiles_lit_pct": 60.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "minor",
@@ -173,7 +215,9 @@
     "expected_remaining": 4.92,
     "solved_on_two_pct": 23.0,
     "spot_rate_pct": 64.1,
-    "tiles_lit_pct": 59.7
+    "tiles_lit_pct": 59.7,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "artel",
@@ -181,7 +225,9 @@
     "expected_remaining": 4.93,
     "solved_on_two_pct": 23.73,
     "spot_rate_pct": 65.4,
-    "tiles_lit_pct": 60.9
+    "tiles_lit_pct": 60.9,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "point",
@@ -189,7 +235,9 @@
     "expected_remaining": 4.93,
     "solved_on_two_pct": 24.43,
     "spot_rate_pct": 64.5,
-    "tiles_lit_pct": 60.1
+    "tiles_lit_pct": 60.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "rione",
@@ -197,7 +245,9 @@
     "expected_remaining": 4.93,
     "solved_on_two_pct": 25.38,
     "spot_rate_pct": 64.8,
-    "tiles_lit_pct": 60.3
+    "tiles_lit_pct": 60.3,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "raile",
@@ -205,7 +255,9 @@
     "expected_remaining": 4.95,
     "solved_on_two_pct": 21.7,
     "spot_rate_pct": 65.3,
-    "tiles_lit_pct": 60.7
+    "tiles_lit_pct": 60.7,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "ratel",
@@ -213,7 +265,9 @@
     "expected_remaining": 4.95,
     "solved_on_two_pct": 23.6,
     "spot_rate_pct": 65.4,
-    "tiles_lit_pct": 60.9
+    "tiles_lit_pct": 60.9,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "shone",
@@ -221,7 +275,9 @@
     "expected_remaining": 4.95,
     "solved_on_two_pct": 23.95,
     "spot_rate_pct": 64.8,
-    "tiles_lit_pct": 60.3
+    "tiles_lit_pct": 60.3,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "ratel",
@@ -229,7 +285,9 @@
     "expected_remaining": 4.96,
     "solved_on_two_pct": 24.6,
     "spot_rate_pct": 65.4,
-    "tiles_lit_pct": 60.9
+    "tiles_lit_pct": 60.9,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "rione",
@@ -237,7 +295,9 @@
     "expected_remaining": 4.96,
     "solved_on_two_pct": 22.09,
     "spot_rate_pct": 65.3,
-    "tiles_lit_pct": 60.7
+    "tiles_lit_pct": 60.7,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "clout",
@@ -245,7 +305,9 @@
     "expected_remaining": 4.97,
     "solved_on_two_pct": 24.6,
     "spot_rate_pct": 63.7,
-    "tiles_lit_pct": 59.3
+    "tiles_lit_pct": 59.3,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "pilot",
@@ -253,7 +315,9 @@
     "expected_remaining": 4.97,
     "solved_on_two_pct": 23.82,
     "spot_rate_pct": 64.5,
-    "tiles_lit_pct": 60.1
+    "tiles_lit_pct": 60.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "liane",
@@ -261,7 +325,9 @@
     "expected_remaining": 4.97,
     "solved_on_two_pct": 24.82,
     "spot_rate_pct": 64.5,
-    "tiles_lit_pct": 60.1
+    "tiles_lit_pct": 60.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "scion",
@@ -269,7 +335,9 @@
     "expected_remaining": 4.98,
     "solved_on_two_pct": 23.08,
     "spot_rate_pct": 65.4,
-    "tiles_lit_pct": 60.9
+    "tiles_lit_pct": 60.9,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "plait",
@@ -277,7 +345,9 @@
     "expected_remaining": 4.99,
     "solved_on_two_pct": 25.55,
     "spot_rate_pct": 64.5,
-    "tiles_lit_pct": 60.1
+    "tiles_lit_pct": 60.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "pilot",
@@ -285,7 +355,9 @@
     "expected_remaining": 5.0,
     "solved_on_two_pct": 23.91,
     "spot_rate_pct": 64.5,
-    "tiles_lit_pct": 60.1
+    "tiles_lit_pct": 60.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "reals",
@@ -293,7 +365,9 @@
     "expected_remaining": 5.0,
     "solved_on_two_pct": 23.0,
     "spot_rate_pct": 65.4,
-    "tiles_lit_pct": 60.9
+    "tiles_lit_pct": 60.9,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "giant",
@@ -301,7 +375,9 @@
     "expected_remaining": 5.0,
     "solved_on_two_pct": 22.78,
     "spot_rate_pct": 64.1,
-    "tiles_lit_pct": 59.7
+    "tiles_lit_pct": 59.7,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "paint",
@@ -309,7 +385,9 @@
     "expected_remaining": 5.0,
     "solved_on_two_pct": 24.73,
     "spot_rate_pct": 64.5,
-    "tiles_lit_pct": 60.1
+    "tiles_lit_pct": 60.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "blast",
@@ -317,7 +395,9 @@
     "expected_remaining": 5.0,
     "solved_on_two_pct": 23.13,
     "spot_rate_pct": 63.8,
-    "tiles_lit_pct": 59.4
+    "tiles_lit_pct": 59.4,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "artel",
@@ -325,7 +405,9 @@
     "expected_remaining": 5.01,
     "solved_on_two_pct": 22.61,
     "spot_rate_pct": 65.4,
-    "tiles_lit_pct": 60.9
+    "tiles_lit_pct": 60.9,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "crust",
@@ -333,7 +415,9 @@
     "expected_remaining": 5.01,
     "solved_on_two_pct": 24.69,
     "spot_rate_pct": 63.4,
-    "tiles_lit_pct": 59.1
+    "tiles_lit_pct": 59.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "point",
@@ -341,7 +425,9 @@
     "expected_remaining": 5.02,
     "solved_on_two_pct": 24.3,
     "spot_rate_pct": 64.5,
-    "tiles_lit_pct": 60.1
+    "tiles_lit_pct": 60.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "seral",
@@ -349,7 +435,9 @@
     "expected_remaining": 5.02,
     "solved_on_two_pct": 23.39,
     "spot_rate_pct": 65.4,
-    "tiles_lit_pct": 60.9
+    "tiles_lit_pct": 60.9,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "giant",
@@ -357,7 +445,9 @@
     "expected_remaining": 5.02,
     "solved_on_two_pct": 23.95,
     "spot_rate_pct": 64.1,
-    "tiles_lit_pct": 59.7
+    "tiles_lit_pct": 59.7,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "loath",
@@ -365,7 +455,9 @@
     "expected_remaining": 5.02,
     "solved_on_two_pct": 24.56,
     "spot_rate_pct": 64.8,
-    "tiles_lit_pct": 60.3
+    "tiles_lit_pct": 60.3,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "plied",
@@ -373,7 +465,9 @@
     "expected_remaining": 5.03,
     "solved_on_two_pct": 23.91,
     "spot_rate_pct": 63.0,
-    "tiles_lit_pct": 58.5
+    "tiles_lit_pct": 58.5,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "alien",
@@ -381,7 +475,9 @@
     "expected_remaining": 5.03,
     "solved_on_two_pct": 24.51,
     "spot_rate_pct": 63.4,
-    "tiles_lit_pct": 59.1
+    "tiles_lit_pct": 59.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "noire",
@@ -389,7 +485,9 @@
     "expected_remaining": 5.03,
     "solved_on_two_pct": 22.04,
     "spot_rate_pct": 65.3,
-    "tiles_lit_pct": 60.7
+    "tiles_lit_pct": 60.7,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "irony",
@@ -397,7 +495,9 @@
     "expected_remaining": 5.04,
     "solved_on_two_pct": 20.83,
     "spot_rate_pct": 65.3,
-    "tiles_lit_pct": 60.7
+    "tiles_lit_pct": 60.7,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "carse",
@@ -405,7 +505,9 @@
     "expected_remaining": 5.04,
     "solved_on_two_pct": 25.55,
     "spot_rate_pct": 63.6,
-    "tiles_lit_pct": 59.2
+    "tiles_lit_pct": 59.2,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "pilot",
@@ -413,7 +515,9 @@
     "expected_remaining": 5.04,
     "solved_on_two_pct": 24.38,
     "spot_rate_pct": 63.6,
-    "tiles_lit_pct": 59.2
+    "tiles_lit_pct": 59.2,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "cater",
@@ -421,7 +525,9 @@
     "expected_remaining": 5.04,
     "solved_on_two_pct": 22.56,
     "spot_rate_pct": 63.9,
-    "tiles_lit_pct": 59.4
+    "tiles_lit_pct": 59.4,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "snore",
@@ -429,7 +535,9 @@
     "expected_remaining": 5.04,
     "solved_on_two_pct": 22.65,
     "spot_rate_pct": 64.8,
-    "tiles_lit_pct": 60.3
+    "tiles_lit_pct": 60.3,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "crane",
@@ -437,7 +545,9 @@
     "expected_remaining": 5.05,
     "solved_on_two_pct": 25.99,
     "spot_rate_pct": 62.9,
-    "tiles_lit_pct": 58.6
+    "tiles_lit_pct": 58.6,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "carne",
@@ -445,7 +555,9 @@
     "expected_remaining": 5.05,
     "solved_on_two_pct": 27.8,
     "spot_rate_pct": 62.4,
-    "tiles_lit_pct": 58.1
+    "tiles_lit_pct": 58.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "alter",
@@ -453,7 +565,9 @@
     "expected_remaining": 5.05,
     "solved_on_two_pct": 22.95,
     "spot_rate_pct": 65.4,
-    "tiles_lit_pct": 60.9
+    "tiles_lit_pct": 60.9,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "react",
@@ -461,7 +575,9 @@
     "expected_remaining": 5.05,
     "solved_on_two_pct": 23.69,
     "spot_rate_pct": 63.9,
-    "tiles_lit_pct": 59.4
+    "tiles_lit_pct": 59.4,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "crony",
@@ -469,7 +585,9 @@
     "expected_remaining": 5.06,
     "solved_on_two_pct": 23.34,
     "spot_rate_pct": 63.5,
-    "tiles_lit_pct": 58.9
+    "tiles_lit_pct": 58.9,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "later",
@@ -477,7 +595,9 @@
     "expected_remaining": 5.06,
     "solved_on_two_pct": 23.39,
     "spot_rate_pct": 65.4,
-    "tiles_lit_pct": 60.9
+    "tiles_lit_pct": 60.9,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "sadly",
@@ -485,7 +605,9 @@
     "expected_remaining": 5.06,
     "solved_on_two_pct": 20.79,
     "spot_rate_pct": 62.8,
-    "tiles_lit_pct": 58.3
+    "tiles_lit_pct": 58.3,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "noire",
@@ -493,7 +615,9 @@
     "expected_remaining": 5.06,
     "solved_on_two_pct": 22.52,
     "spot_rate_pct": 64.5,
-    "tiles_lit_pct": 60.1
+    "tiles_lit_pct": 60.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "copse",
@@ -501,7 +625,9 @@
     "expected_remaining": 5.07,
     "solved_on_two_pct": 25.12,
     "spot_rate_pct": 63.6,
-    "tiles_lit_pct": 59.2
+    "tiles_lit_pct": 59.2,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "groin",
@@ -509,7 +635,9 @@
     "expected_remaining": 5.08,
     "solved_on_two_pct": 23.34,
     "spot_rate_pct": 64.1,
-    "tiles_lit_pct": 59.7
+    "tiles_lit_pct": 59.7,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "carle",
@@ -517,7 +645,9 @@
     "expected_remaining": 5.08,
     "solved_on_two_pct": 25.73,
     "spot_rate_pct": 63.6,
-    "tiles_lit_pct": 59.2
+    "tiles_lit_pct": 59.2,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "daily",
@@ -525,7 +655,9 @@
     "expected_remaining": 5.08,
     "solved_on_two_pct": 21.22,
     "spot_rate_pct": 63.8,
-    "tiles_lit_pct": 59.1
+    "tiles_lit_pct": 59.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "scald",
@@ -533,7 +665,9 @@
     "expected_remaining": 5.08,
     "solved_on_two_pct": 24.47,
     "spot_rate_pct": 62.6,
-    "tiles_lit_pct": 58.3
+    "tiles_lit_pct": 58.3,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "paint",
@@ -541,7 +675,9 @@
     "expected_remaining": 5.08,
     "solved_on_two_pct": 25.99,
     "spot_rate_pct": 64.5,
-    "tiles_lit_pct": 60.1
+    "tiles_lit_pct": 60.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "noire",
@@ -549,7 +685,9 @@
     "expected_remaining": 5.08,
     "solved_on_two_pct": 25.08,
     "spot_rate_pct": 64.8,
-    "tiles_lit_pct": 60.3
+    "tiles_lit_pct": 60.3,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "raile",
@@ -557,7 +695,9 @@
     "expected_remaining": 5.09,
     "solved_on_two_pct": 22.69,
     "spot_rate_pct": 65.5,
-    "tiles_lit_pct": 61.0
+    "tiles_lit_pct": 61.0,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "rales",
@@ -565,7 +705,9 @@
     "expected_remaining": 5.09,
     "solved_on_two_pct": 23.52,
     "spot_rate_pct": 65.4,
-    "tiles_lit_pct": 60.9
+    "tiles_lit_pct": 60.9,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "plain",
@@ -573,7 +715,9 @@
     "expected_remaining": 5.09,
     "solved_on_two_pct": 24.3,
     "spot_rate_pct": 64.5,
-    "tiles_lit_pct": 60.1
+    "tiles_lit_pct": 60.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "carne",
@@ -581,7 +725,9 @@
     "expected_remaining": 5.1,
     "solved_on_two_pct": 24.08,
     "spot_rate_pct": 62.7,
-    "tiles_lit_pct": 58.4
+    "tiles_lit_pct": 58.4,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "arles",
@@ -589,7 +735,9 @@
     "expected_remaining": 5.1,
     "solved_on_two_pct": 22.78,
     "spot_rate_pct": 65.4,
-    "tiles_lit_pct": 60.9
+    "tiles_lit_pct": 60.9,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "plain",
@@ -597,7 +745,9 @@
     "expected_remaining": 5.1,
     "solved_on_two_pct": 24.64,
     "spot_rate_pct": 64.5,
-    "tiles_lit_pct": 60.1
+    "tiles_lit_pct": 60.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "glint",
@@ -605,7 +755,9 @@
     "expected_remaining": 5.11,
     "solved_on_two_pct": 24.38,
     "spot_rate_pct": 64.1,
-    "tiles_lit_pct": 59.7
+    "tiles_lit_pct": 59.7,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "clout",
@@ -613,7 +765,9 @@
     "expected_remaining": 5.11,
     "solved_on_two_pct": 22.91,
     "spot_rate_pct": 64.6,
-    "tiles_lit_pct": 60.1
+    "tiles_lit_pct": 60.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "carle",
@@ -621,7 +775,9 @@
     "expected_remaining": 5.11,
     "solved_on_two_pct": 26.33,
     "spot_rate_pct": 63.9,
-    "tiles_lit_pct": 59.5
+    "tiles_lit_pct": 59.5,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "carne",
@@ -629,7 +785,9 @@
     "expected_remaining": 5.11,
     "solved_on_two_pct": 25.77,
     "spot_rate_pct": 62.9,
-    "tiles_lit_pct": 58.6
+    "tiles_lit_pct": 58.6,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "scaly",
@@ -637,7 +795,9 @@
     "expected_remaining": 5.11,
     "solved_on_two_pct": 23.17,
     "spot_rate_pct": 63.2,
-    "tiles_lit_pct": 58.7
+    "tiles_lit_pct": 58.7,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "nosey",
@@ -645,7 +805,9 @@
     "expected_remaining": 5.11,
     "solved_on_two_pct": 21.31,
     "spot_rate_pct": 65.3,
-    "tiles_lit_pct": 60.7
+    "tiles_lit_pct": 60.7,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "court",
@@ -653,7 +815,9 @@
     "expected_remaining": 5.12,
     "solved_on_two_pct": 25.77,
     "spot_rate_pct": 63.7,
-    "tiles_lit_pct": 59.3
+    "tiles_lit_pct": 59.3,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "crane",
@@ -661,7 +825,9 @@
     "expected_remaining": 5.12,
     "solved_on_two_pct": 27.37,
     "spot_rate_pct": 62.4,
-    "tiles_lit_pct": 58.1
+    "tiles_lit_pct": 58.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "scaly",
@@ -669,7 +835,9 @@
     "expected_remaining": 5.12,
     "solved_on_two_pct": 22.04,
     "spot_rate_pct": 63.5,
-    "tiles_lit_pct": 58.9
+    "tiles_lit_pct": 58.9,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "crony",
@@ -677,7 +845,9 @@
     "expected_remaining": 5.13,
     "solved_on_two_pct": 22.82,
     "spot_rate_pct": 63.5,
-    "tiles_lit_pct": 58.9
+    "tiles_lit_pct": 58.9,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "bloat",
@@ -685,7 +855,9 @@
     "expected_remaining": 5.13,
     "solved_on_two_pct": 23.52,
     "spot_rate_pct": 63.8,
-    "tiles_lit_pct": 59.4
+    "tiles_lit_pct": 59.4,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "saine",
@@ -693,7 +865,9 @@
     "expected_remaining": 5.14,
     "solved_on_two_pct": 21.74,
     "spot_rate_pct": 63.3,
-    "tiles_lit_pct": 58.8
+    "tiles_lit_pct": 58.8,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "least",
@@ -701,7 +875,9 @@
     "expected_remaining": 5.14,
     "solved_on_two_pct": 22.48,
     "spot_rate_pct": 64.1,
-    "tiles_lit_pct": 59.7
+    "tiles_lit_pct": 59.7,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "clout",
@@ -709,7 +885,9 @@
     "expected_remaining": 5.14,
     "solved_on_two_pct": 24.25,
     "spot_rate_pct": 63.7,
-    "tiles_lit_pct": 59.3
+    "tiles_lit_pct": 59.3,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "sadly",
@@ -717,7 +895,9 @@
     "expected_remaining": 5.14,
     "solved_on_two_pct": 22.61,
     "spot_rate_pct": 62.5,
-    "tiles_lit_pct": 58.1
+    "tiles_lit_pct": 58.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "alose",
@@ -725,7 +905,9 @@
     "expected_remaining": 5.14,
     "solved_on_two_pct": 24.56,
     "spot_rate_pct": 64.5,
-    "tiles_lit_pct": 60.1
+    "tiles_lit_pct": 60.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "could",
@@ -733,7 +915,9 @@
     "expected_remaining": 5.15,
     "solved_on_two_pct": 22.3,
     "spot_rate_pct": 62.1,
-    "tiles_lit_pct": 57.7
+    "tiles_lit_pct": 57.7,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "roate",
@@ -741,7 +925,9 @@
     "expected_remaining": 5.15,
     "solved_on_two_pct": 23.0,
     "spot_rate_pct": 64.1,
-    "tiles_lit_pct": 59.7
+    "tiles_lit_pct": 59.7,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "count",
@@ -749,7 +935,9 @@
     "expected_remaining": 5.15,
     "solved_on_two_pct": 23.82,
     "spot_rate_pct": 63.9,
-    "tiles_lit_pct": 59.5
+    "tiles_lit_pct": 59.5,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "carne",
@@ -757,7 +945,9 @@
     "expected_remaining": 5.15,
     "solved_on_two_pct": 26.94,
     "spot_rate_pct": 62.4,
-    "tiles_lit_pct": 58.1
+    "tiles_lit_pct": 58.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "later",
@@ -765,7 +955,9 @@
     "expected_remaining": 5.15,
     "solved_on_two_pct": 22.52,
     "spot_rate_pct": 65.4,
-    "tiles_lit_pct": 60.9
+    "tiles_lit_pct": 60.9,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "scalp",
@@ -773,7 +965,9 @@
     "expected_remaining": 5.15,
     "solved_on_two_pct": 25.16,
     "spot_rate_pct": 62.7,
-    "tiles_lit_pct": 58.3
+    "tiles_lit_pct": 58.3,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "lears",
@@ -781,7 +975,9 @@
     "expected_remaining": 5.15,
     "solved_on_two_pct": 24.08,
     "spot_rate_pct": 64.5,
-    "tiles_lit_pct": 60.1
+    "tiles_lit_pct": 60.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "copse",
@@ -789,7 +985,9 @@
     "expected_remaining": 5.15,
     "solved_on_two_pct": 25.38,
     "spot_rate_pct": 63.6,
-    "tiles_lit_pct": 59.2
+    "tiles_lit_pct": 59.2,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "gloat",
@@ -797,7 +995,9 @@
     "expected_remaining": 5.15,
     "solved_on_two_pct": 24.6,
     "spot_rate_pct": 64.1,
-    "tiles_lit_pct": 59.7
+    "tiles_lit_pct": 59.7,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "blast",
@@ -805,7 +1005,9 @@
     "expected_remaining": 5.15,
     "solved_on_two_pct": 22.95,
     "spot_rate_pct": 63.8,
-    "tiles_lit_pct": 59.4
+    "tiles_lit_pct": 59.4,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "crate",
@@ -813,7 +1015,9 @@
     "expected_remaining": 5.16,
     "solved_on_two_pct": 25.9,
     "spot_rate_pct": 63.6,
-    "tiles_lit_pct": 59.2
+    "tiles_lit_pct": 59.2,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "carle",
@@ -821,7 +1025,9 @@
     "expected_remaining": 5.16,
     "solved_on_two_pct": 24.12,
     "spot_rate_pct": 62.4,
-    "tiles_lit_pct": 58.0
+    "tiles_lit_pct": 58.0,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "carse",
@@ -829,7 +1035,9 @@
     "expected_remaining": 5.16,
     "solved_on_two_pct": 23.69,
     "spot_rate_pct": 63.4,
-    "tiles_lit_pct": 59.1
+    "tiles_lit_pct": 59.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "crane",
@@ -837,7 +1045,9 @@
     "expected_remaining": 5.16,
     "solved_on_two_pct": 26.85,
     "spot_rate_pct": 62.4,
-    "tiles_lit_pct": 58.1
+    "tiles_lit_pct": 58.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "shoal",
@@ -845,7 +1055,9 @@
     "expected_remaining": 5.16,
     "solved_on_two_pct": 22.87,
     "spot_rate_pct": 64.8,
-    "tiles_lit_pct": 60.3
+    "tiles_lit_pct": 60.3,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "rione",
@@ -853,7 +1065,9 @@
     "expected_remaining": 5.16,
     "solved_on_two_pct": 23.6,
     "spot_rate_pct": 64.5,
-    "tiles_lit_pct": 60.1
+    "tiles_lit_pct": 60.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "irate",
@@ -861,7 +1075,9 @@
     "expected_remaining": 5.17,
     "solved_on_two_pct": 21.22,
     "spot_rate_pct": 63.9,
-    "tiles_lit_pct": 59.4
+    "tiles_lit_pct": 59.4,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "antic",
@@ -869,7 +1085,9 @@
     "expected_remaining": 5.17,
     "solved_on_two_pct": 22.65,
     "spot_rate_pct": 65.4,
-    "tiles_lit_pct": 60.9
+    "tiles_lit_pct": 60.9,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "scalp",
@@ -877,7 +1095,9 @@
     "expected_remaining": 5.17,
     "solved_on_two_pct": 23.82,
     "spot_rate_pct": 62.7,
-    "tiles_lit_pct": 58.3
+    "tiles_lit_pct": 58.3,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "irony",
@@ -885,7 +1105,9 @@
     "expected_remaining": 5.18,
     "solved_on_two_pct": 20.44,
     "spot_rate_pct": 65.3,
-    "tiles_lit_pct": 60.7
+    "tiles_lit_pct": 60.7,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "parte",
@@ -893,7 +1115,9 @@
     "expected_remaining": 5.18,
     "solved_on_two_pct": 22.69,
     "spot_rate_pct": 63.0,
-    "tiles_lit_pct": 58.5
+    "tiles_lit_pct": 58.5,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "learn",
@@ -901,7 +1125,9 @@
     "expected_remaining": 5.18,
     "solved_on_two_pct": 24.04,
     "spot_rate_pct": 64.1,
-    "tiles_lit_pct": 59.7
+    "tiles_lit_pct": 59.7,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "point",
@@ -909,7 +1135,9 @@
     "expected_remaining": 5.18,
     "solved_on_two_pct": 24.12,
     "spot_rate_pct": 64.5,
-    "tiles_lit_pct": 60.1
+    "tiles_lit_pct": 60.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "anile",
@@ -917,7 +1145,9 @@
     "expected_remaining": 5.18,
     "solved_on_two_pct": 24.3,
     "spot_rate_pct": 63.4,
-    "tiles_lit_pct": 59.1
+    "tiles_lit_pct": 59.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "anole",
@@ -925,7 +1155,9 @@
     "expected_remaining": 5.18,
     "solved_on_two_pct": 24.3,
     "spot_rate_pct": 63.7,
-    "tiles_lit_pct": 59.3
+    "tiles_lit_pct": 59.3,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "cloud",
@@ -933,7 +1165,9 @@
     "expected_remaining": 5.19,
     "solved_on_two_pct": 22.04,
     "spot_rate_pct": 62.1,
-    "tiles_lit_pct": 57.7
+    "tiles_lit_pct": 57.7,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "raile",
@@ -941,7 +1175,9 @@
     "expected_remaining": 5.19,
     "solved_on_two_pct": 21.96,
     "spot_rate_pct": 64.6,
-    "tiles_lit_pct": 60.1
+    "tiles_lit_pct": 60.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "groin",
@@ -949,7 +1185,9 @@
     "expected_remaining": 5.19,
     "solved_on_two_pct": 24.04,
     "spot_rate_pct": 64.1,
-    "tiles_lit_pct": 59.7
+    "tiles_lit_pct": 59.7,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "spoil",
@@ -957,7 +1195,9 @@
     "expected_remaining": 5.19,
     "solved_on_two_pct": 25.12,
     "spot_rate_pct": 63.6,
-    "tiles_lit_pct": 59.2
+    "tiles_lit_pct": 59.2,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "carte",
@@ -965,7 +1205,9 @@
     "expected_remaining": 5.19,
     "solved_on_two_pct": 26.07,
     "spot_rate_pct": 63.6,
-    "tiles_lit_pct": 59.2
+    "tiles_lit_pct": 59.2,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "orbit",
@@ -973,7 +1215,9 @@
     "expected_remaining": 5.19,
     "solved_on_two_pct": 22.43,
     "spot_rate_pct": 63.8,
-    "tiles_lit_pct": 59.4
+    "tiles_lit_pct": 59.4,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "crony",
@@ -981,7 +1225,9 @@
     "expected_remaining": 5.19,
     "solved_on_two_pct": 22.17,
     "spot_rate_pct": 63.5,
-    "tiles_lit_pct": 58.9
+    "tiles_lit_pct": 58.9,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "scrap",
@@ -989,7 +1235,9 @@
     "expected_remaining": 5.19,
     "solved_on_two_pct": 22.87,
     "spot_rate_pct": 63.6,
-    "tiles_lit_pct": 59.2
+    "tiles_lit_pct": 59.2,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "liane",
@@ -997,7 +1245,9 @@
     "expected_remaining": 5.19,
     "solved_on_two_pct": 25.08,
     "spot_rate_pct": 64.8,
-    "tiles_lit_pct": 60.3
+    "tiles_lit_pct": 60.3,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "alone",
@@ -1005,7 +1255,9 @@
     "expected_remaining": 5.19,
     "solved_on_two_pct": 23.95,
     "spot_rate_pct": 63.7,
-    "tiles_lit_pct": 59.3
+    "tiles_lit_pct": 59.3,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "liart",
@@ -1013,7 +1265,9 @@
     "expected_remaining": 5.19,
     "solved_on_two_pct": 25.08,
     "spot_rate_pct": 64.8,
-    "tiles_lit_pct": 60.3
+    "tiles_lit_pct": 60.3,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "crise",
@@ -1021,7 +1275,9 @@
     "expected_remaining": 5.19,
     "solved_on_two_pct": 26.98,
     "spot_rate_pct": 62.4,
-    "tiles_lit_pct": 58.1
+    "tiles_lit_pct": 58.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "round",
@@ -1029,7 +1285,9 @@
     "expected_remaining": 5.2,
     "solved_on_two_pct": 21.22,
     "spot_rate_pct": 63.0,
-    "tiles_lit_pct": 58.6
+    "tiles_lit_pct": 58.6,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "minor",
@@ -1037,7 +1295,9 @@
     "expected_remaining": 5.2,
     "solved_on_two_pct": 21.09,
     "spot_rate_pct": 64.1,
-    "tiles_lit_pct": 59.7
+    "tiles_lit_pct": 59.7,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "prate",
@@ -1045,7 +1305,9 @@
     "expected_remaining": 5.2,
     "solved_on_two_pct": 22.3,
     "spot_rate_pct": 63.0,
-    "tiles_lit_pct": 58.5
+    "tiles_lit_pct": 58.5,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "leant",
@@ -1053,7 +1315,9 @@
     "expected_remaining": 5.2,
     "solved_on_two_pct": 22.13,
     "spot_rate_pct": 63.7,
-    "tiles_lit_pct": 59.3
+    "tiles_lit_pct": 59.3,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "antic",
@@ -1061,7 +1325,9 @@
     "expected_remaining": 5.2,
     "solved_on_two_pct": 20.96,
     "spot_rate_pct": 65.4,
-    "tiles_lit_pct": 60.9
+    "tiles_lit_pct": 60.9,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "irony",
@@ -1069,7 +1335,9 @@
     "expected_remaining": 5.21,
     "solved_on_two_pct": 19.75,
     "spot_rate_pct": 65.3,
-    "tiles_lit_pct": 60.7
+    "tiles_lit_pct": 60.7,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "clasp",
@@ -1077,7 +1345,9 @@
     "expected_remaining": 5.21,
     "solved_on_two_pct": 25.16,
     "spot_rate_pct": 62.7,
-    "tiles_lit_pct": 58.3
+    "tiles_lit_pct": 58.3,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "minor",
@@ -1085,7 +1355,9 @@
     "expected_remaining": 5.21,
     "solved_on_two_pct": 21.18,
     "spot_rate_pct": 64.1,
-    "tiles_lit_pct": 59.7
+    "tiles_lit_pct": 59.7,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "clout",
@@ -1093,7 +1365,9 @@
     "expected_remaining": 5.21,
     "solved_on_two_pct": 23.0,
     "spot_rate_pct": 62.1,
-    "tiles_lit_pct": 57.7
+    "tiles_lit_pct": 57.7,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "clasp",
@@ -1101,7 +1375,9 @@
     "expected_remaining": 5.21,
     "solved_on_two_pct": 24.04,
     "spot_rate_pct": 62.7,
-    "tiles_lit_pct": 58.3
+    "tiles_lit_pct": 58.3,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "alter",
@@ -1109,7 +1385,9 @@
     "expected_remaining": 5.22,
     "solved_on_two_pct": 22.09,
     "spot_rate_pct": 65.4,
-    "tiles_lit_pct": 60.9
+    "tiles_lit_pct": 60.9,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "ranch",
@@ -1117,7 +1395,9 @@
     "expected_remaining": 5.22,
     "solved_on_two_pct": 23.65,
     "spot_rate_pct": 63.1,
-    "tiles_lit_pct": 58.9
+    "tiles_lit_pct": 58.9,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "solid",
@@ -1125,7 +1405,9 @@
     "expected_remaining": 5.22,
     "solved_on_two_pct": 21.44,
     "spot_rate_pct": 63.0,
-    "tiles_lit_pct": 58.5
+    "tiles_lit_pct": 58.5,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "roast",
@@ -1133,7 +1415,9 @@
     "expected_remaining": 5.23,
     "solved_on_two_pct": 22.56,
     "spot_rate_pct": 63.7,
-    "tiles_lit_pct": 59.3
+    "tiles_lit_pct": 59.3,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "aline",
@@ -1141,7 +1425,9 @@
     "expected_remaining": 5.23,
     "solved_on_two_pct": 24.38,
     "spot_rate_pct": 63.4,
-    "tiles_lit_pct": 59.1
+    "tiles_lit_pct": 59.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "count",
@@ -1149,7 +1435,9 @@
     "expected_remaining": 5.23,
     "solved_on_two_pct": 23.6,
     "spot_rate_pct": 63.7,
-    "tiles_lit_pct": 59.3
+    "tiles_lit_pct": 59.3,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "rance",
@@ -1157,7 +1445,9 @@
     "expected_remaining": 5.23,
     "solved_on_two_pct": 26.25,
     "spot_rate_pct": 62.4,
-    "tiles_lit_pct": 58.1
+    "tiles_lit_pct": 58.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "print",
@@ -1165,7 +1455,9 @@
     "expected_remaining": 5.23,
     "solved_on_two_pct": 26.2,
     "spot_rate_pct": 62.4,
-    "tiles_lit_pct": 58.1
+    "tiles_lit_pct": 58.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "point",
@@ -1173,7 +1465,9 @@
     "expected_remaining": 5.24,
     "solved_on_two_pct": 26.59,
     "spot_rate_pct": 62.6,
-    "tiles_lit_pct": 58.3
+    "tiles_lit_pct": 58.3,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "antre",
@@ -1181,7 +1475,9 @@
     "expected_remaining": 5.24,
     "solved_on_two_pct": 23.47,
     "spot_rate_pct": 64.8,
-    "tiles_lit_pct": 60.3
+    "tiles_lit_pct": 60.3,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "aline",
@@ -1189,7 +1485,9 @@
     "expected_remaining": 5.24,
     "solved_on_two_pct": 24.25,
     "spot_rate_pct": 64.5,
-    "tiles_lit_pct": 60.1
+    "tiles_lit_pct": 60.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "sadly",
@@ -1197,7 +1495,9 @@
     "expected_remaining": 5.24,
     "solved_on_two_pct": 21.44,
     "spot_rate_pct": 61.6,
-    "tiles_lit_pct": 57.2
+    "tiles_lit_pct": 57.2,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "clasp",
@@ -1205,7 +1505,9 @@
     "expected_remaining": 5.24,
     "solved_on_two_pct": 24.12,
     "spot_rate_pct": 62.7,
-    "tiles_lit_pct": 58.3
+    "tiles_lit_pct": 58.3,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "alien",
@@ -1213,7 +1515,9 @@
     "expected_remaining": 5.24,
     "solved_on_two_pct": 25.34,
     "spot_rate_pct": 64.8,
-    "tiles_lit_pct": 60.3
+    "tiles_lit_pct": 60.3,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "robin",
@@ -1221,7 +1525,9 @@
     "expected_remaining": 5.25,
     "solved_on_two_pct": 22.22,
     "spot_rate_pct": 63.8,
-    "tiles_lit_pct": 59.4
+    "tiles_lit_pct": 59.4,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "carse",
@@ -1229,7 +1535,9 @@
     "expected_remaining": 5.25,
     "solved_on_two_pct": 27.28,
     "spot_rate_pct": 62.6,
-    "tiles_lit_pct": 58.3
+    "tiles_lit_pct": 58.3,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "plaid",
@@ -1237,7 +1545,9 @@
     "expected_remaining": 5.25,
     "solved_on_two_pct": 22.82,
     "spot_rate_pct": 63.0,
-    "tiles_lit_pct": 58.5
+    "tiles_lit_pct": 58.5,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "pilot",
@@ -1245,7 +1555,9 @@
     "expected_remaining": 5.25,
     "solved_on_two_pct": 23.78,
     "spot_rate_pct": 63.6,
-    "tiles_lit_pct": 59.2
+    "tiles_lit_pct": 59.2,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "opine",
@@ -1253,7 +1565,9 @@
     "expected_remaining": 5.25,
     "solved_on_two_pct": 23.39,
     "spot_rate_pct": 64.5,
-    "tiles_lit_pct": 60.1
+    "tiles_lit_pct": 60.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "laser",
@@ -1261,7 +1575,9 @@
     "expected_remaining": 5.25,
     "solved_on_two_pct": 23.26,
     "spot_rate_pct": 65.4,
-    "tiles_lit_pct": 60.9
+    "tiles_lit_pct": 60.9,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "ronte",
@@ -1269,7 +1585,9 @@
     "expected_remaining": 5.25,
     "solved_on_two_pct": 24.43,
     "spot_rate_pct": 62.7,
-    "tiles_lit_pct": 58.3
+    "tiles_lit_pct": 58.3,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "anile",
@@ -1277,7 +1595,9 @@
     "expected_remaining": 5.25,
     "solved_on_two_pct": 23.95,
     "spot_rate_pct": 64.5,
-    "tiles_lit_pct": 60.1
+    "tiles_lit_pct": 60.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "irony",
@@ -1285,7 +1605,9 @@
     "expected_remaining": 5.26,
     "solved_on_two_pct": 20.31,
     "spot_rate_pct": 65.3,
-    "tiles_lit_pct": 60.7
+    "tiles_lit_pct": 60.7,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "scary",
@@ -1293,7 +1615,9 @@
     "expected_remaining": 5.26,
     "solved_on_two_pct": 22.17,
     "spot_rate_pct": 64.4,
-    "tiles_lit_pct": 59.8
+    "tiles_lit_pct": 59.8,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "lares",
@@ -1301,7 +1625,9 @@
     "expected_remaining": 5.26,
     "solved_on_two_pct": 23.91,
     "spot_rate_pct": 65.4,
-    "tiles_lit_pct": 60.9
+    "tiles_lit_pct": 60.9,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "octal",
@@ -1309,7 +1635,9 @@
     "expected_remaining": 5.26,
     "solved_on_two_pct": 21.83,
     "spot_rate_pct": 65.4,
-    "tiles_lit_pct": 60.9
+    "tiles_lit_pct": 60.9,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "scaly",
@@ -1317,7 +1645,9 @@
     "expected_remaining": 5.26,
     "solved_on_two_pct": 22.0,
     "spot_rate_pct": 63.5,
-    "tiles_lit_pct": 58.9
+    "tiles_lit_pct": 58.9,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "basil",
@@ -1325,7 +1655,9 @@
     "expected_remaining": 5.27,
     "solved_on_two_pct": 22.26,
     "spot_rate_pct": 63.8,
-    "tiles_lit_pct": 59.4
+    "tiles_lit_pct": 59.4,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "groin",
@@ -1333,7 +1665,9 @@
     "expected_remaining": 5.27,
     "solved_on_two_pct": 22.43,
     "spot_rate_pct": 64.1,
-    "tiles_lit_pct": 59.7
+    "tiles_lit_pct": 59.7,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "aline",
@@ -1341,7 +1675,9 @@
     "expected_remaining": 5.27,
     "solved_on_two_pct": 24.73,
     "spot_rate_pct": 64.8,
-    "tiles_lit_pct": 60.3
+    "tiles_lit_pct": 60.3,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "arles",
@@ -1349,7 +1685,9 @@
     "expected_remaining": 5.27,
     "solved_on_two_pct": 22.95,
     "spot_rate_pct": 63.7,
-    "tiles_lit_pct": 59.3
+    "tiles_lit_pct": 59.3,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "rance",
@@ -1357,7 +1695,9 @@
     "expected_remaining": 5.27,
     "solved_on_two_pct": 23.34,
     "spot_rate_pct": 62.7,
-    "tiles_lit_pct": 58.4
+    "tiles_lit_pct": 58.4,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "alone",
@@ -1365,7 +1705,9 @@
     "expected_remaining": 5.27,
     "solved_on_two_pct": 24.73,
     "spot_rate_pct": 64.8,
-    "tiles_lit_pct": 60.3
+    "tiles_lit_pct": 60.3,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "crash",
@@ -1373,7 +1715,9 @@
     "expected_remaining": 5.28,
     "solved_on_two_pct": 24.82,
     "spot_rate_pct": 63.9,
-    "tiles_lit_pct": 59.5
+    "tiles_lit_pct": 59.5,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "scram",
@@ -1381,7 +1725,9 @@
     "expected_remaining": 5.28,
     "solved_on_two_pct": 22.22,
     "spot_rate_pct": 63.2,
-    "tiles_lit_pct": 58.8
+    "tiles_lit_pct": 58.8,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "clued",
@@ -1389,7 +1735,9 @@
     "expected_remaining": 5.28,
     "solved_on_two_pct": 22.13,
     "spot_rate_pct": 62.1,
-    "tiles_lit_pct": 57.7
+    "tiles_lit_pct": 57.7,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "parle",
@@ -1397,7 +1745,9 @@
     "expected_remaining": 5.28,
     "solved_on_two_pct": 24.08,
     "spot_rate_pct": 62.9,
-    "tiles_lit_pct": 58.6
+    "tiles_lit_pct": 58.6,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "plain",
@@ -1405,7 +1755,9 @@
     "expected_remaining": 5.28,
     "solved_on_two_pct": 23.43,
     "spot_rate_pct": 64.5,
-    "tiles_lit_pct": 60.1
+    "tiles_lit_pct": 60.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "liart",
@@ -1413,7 +1765,9 @@
     "expected_remaining": 5.28,
     "solved_on_two_pct": 23.82,
     "spot_rate_pct": 63.6,
-    "tiles_lit_pct": 59.2
+    "tiles_lit_pct": 59.2,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "crise",
@@ -1421,7 +1775,9 @@
     "expected_remaining": 5.28,
     "solved_on_two_pct": 23.3,
     "spot_rate_pct": 63.2,
-    "tiles_lit_pct": 58.8
+    "tiles_lit_pct": 58.8,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "carle",
@@ -1429,7 +1785,9 @@
     "expected_remaining": 5.29,
     "solved_on_two_pct": 23.13,
     "spot_rate_pct": 63.5,
-    "tiles_lit_pct": 58.9
+    "tiles_lit_pct": 58.9,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "clout",
@@ -1437,7 +1795,9 @@
     "expected_remaining": 5.29,
     "solved_on_two_pct": 24.95,
     "spot_rate_pct": 63.7,
-    "tiles_lit_pct": 59.3
+    "tiles_lit_pct": 59.3,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "arles",
@@ -1445,7 +1805,9 @@
     "expected_remaining": 5.29,
     "solved_on_two_pct": 23.82,
     "spot_rate_pct": 64.5,
-    "tiles_lit_pct": 60.1
+    "tiles_lit_pct": 60.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "scope",
@@ -1453,7 +1815,9 @@
     "expected_remaining": 5.29,
     "solved_on_two_pct": 23.47,
     "spot_rate_pct": 63.6,
-    "tiles_lit_pct": 59.2
+    "tiles_lit_pct": 59.2,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "corny",
@@ -1461,7 +1825,9 @@
     "expected_remaining": 5.3,
     "solved_on_two_pct": 24.47,
     "spot_rate_pct": 63.5,
-    "tiles_lit_pct": 58.9
+    "tiles_lit_pct": 58.9,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "carle",
@@ -1469,7 +1835,9 @@
     "expected_remaining": 5.3,
     "solved_on_two_pct": 24.51,
     "spot_rate_pct": 61.3,
-    "tiles_lit_pct": 57.2
+    "tiles_lit_pct": 57.2,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "carse",
@@ -1477,7 +1845,9 @@
     "expected_remaining": 5.3,
     "solved_on_two_pct": 24.9,
     "spot_rate_pct": 61.9,
-    "tiles_lit_pct": 57.7
+    "tiles_lit_pct": 57.7,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "cloth",
@@ -1485,7 +1855,9 @@
     "expected_remaining": 5.31,
     "solved_on_two_pct": 25.16,
     "spot_rate_pct": 63.9,
-    "tiles_lit_pct": 59.5
+    "tiles_lit_pct": 59.5,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "round",
@@ -1493,7 +1865,9 @@
     "expected_remaining": 5.31,
     "solved_on_two_pct": 23.34,
     "spot_rate_pct": 63.0,
-    "tiles_lit_pct": 58.6
+    "tiles_lit_pct": 58.6,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "orate",
@@ -1501,7 +1875,9 @@
     "expected_remaining": 5.31,
     "solved_on_two_pct": 22.0,
     "spot_rate_pct": 64.1,
-    "tiles_lit_pct": 59.7
+    "tiles_lit_pct": 59.7,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "dirty",
@@ -1509,7 +1885,9 @@
     "expected_remaining": 5.31,
     "solved_on_two_pct": 22.91,
     "spot_rate_pct": 62.5,
-    "tiles_lit_pct": 58.1
+    "tiles_lit_pct": 58.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "clasp",
@@ -1517,7 +1895,9 @@
     "expected_remaining": 5.31,
     "solved_on_two_pct": 25.81,
     "spot_rate_pct": 62.4,
-    "tiles_lit_pct": 58.1
+    "tiles_lit_pct": 58.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "saice",
@@ -1525,7 +1905,9 @@
     "expected_remaining": 5.31,
     "solved_on_two_pct": 21.74,
     "spot_rate_pct": 62.4,
-    "tiles_lit_pct": 57.9
+    "tiles_lit_pct": 57.9,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "broil",
@@ -1533,7 +1915,9 @@
     "expected_remaining": 5.31,
     "solved_on_two_pct": 21.44,
     "spot_rate_pct": 63.8,
-    "tiles_lit_pct": 59.4
+    "tiles_lit_pct": 59.4,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "anile",
@@ -1541,7 +1925,9 @@
     "expected_remaining": 5.31,
     "solved_on_two_pct": 24.47,
     "spot_rate_pct": 64.8,
-    "tiles_lit_pct": 60.3
+    "tiles_lit_pct": 60.3,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "anole",
@@ -1549,7 +1935,9 @@
     "expected_remaining": 5.31,
     "solved_on_two_pct": 24.47,
     "spot_rate_pct": 64.8,
-    "tiles_lit_pct": 60.3
+    "tiles_lit_pct": 60.3,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "raine",
@@ -1557,7 +1945,9 @@
     "expected_remaining": 5.32,
     "solved_on_two_pct": 21.74,
     "spot_rate_pct": 62.7,
-    "tiles_lit_pct": 58.4
+    "tiles_lit_pct": 58.4,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "noisy",
@@ -1565,7 +1955,9 @@
     "expected_remaining": 5.32,
     "solved_on_two_pct": 20.96,
     "spot_rate_pct": 65.3,
-    "tiles_lit_pct": 60.7
+    "tiles_lit_pct": 60.7,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "daunt",
@@ -1573,7 +1965,9 @@
     "expected_remaining": 5.32,
     "solved_on_two_pct": 23.3,
     "spot_rate_pct": 63.0,
-    "tiles_lit_pct": 58.6
+    "tiles_lit_pct": 58.6,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "lunar",
@@ -1581,7 +1975,9 @@
     "expected_remaining": 5.32,
     "solved_on_two_pct": 22.0,
     "spot_rate_pct": 65.5,
-    "tiles_lit_pct": 61.0
+    "tiles_lit_pct": 61.0,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "lares",
@@ -1589,7 +1985,9 @@
     "expected_remaining": 5.32,
     "solved_on_two_pct": 24.95,
     "spot_rate_pct": 64.5,
-    "tiles_lit_pct": 60.1
+    "tiles_lit_pct": 60.1,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   },
   {
     "first": "cloth",
@@ -1597,6 +1995,8 @@
     "expected_remaining": 5.33,
     "solved_on_two_pct": 23.52,
     "spot_rate_pct": 63.1,
-    "tiles_lit_pct": 58.9
+    "tiles_lit_pct": 58.9,
+    "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+    "second_universe": "data/answers.txt (2,309 past answers); CLINT is guess-only, so SOARE+CLINT is outside this scan's search space"
   }
 ]

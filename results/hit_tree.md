@@ -1,8 +1,9 @@
 # Guess-3 tree after SOARE+CLINT, branched on hit count
 
 A hit = a tested letter that shows green or yellow.
+Candidates: 2,309 past answers (`data/answers.txt`).
 
-**The rule:** Count your hits to find the candidate pool, then play the word that leaves the fewest expected candidates: a candidate if that word is still possible, otherwise a split word that reuses a hit letter or a burn word that tests only fresh letters.
+**The rule:** Count your hits to find the candidate pool, then play the word that leaves the fewest expected candidates: a candidate if that word is still possible, otherwise a split word that reuses a hit letter or a burn word that carries no hit letter.
 
 | Hits | Share | Patterns | Avg left | Max left | Actions in largest pools |
 |---|---|---|---|---|---|

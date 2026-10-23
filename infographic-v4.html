@@ -497,12 +497,12 @@ h1 em { font-style: normal; color: var(--accent); text-shadow: 0 0 44px color-mi
           </tr>
         </thead>
         <tbody>
-          <tr><td class="big">0</td><td class="num-col">0.6%</td><td class="num-col">~15.0</td><td class="strat">Burn word</td><td class="g3">DUMPY</td><td class="num-col">~1.4</td></tr>
-          <tr><td class="big">1</td><td class="num-col">4.5%</td><td class="num-col">~5.4</td><td class="strat">Split candidates</td><td class="g3">DEBUG</td><td class="num-col">~1.88</td></tr>
-          <tr><td class="big">2</td><td class="num-col">20.4%</td><td class="num-col">~3.5</td><td class="strat">Guess candidate</td><td class="g3">DUMPY</td><td class="num-col">~1.78</td></tr>
-          <tr><td class="big">3</td><td class="num-col">43.1%</td><td class="num-col">~2.3</td><td class="strat">Guess candidate</td><td class="g3">GAWKY</td><td class="num-col">~3.48</td></tr>
-          <tr><td class="big">4</td><td class="num-col">26.9%</td><td class="num-col">~1.5</td><td class="strat">Guess candidate</td><td class="g3">MATCH</td><td class="num-col">~1.44</td></tr>
-          <tr><td class="big">5</td><td class="num-col">4.5%</td><td class="num-col">~1.0</td><td class="strat">Solved</td><td class="g3">ABACK</td><td class="num-col">~1.0</td></tr>
+          <tr><td class="big">0</td><td class="num-col">0.6%</td><td class="num-col">~15.0</td><td class="strat">Candidate</td><td class="g3">DUMPY</td><td class="num-col">~1.4</td></tr>
+          <tr><td class="big">1</td><td class="num-col">4.5%</td><td class="num-col">~5.4</td><td class="strat">Burn word</td><td class="g3">DEBUG</td><td class="num-col">~1.88</td></tr>
+          <tr><td class="big">2</td><td class="num-col">20.4%</td><td class="num-col">~3.5</td><td class="strat">Candidate</td><td class="g3">REEDY</td><td class="num-col">~1.7</td></tr>
+          <tr><td class="big">3</td><td class="num-col">43.1%</td><td class="num-col">~2.3</td><td class="strat">Split word</td><td class="g3">GAWKY</td><td class="num-col">~3.48</td></tr>
+          <tr><td class="big">4</td><td class="num-col">26.9%</td><td class="num-col">~1.5</td><td class="strat">Split word</td><td class="g3">MATCH</td><td class="num-col">~1.44</td></tr>
+          <tr><td class="big">5</td><td class="num-col">4.5%</td><td class="num-col">~1.0</td><td class="strat">Candidate</td><td class="g3">RESIN</td><td class="num-col">~1.0</td></tr>
         </tbody>
       </table>
     </div>
@@ -513,7 +513,7 @@ h1 em { font-style: normal; color: var(--accent); text-shadow: 0 0 44px color-mi
   <div class="container">
     <div class="sec-head"><span class="roman">III</span><h2 class="sec-title">Guess-3 reference</h2><span class="sec-meta">Hit-count table</span></div>
     <div class="panel">
-      <p class="chart-note" style="margin-top:0;">The rule: Count your hits to find the candidate pool, then play the word that leaves the fewest expected candidates: a candidate if that word is still possible, otherwise a split word that reuses a hit letter or a burn word that tests only fresh letters.</p>
+      <p class="chart-note" style="margin-top:0;">The rule: Count your hits to find the candidate pool, then play the word that leaves the fewest expected candidates: a candidate if that word is still possible, otherwise a split word that reuses a hit letter or a burn word that carries no hit letter.</p>
       <p class="chart-note" style="margin-top:var(--space-2);">Five hits pins every letter, but it is not always solved: ARISE/RAISE and RESIN/RISEN both return the same board (4 of 2,309 games), so play either — the other is your next guess.</p>
       <div class="grid-2">
         <div>

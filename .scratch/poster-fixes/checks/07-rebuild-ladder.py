@@ -98,11 +98,9 @@ def main() -> int:
         print("  - ladder section has no rungs")
         return 1
 
-    # --- no rung is labelled a median ------------------------------------
     if "median" in lower:
         failures.append("a rung or the panel prose is still labelled a median")
 
-    # --- the taught method appears at its simulated average --------------
     taught = find_rung(rungs, "taught method")
     if taught is None:
         failures.append("no rung names the taught method")
@@ -120,7 +118,6 @@ def main() -> int:
         if "worst case 6" not in taught["label"].lower():
             failures.append("taught-method rung does not state its worst case of six")
 
-    # --- the optimal rung reads as the optimal policy --------------------
     optimal = find_rung(rungs, "optimal")
     if optimal is None:
         failures.append("no rung is labelled as the optimal policy")
@@ -136,7 +133,6 @@ def main() -> int:
         if "taught" in optimal["label"].lower():
             failures.append("optimal rung conflates itself with the taught method")
 
-    # --- the average-player rung names its source ------------------------
     human = find_rung(rungs, "average player")
     if human is None:
         failures.append("no rung names the average player")
@@ -150,14 +146,12 @@ def main() -> int:
                 f"average-player rung does not name its source ({HUMAN_SOURCE!r})"
             )
 
-    # --- no unattributable bot/median numbers remain ---------------------
     if re.search(r"wordlebot users\s*·", lower):
         failures.append("a WordleBot-users rung survives without a stated average")
     for banned in ("3.75", "4.10", "4.50"):
         if banned in text:
             failures.append(f"unattributable rung value {banned} still on the panel")
 
-    # --- gaps between adjacent rungs match the prose claims --------------
     values = sorted(rung["value"] for rung in rungs)
     if values == [3.42, 3.61, 3.80]:
         gaps = [values[i + 1] - values[i] for i in range(len(values) - 1)]
@@ -171,13 +165,11 @@ def main() -> int:
     if "three-quarters" in lower:
         failures.append("panel still claims a three-quarters gap the rungs deny")
 
-    # --- the sourced relative statement is kept --------------------------
     if "quarter of a turn" not in lower:
         failures.append("the NYT quarter-turn relative statement was dropped")
     if "515" not in text:
         failures.append("the panel does not name the 515-million-game NYT source")
 
-    # --- bars match the stated scale -------------------------------------
     for rung in rungs:
         if rung["width"] is None:
             failures.append(f"rung {rung['value']} has no bar width")
@@ -189,7 +181,6 @@ def main() -> int:
                 f"expected {expected_width:.0f}% for the stated 3.0-4.0 scale"
             )
 
-    # --- the six-guess caveat is present and qualified -------------------
     if "joker" not in lower:
         failures.append("panel does not name the six-guess game JOKER")
     if not re.search(r"one of 2,?309", lower):
