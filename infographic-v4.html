@@ -295,6 +295,8 @@ h1 em { font-style: normal; color: var(--accent); text-shadow: 0 0 44px color-mi
 .shape-row { display: flex; justify-content: space-between; gap: var(--space-4); padding: 7px 0; border-bottom: 1px solid var(--border-soft); font-size: var(--text-sm); }
 .shape-row:last-child { border-bottom: 0; }
 .shape-row b { font-family: var(--font-display); font-weight: 700; font-variant-numeric: tabular-nums; color: var(--fg); }
+.tpl { font-family: var(--font-mono); letter-spacing: 0.28em; color: var(--muted); }
+.tpl b { color: var(--accent); font-weight: 700; }
 
 /* ---- do / don't ---- */
 .dodont { display: grid; grid-template-columns: 1fr 1fr; }
@@ -758,7 +760,7 @@ h1 em { font-style: normal; color: var(--accent); text-shadow: 0 0 44px color-mi
             </ul>
           </div>
         </div>
-        <p class="note-line">To tell one copy of a letter from two, your guess must carry that letter twice: the number of non-gray tiles among those two copies is the number of copies in the answer. Radar repeats A apart, and SOARE carries a single A, so it can only ever show one hit; guess ABACK and both A tiles come back non-gray, exposing the second copy.</p>
+        <p class="note-line">Telling one copy of a letter from two takes a deliberate probe; <b>Section VIII</b> carries the rule and a worked example.</p>
       </div>
     </div>
   </div>
@@ -798,6 +800,26 @@ h1 em { font-style: normal; color: var(--accent); text-shadow: 0 0 44px color-mi
           <div class="shape-row"><span>opening never tests it</span><b>19%</b></div>
         </div>
         <p class="note-line">Denominator: <b>786 repeated-letter instances</b> — one repeated letter per word, counted once however many copies it has. 340 of them touch (43%) and 446 are separated (57%). Touching repeats are consonant-heavy: 222 of 340 (65%). Separated repeats are vowel-heavy: 238 of 446 (53%). And 639 of 786 (81%) repeat a letter the opening tests, so the reader sees one copy and cannot tell there are two; the other 147 (19%) repeat a letter it never tests, where nothing shows at all.</p>
+      </div>
+    </div>
+    <div class="panel" style="margin-top:clamp(16px,2.4vw,28px);">
+      <p class="fig-cap">Fig. 06 — Three shapes to recognise</p>
+      <div class="grid-2">
+        <div>
+          <div class="shape-card">
+            <h3>Repeat shapes</h3>
+            <div class="shape-row"><span><span class="tpl" aria-hidden="true">· · <b>●</b> <b>●</b> ·</span> <span>slots 3 &amp; 4 — touching · 186 of 786</span></span><b>23.7%</b></div>
+            <div class="shape-row"><span><span class="tpl" aria-hidden="true"><b>●</b> · · · <b>●</b></span> <span>slots 1 &amp; 5 — separated · 91 of 786</span></span><b>11.6%</b></div>
+            <div class="shape-row"><span><span class="tpl" aria-hidden="true">· <b>●</b> · · <b>●</b></span> <span>slots 2 &amp; 5 — separated · 87 of 786</span></span><b>11.1%</b></div>
+          </div>
+          <p class="chart-note"><b>●</b> carries the repeated letter, · any other tile. Denominator: <b>786 repeated-letter instances</b> — one repeated letter per word, counted once however many copies it has. These three shapes account for 364 of 786 (46.3%). The grid above counts <b>826 repeat pairs</b> instead — three copies of a letter make three pairs — so its shares differ slightly.</p>
+        </div>
+        <div>
+          <div class="shape-card">
+            <h3>One copy or two?</h3>
+            <p class="note-line">To tell one copy of a letter from two, your guess must carry that letter twice: the number of non-gray tiles among those two copies is the number of copies in the answer. Radar repeats A apart, and SOARE carries a single A, so it can only ever show one hit; guess ABACK and both A tiles come back non-gray, exposing the second copy.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
