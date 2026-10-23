@@ -385,7 +385,7 @@ h1 em { font-style: normal; color: var(--accent); text-shadow: 0 0 44px color-mi
       </div>
       <div class="stat">
         <div class="stat-num">27.76<span class="u">%</span></div>
-        <p class="stat-label">of games are solved on the second guess alone.</p>
+        <p class="stat-label">of games have the answer pinned before guess three.</p>
       </div>
       <div class="stat">
         <div class="stat-num">65.4<span class="u">%</span></div>
@@ -462,7 +462,7 @@ h1 em { font-style: normal; color: var(--accent); text-shadow: 0 0 44px color-mi
           <div class="flow-num">5</div>
           <div class="flow-strat">Solved</div>
           <div class="flow-ex">ABACK</div>
-          <p class="flow-note">Five hits means the answer is confirmed.</p>
+          <p class="flow-note">Five hits pins every letter — but four games still leave a two-anagram tie.</p>
           <div class="flow-share">4.5% of games · ~1.0 left</div>
         </div>
       </div>
@@ -615,7 +615,7 @@ h1 em { font-style: normal; color: var(--accent); text-shadow: 0 0 44px color-mi
         </table>
       </div>
       <div class="pat-card">
-        <h3>5 hits — Solved</h3>
+        <h3>5 hits — Solved, two ties</h3>
         <p class="pat-sub">4.5% of games · 102 patterns</p>
         <table>
           <thead><tr><th>G1</th><th>G2</th><th class="num-col">#</th><th>G3</th><th class="num-col">Left</th></tr></thead>
@@ -625,6 +625,7 @@ h1 em { font-style: normal; color: var(--accent); text-shadow: 0 0 44px color-mi
             <tr><td class="pat">XYYGX</td><td class="pat">YXXYX</td><td class="num-col">1</td><td class="g3">ABACK</td><td class="num-col">~1.0</td></tr>
           </tbody>
         </table>
+        <p class="chart-note" style="margin-top:var(--space-4);">Four games leave a two-anagram tie instead of one answer: ARISE/RAISE and RESIN/RISEN (4 of 2,309). The two openers cannot separate a pair, so play either — the other is your next guess.</p>
       </div>
     </div>
   </div>
@@ -731,10 +732,12 @@ h1 em { font-style: normal; color: var(--accent); text-shadow: 0 0 44px color-mi
             <ul>
               <li>Split candidates with a deliberate burn word.</li>
               <li>Treat every gray as free information.</li>
-              <li>Watch the -E / -ER / -Y endings and doubles (14.7%).</li>
+              <li>Watch the -E / -ER / -Y endings.</li>
+              <li>Expect a repeat: 32.4% of answers repeat a letter. Only 14.7% double it adjacently; the rest hide the second copy, and 10.3% repeat a vowel apart.</li>
             </ul>
           </div>
         </div>
+        <p class="note-line">To tell one copy of a letter from two, your guess must carry that letter twice: the number of non-gray tiles among those two copies is the number of copies in the answer. Radar repeats A apart, and SOARE carries a single A, so it can only ever show one hit; guess ABACK and both A tiles come back non-gray, exposing the second copy.</p>
       </div>
     </div>
   </div>
