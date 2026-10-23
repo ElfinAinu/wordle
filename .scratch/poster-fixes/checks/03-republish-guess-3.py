@@ -261,20 +261,23 @@ def main() -> int:
     for card, hits in zip(cards, sorted(buckets)):
         pools = buckets[hits]
         expected_pairs = top_patterns(pools)
-        want_heading = ", ".join(
-            action
-            for action in ACTION_ORDER
-            if action
-            in [
-                label(choose_word(answers, pool)[0], choose_word(answers, pool)[2], hit_letters(pair))
-                for pair, pool in expected_pairs
-            ]
-        )
-        heading_actions = {a.strip() for a in card["heading"].split("—")[-1].split(",")}
-        if heading_actions != {a.strip() for a in want_heading.split(",")}:
+        if re.search(
+            r"\b(Candidate|Split(?: word)?|Burn(?: word)?)\b", card["heading"]
+        ):
             failures.append(
-                f"section IV {hits} hits: heading {card['heading']!r} names "
-                f"{heading_actions}, expected {want_heading}"
+                f"section IV {hits} hits: title still names an action: "
+                f"{card['heading']!r}"
+            )
+        if "largest" not in card["sub"].lower():
+            failures.append(
+                f"section IV {hits} hits: subtitle does not say the rows are the "
+                f"band's largest pools: {card['sub']!r}"
+            )
+        pool_claim = re.search(rf"(\d+)\s+of\s+{len(pools)}\b", card["sub"])
+        if not pool_claim or int(pool_claim.group(1)) != len(card["rows"]):
+            failures.append(
+                f"section IV {hits} hits: subtitle {card['sub']!r} does not state "
+                f"{len(card['rows'])} of {len(pools)} largest pools"
             )
         if len(card["rows"]) != len(expected_pairs):
             failures.append(

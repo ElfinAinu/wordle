@@ -75,10 +75,12 @@ def parse_cards(section: str) -> list[dict]:
     cards = []
     for chunk in section.split('<div class="pat-card">')[1:]:
         heading = re.search(r"<h3>(.*?)</h3>", chunk, re.DOTALL)
+        sub = re.search(r'<p class="pat-sub">(.*?)</p>', chunk, re.DOTALL)
         note = re.search(r'<p class="chart-note"[^>]*>(.*?)</p>', chunk, re.DOTALL)
         cards.append(
             {
                 "heading": clean(heading.group(1)) if heading else "",
+                "sub": clean(sub.group(1)) if sub else "",
                 "rows": parse_table(chunk),
                 "note": clean(note.group(1)) if note else "",
             }
@@ -359,12 +361,28 @@ def main() -> int:
             failures.append(
                 f"section IV card order: {card['heading']!r} for {row['hits']} hits"
             )
-        heading_actions = card["heading"].split("—")[-1].strip()
-        shown = {a.strip() for a in heading_actions.split(",") if a.strip()}
-        if shown != set(row["actions"]):
+        if re.search(
+            r"\b(Candidate|Split(?: word)?|Burn(?: word)?)\b", card["heading"]
+        ):
             failures.append(
-                f"section IV {row['hits']} hits: heading actions {shown} "
-                f"!= {set(row['actions'])}"
+                f"section IV {row['hits']} hits: title still names an action: "
+                f"{card['heading']!r}"
+            )
+        if "largest" not in card["sub"].lower():
+            failures.append(
+                f"section IV {row['hits']} hits: subtitle does not say the rows are "
+                f"the band's largest pools: {card['sub']!r}"
+            )
+        pool_claim = re.search(rf"(\d+)\s+of\s+{row['patterns']}\b", card["sub"])
+        if not pool_claim:
+            failures.append(
+                f"section IV {row['hits']} hits: subtitle does not state how many "
+                f"of the band's {row['patterns']} pools are shown: {card['sub']!r}"
+            )
+        elif int(pool_claim.group(1)) != len(card["rows"]):
+            failures.append(
+                f"section IV {row['hits']} hits: subtitle claims {pool_claim.group(1)} "
+                f"of {row['patterns']} pools but {len(card['rows'])} rows are shown"
             )
         if len(card["rows"]) != len(row["top_patterns"]):
             failures.append(
