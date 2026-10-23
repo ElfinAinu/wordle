@@ -7,7 +7,11 @@
 Two fixed guesses test 10 distinct letters, so guesses 1-2 purely spot
 which letters are in the answer. Metrics per pair:
 - expected remaining candidates after both feedbacks (information)
-- spot rate: mean share of each answer's distinct letters tested
+- distinct-letter share (spot_rate_pct): mean share of each answer's
+  distinct letters that the openers test
+- tiles-lit share (tiles_lit_pct): mean share of each answer's five tiles
+  the openers can actually reveal. A letter carried once lights at most
+  one copy, so repeated-letter answers score lower here than above
 """
 
 import json
@@ -60,6 +64,12 @@ def score_pair(
     _, counts = np.unique(combined, return_counts=True)
     total = answer_codes.shape[0]
     spot = float(((masks & pair_mask).sum(axis=1) / distinct_counts).mean())
+    pair_counts = np.zeros(26, dtype=np.int16)
+    for ch in first + second:
+        pair_counts[ord(ch) - 97] += 1
+    tiles_lit = float(
+        (np.minimum(answer_counts, pair_counts).sum(axis=1) / 5.0).mean()
+    )
     return {
         "first": first,
         "second": second,
@@ -68,6 +78,7 @@ def score_pair(
         ),
         "solved_on_two_pct": round(100 * float((counts == 1).sum()) / total, 2),
         "spot_rate_pct": round(100 * spot, 1),
+        "tiles_lit_pct": round(100 * tiles_lit, 1),
     }
 
 
@@ -113,13 +124,18 @@ def main() -> None:
     lines = [
         "# Disjoint opener pairs (guess 2 shares no letters with guess 1)",
         "",
-        "| # | Pair | Expected remaining after 2 | Spot rate |",
-        "|---|---|---|---|",
+        "Distinct-letter share counts each answer's distinct letters; tiles-lit",
+        "share counts the five board tiles a single copy of each opener letter",
+        "can reveal. Every repeated-letter answer scores lower on tiles-lit.",
+        "",
+        "| # | Pair | Expected remaining after 2 | Distinct-letter share | Tiles-lit share |",
+        "|---|---|---|---|---|",
     ]
     for rank, row in enumerate(scored[:TOP_PAIRS], start=1):
         lines.append(
             f"| {rank} | {row['first'].upper()} + {row['second'].upper()} "
-            f"| {row['expected_remaining']} | {row['spot_rate_pct']}% |"
+            f"| {row['expected_remaining']} | {row['spot_rate_pct']}% "
+            f"| {row['tiles_lit_pct']}% |"
         )
     (RESULTS_DIR / "coverage.md").write_text("\n".join(lines) + "\n")
 
@@ -127,7 +143,8 @@ def main() -> None:
     for row in scored[:TOP_PAIRS]:
         print(
             f"  {row['first'].upper():6} + {row['second'].upper():6} "
-            f"remaining {row['expected_remaining']:6.2f}  spot {row['spot_rate_pct']}%"
+            f"remaining {row['expected_remaining']:6.2f}  "
+            f"distinct {row['spot_rate_pct']}%  tiles {row['tiles_lit_pct']}%"
         )
 
 
