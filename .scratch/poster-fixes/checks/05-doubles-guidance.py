@@ -5,9 +5,10 @@
 
 Recomputes the repeat figures from data/answers.txt and asserts the deployed
 poster infographic-v4.html carries them, separates adjacent doubles from
-repeats overall, keeps the two-copy rule in section VIII with section VII
-cross-referencing it, and gives a worked vowel-apart example that the fixed
-two-opener cannot see.
+repeats overall, keeps section VII reading on its own with its cross-reference
+to section VIII, and gives a worked vowel-apart example that the fixed
+two-opener cannot see. The two-copy rule's placement is owned by the
+repeats-section suite.
 
 Run: python3 .scratch/poster-fixes/checks/05-doubles-guidance.py
 """
@@ -73,21 +74,13 @@ def main():
         assert quoted in html, f"poster is missing quoted figure {quoted}"
     assert "adjacent" in lowered, "poster does not name the adjacent kind"
 
-    # The two-copy rule now lives in section VIII (ticket 03), stated as an
-    # action; section VII points at it instead of restating it.
+    # Section VII still reads on its own; the rule's placement is owned by
+    # .scratch/repeats-section/checks/03-section-probing-a-repeat.py.
     repeats = get_section(html, "repeats")
     repeats_lowered = repeats.lower()
     shape = get_section(html, "shape")
     shape_text = clean(shape).lower()
-    assert "twice" in repeats_lowered, "two-copy rule missing 'twice'"
-    assert "non-gray" in repeats_lowered, "two-copy rule missing the non-gray count"
-    assert (
-        "copies in the answer" in repeats_lowered
-    ), "two-copy rule missing the count meaning"
     assert "viii" in shape_text, "section VII does not cross-reference section VIII"
-    assert (
-        "copies in the answer" not in shape_text
-    ), "section VII still restates the two-copy rule"
 
     # One worked example that is real and really is an invisible vowel-apart repeat.
     examples = [w for w in ("radar", "tenet") if w in words and w in repeats_lowered]

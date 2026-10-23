@@ -5,8 +5,10 @@ Re-derives the shape-template strip from data/answers.txt and fails when any
 figure drifts, then checks the two-copy probe rule moved cleanly:
 
   * the strip shows the three commonest repeat shapes as templates with the
-    repeated slots marked, sharing the repeated-letter-instance denominator
-    (and naming the grid's repeat-pair denominator so the two agree);
+    repeated slots marked and each labelled touching or separated, sharing the
+    repeated-letter-instance denominator (and naming the grid's repeat-pair
+    denominator so the two agree), plus the roll-up that says the three
+    account for 364 of 786 (46.3%);
   * the probe rule appears exactly once in the poster, inside section VIII,
     with its worked Radar / SOARE / ABACK example intact;
   * section VII points at the rule instead of restating it.
@@ -42,7 +44,7 @@ WORKED_EXAMPLE = "both A tiles come back non-gray"
 # <span class="tpl" ...>TEMPLATE</span> <span>slots A &amp; B — kind</span>...</span><b>SHARE%</b>
 TEMPLATE_RE = re.compile(
     r'<span class="tpl"[^>]*>(?P<tpl>.*?)</span>'
-    r'\s*<span>slots (?P<a>\d) &amp; (?P<b>\d)[^<]*</span>'
+    r'\s*<span>slots (?P<a>\d) &amp; (?P<b>\d)(?P<label>[^<]*)</span>'
     r'.*?<b>(?P<share>[\d.]+)%</b>',
     re.DOTALL,
 )
@@ -69,6 +71,10 @@ def shape_counts(words: list[str]) -> Counter[tuple[int, ...]]:
     return shapes
 
 
+def shape_touching(slots: tuple[int, ...]) -> bool:
+    return any(slots[i + 1] - slots[i] == 1 for i in range(len(slots) - 1))
+
+
 def share(part: int, whole: int) -> float:
     return round(100 * part / whole, 1)
 
@@ -84,8 +90,10 @@ def clean(text: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
-def templates_in(section: str) -> dict[tuple[int, int], tuple[float, tuple[int, ...]]]:
-    found: dict[tuple[int, int], tuple[float, tuple[int, ...]]] = {}
+def templates_in(
+    section: str,
+) -> dict[tuple[int, int], tuple[float, tuple[int, ...], str]]:
+    found: dict[tuple[int, int], tuple[float, tuple[int, ...], str]] = {}
     for match in TEMPLATE_RE.finditer(section):
         a, b = int(match.group("a")), int(match.group("b"))
         marked = tuple(
@@ -93,7 +101,11 @@ def templates_in(section: str) -> dict[tuple[int, int], tuple[float, tuple[int, 
             for index, token in enumerate(clean(match.group("tpl")).split())
             if token == "●"
         )
-        found[(a, b)] = (float(match.group("share")), marked)
+        found[(a, b)] = (
+            float(match.group("share")),
+            marked,
+            match.group("label"),
+        )
     return found
 
 
@@ -126,10 +138,11 @@ def main() -> int:
     templates = templates_in(repeats)
     for (a, b), count in expected_shapes.items():
         expected_share = share(count, total)
+        shape_kind = "touching" if shape_touching((a, b)) else "separated"
         if (a, b) not in templates:
             failures.append(f"strip has no template for slots {a}-{b}")
             continue
-        got_share, marked = templates[(a, b)]
+        got_share, marked, label = templates[(a, b)]
         if got_share != expected_share:
             failures.append(
                 f"template {a}-{b} states {got_share}%, expected {expected_share}%"
@@ -140,8 +153,23 @@ def main() -> int:
             )
         if str(count) not in repeats_text:
             failures.append(f"strip does not state the count {count} for {a}-{b}")
+        named_kinds = [k for k in ("touching", "separated") if k in label.lower()]
+        if named_kinds != [shape_kind]:
+            failures.append(
+                f"template {a}-{b} is labelled {label.strip()!r}, "
+                f"expected {shape_kind}"
+            )
     if len(templates) != 3:
         failures.append(f"strip has {len(templates)} templates, expected exactly 3")
+
+    # The strip's roll-up must agree with the three template counts.
+    top_three_sum = sum(expected_shapes.values())
+    summary = (
+        f"account for {top_three_sum} of {total} "
+        f"({share(top_three_sum, total)}%)"
+    )
+    if summary not in repeats_text:
+        failures.append(f"strip summary is missing {summary!r}")
 
     # Denominator must be the instance count, with the grid's pair count named
     # alongside it so the two figures stay consistent.
@@ -186,6 +214,10 @@ def main() -> int:
     print("PASS")
     for (a, b), count in expected_shapes.items():
         print(f"  template {a}-{b}: {count} of {total} ({share(count, total)}%)")
+    print(
+        f"  three shapes account for {top_three_sum} of {total} "
+        f"({share(top_three_sum, total)}%)"
+    )
     print("  probe rule appears once, in section VIII; section VII cross-references it")
     return 0
 
