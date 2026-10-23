@@ -4,7 +4,7 @@
     "share_pct": 14.0,
     "candidates": 323,
     "guess3": "terse",
-    "expected_remaining": 19.4,
+    "expected_remaining": 18.85,
     "universe": "data/answers.txt (2,309 past answers)",
     "pair": [
       "soare",
@@ -27,8 +27,8 @@
     "vowels": "E",
     "share_pct": 13.0,
     "candidates": 301,
-    "guess3": "reset",
-    "expected_remaining": 9.37,
+    "guess3": "terse",
+    "expected_remaining": 7.66,
     "universe": "data/answers.txt (2,309 past answers)",
     "pair": [
       "soare",
@@ -123,8 +123,8 @@
     "vowels": "IO",
     "share_pct": 3.0,
     "candidates": 70,
-    "guess3": "snort",
-    "expected_remaining": 4.6,
+    "guess3": "torso",
+    "expected_remaining": 4.57,
     "universe": "data/answers.txt (2,309 past answers)",
     "pair": [
       "soare",

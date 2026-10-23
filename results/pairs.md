@@ -1,6 +1,6 @@
 # Opener pair tree: ROATE
 
-Solved on guess 2: **1.0%** of games. Expected candidates left after guess 2: **3.14**.
+Solved on guess 2: **1.0%** of games. Expected candidates left after guess 2: **3.12**.
 
 Candidates: 2,309 past answers (`data/answers.txt`). Second guesses:
 any valid guess (answers + `data/allowed.txt`). This scan's opener is
@@ -8,19 +8,19 @@ ROATE, not the poster's fixed SOARE+CLINT pair.
 
 ROATE
 ├─ 0 green / 2 yellow — 20.0% of games
-│   └─ YXXXY (102 candidates) → FEUED (leaves ~7.04)
+│   └─ YXXXY (102 candidates) → FEUED (leaves ~6.94)
 │   └─ YYXXX (57 candidates) → CROON (leaves ~4.58)
 │   └─ XXXYY (56 candidates) → SLEET (leaves ~2.57)
 │   └─ XXYXY (55 candidates) → GENAL (leaves ~2.82)
 │   └─ XXYYX (50 candidates) → CLINT (leaves ~3.4)
-│   └─ YXYXX (35 candidates) → MIRAH (leaves ~2.43)
+│   └─ YXYXX (35 candidates) → CARRS (leaves ~2.37)
 │   └─ XYYXX (33 candidates) → LINOS (leaves ~2.33)
 │   └─ YXXYX (29 candidates) → SCUFT (leaves ~1.62)
 │   └─ XYXYX (26 candidates) → PUNCH (leaves ~2.0)
 │   └─ XYXXY (19 candidates) → DEMON (leaves ~1.53)
 ├─ 0 green / 1 yellow — 17.7% of games
 │   └─ XXYXX (111 candidates) → LYSIN (leaves ~5.07)
-│   └─ XXXXY (105 candidates) → LENES (leaves ~3.88)
+│   └─ XXXXY (105 candidates) → LENES (leaves ~3.69)
 │   └─ XYXXX (66 candidates) → SNOOL (leaves ~2.76)
 │   └─ YXXXX (63 candidates) → SCULK (leaves ~2.9)
 │   └─ XXXYX (63 candidates) → SHUNT (leaves ~3.06)
@@ -97,7 +97,7 @@ ROATE
 │   └─ YXGXG (23 candidates) → CRAGS (leaves ~3.17)
 │   └─ XXYGG (10 candidates) → BUTCH (leaves ~1.6)
 │   └─ YGXXG (7 candidates) → GNASH (leaves ~1.0)
-│   └─ XXGYG (5 candidates) → GLISK (leaves ~1.0)
+│   └─ XXGYG (5 candidates) → GLEEK (leaves ~1.0)
 │   └─ YGXGX (4 candidates) → DOWNY (leaves ~1.0)
 │   └─ GGXXY (4 candidates) → ADVEW (leaves ~1.0)
 │   └─ GXGXY (4 candidates) → ACOLD (leaves ~1.0)
