@@ -13,8 +13,22 @@ the write-up; this repo just produces it.
 - `*.py` — one analysis question per script
 - `results/` — generated outputs (`*.md` + `*.json`)
 - `infographic-v4.html` — the shipped poster (static, self-contained); this is the only poster
+- `publish_poster.py` — the guarded one-step deploy to the served branch (see Publish)
 - `.scratch/poster-fixes/checks/` — per-ticket acceptance checks that
   re-derive the poster's figures from committed inputs
+
+## Publish
+
+`publish_poster.py` copies `infographic-v4.html` from the default branch
+(`main`) onto `index.html` on the served branch (`gh-pages`) and removes the
+duplicate poster there. It runs the guards and refuses to write if a retracted
+claim survives, a hit-count band names a guess word, or the served copy does
+not match the source afterwards. It is idempotent and never pushes.
+
+```
+python3 publish_poster.py            # run the guards, then publish
+python3 publish_poster.py --check    # run the guards only
+```
 
 ## Core pipeline
 
