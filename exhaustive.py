@@ -112,10 +112,17 @@ def main() -> None:
 
     RESULTS_DIR.mkdir(exist_ok=True)
     (RESULTS_DIR / f"exhaustive_{universe}.json").write_text(
-        json.dumps(scored[:50], indent=2)
+        json.dumps({"universe": universe, "pairs": scored[:50]}, indent=2)
+    )
+    candidate_desc = (
+        "past answers only"
+        if universe == "answers"
+        else "past answers + every valid guess"
     )
     lines = [
         f"# Exhaustive disjoint-pair check, universe={universe} ({len(scored)} pairs)",
+        "",
+        f"Candidates: {total} ({candidate_desc}).",
         "",
         f"Baseline {BASELINE[0].upper()}+{BASELINE[1].upper()}: remaining {baseline['expected_remaining']}, "
         f"solved-on-2 {baseline['solved_on_two_pct']}%, spot {baseline['spot_rate_pct']}%.",

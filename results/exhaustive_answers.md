@@ -1,5 +1,7 @@
 # Exhaustive disjoint-pair check, universe=answers (434077 pairs)
 
+Candidates: 2309 (past answers only).
+
 Baseline SOARE+CLINT: remaining 4.367, solved-on-2 27.76%, spot 65.4%.
 Pairs beating baseline: **6**.
 
