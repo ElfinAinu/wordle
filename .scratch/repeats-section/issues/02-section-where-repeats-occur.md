@@ -17,16 +17,16 @@ that involve a letter it never tests, where nothing shows.
 
 **Status:** ready-for-agent
 
-- [ ] The section exists as VIII, appended, with no existing numeral or section
+- [x] The section exists as VIII, appended, with no existing numeral or section
       renumbered.
-- [ ] The grid is a 5x5 upper triangle, one cell per slot pair, shaded by share
+- [x] The grid is a 5x5 upper triangle, one cell per slot pair, shaded by share
       of repeat pairs, reusing the existing cell styling; the raw count is
       available on hover.
-- [ ] Touching pairs read as different from separated pairs at a glance.
-- [ ] The caption states the touching/separated split, the class skew and the
+- [x] Touching pairs read as different from separated pairs at a glance.
+- [x] The caption states the touching/separated split, the class skew and the
       visibility split, and the section says what its denominator is (repeat
       pairs for the grid, repeated-letter instances for the splits).
-- [ ] An acceptance check re-derives every figure the section prints from
+- [x] An acceptance check re-derives every figure the section prints from
       `data/answers.txt` and fails when any drifts.
-- [ ] `publish_poster.py --check` still passes, and the band guard is
+- [x] `publish_poster.py --check` still passes, and the band guard is
       unaffected.

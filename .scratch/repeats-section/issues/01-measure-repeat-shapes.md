@@ -28,9 +28,9 @@ Values the implementation must reproduce - verify these, do not transcribe them:
   is tested, meaning one copy can show and the count still cannot be read; 147
   (18.7%) repeat a letter never tested, so nothing shows at all.
 
-- [ ] The slot-pair distribution, the shape list, the class split and the
+- [x] The slot-pair distribution, the shape list, the class split and the
       visibility split are written to `results/` as markdown and json.
-- [ ] Every figure above reproduces from `data/answers.txt`.
-- [ ] Each output states which universe and which opening pair it is measured
+- [x] Every figure above reproduces from `data/answers.txt`.
+- [x] Each output states which universe and which opening pair it is measured
       against.
-- [ ] Regenerating twice produces identical output.
+- [x] Regenerating twice produces identical output.

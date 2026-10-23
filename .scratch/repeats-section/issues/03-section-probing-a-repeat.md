@@ -14,12 +14,12 @@ is the number of copies in the answer, with the radar / SOARE / ABACK example.
 
 **Status:** ready-for-agent
 
-- [ ] The shape templates strip shows the top three shapes with their shares, as
+- [x] The shape templates strip shows the top three shapes with their shares, as
       templates with the repeated slots marked.
-- [ ] The probe rule appears exactly once in the poster - in this section - with
+- [x] The probe rule appears exactly once in the poster - in this section - with
       its worked example intact.
-- [ ] Section VII cross-references the rule rather than restating it, and still
+- [x] Section VII cross-references the rule rather than restating it, and still
       reads correctly on its own.
-- [ ] The acceptance check fails if the rule appears in more than one section.
-- [ ] All existing checks still pass, and `publish_poster.py --check` still
+- [x] The acceptance check fails if the rule appears in more than one section.
+- [x] All existing checks still pass, and `publish_poster.py --check` still
       passes.
