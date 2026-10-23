@@ -22,10 +22,10 @@ from analyze import (
     load_words,
     pattern_codes,
     rank_openers,
+    sum_sq_batch,
 )
 
 STATE_CHARS = {0: "X", 1: "Y", 2: "G"}
-POSITION_WEIGHTS = 3 ** np.arange(5)
 TOP_OPENERS = 8
 
 
@@ -46,41 +46,11 @@ def group_candidates(opener: str, answer_codes: np.ndarray, answer_counts: np.nd
 
 
 def expected_remaining_per_guess(
-    pool_codes: np.ndarray, candidates: np.ndarray
+    pool_codes: np.ndarray, candidates: np.ndarray, candidate_counts: np.ndarray
 ) -> np.ndarray:
-    """Expected remaining candidates after each pool guess, vectorized over the pool."""
-    pool_onehot = np.eye(26, dtype=np.int8)[pool_codes]
-    cand_onehot = np.eye(26, dtype=np.int8)[candidates]
-    green_match = np.einsum("ipc,jpc->ijc", pool_onehot, cand_onehot, dtype=np.int8)
-    cand_letter_counts = letter_counts(candidates)
-
-    pattern = np.zeros((pool_codes.shape[0], candidates.shape[0]), dtype=np.int32)
-    for position in range(5):
-        pool_letter = pool_codes[:, position]
-        cand_letter = candidates[:, position]
-        green = pool_letter[:, None] == cand_letter[None, :]
-        yellow = (~green) & (
-            cand_letter_counts.T[pool_letter]
-            > green_match[
-                np.arange(pool_codes.shape[0])[:, None],
-                np.arange(candidates.shape[0])[None, :],
-                pool_letter[:, None],
-            ]
-        )
-        pattern += (
-            np.where(green, 2, np.where(yellow, 1, 0)) * POSITION_WEIGHTS[position]
-        )
-
-    sorted_patterns = np.sort(pattern, axis=1)
-    segment_start = np.empty_like(sorted_patterns, dtype=bool)
-    segment_start[:, 0] = True
-    segment_start[:, 1:] = sorted_patterns[:, 1:] != sorted_patterns[:, :-1]
-    starts = np.flatnonzero(segment_start)
-    ends = np.append(starts[1:], sorted_patterns.size)
-    counts = ends - starts
-    row_of_segment = starts // sorted_patterns.shape[1]
-    sums = np.bincount(row_of_segment, weights=counts.astype(np.float64) ** 2)
-    return sums / sorted_patterns.shape[1]
+    """Expected remaining candidates after each pool guess."""
+    sums = sum_sq_batch(pool_codes, candidates, candidate_counts)
+    return sums.astype(np.float64) / candidates.shape[0]
 
 
 def analyze_opener(
@@ -104,7 +74,9 @@ def analyze_opener(
             solved_on_two += share
             expected_after_two += share
             continue
-        remaining = expected_remaining_per_guess(pool_codes, candidates)
+        remaining = expected_remaining_per_guess(
+            pool_codes, candidates, letter_counts(candidates)
+        )
         remaining[opener_index] = np.inf
         best = int(np.argmin(remaining))
         expected_after_two += share * float(remaining[best])

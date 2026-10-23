@@ -14,10 +14,8 @@ what that word is:
   * Burn word  — the word is not in the pool and carries no hit letter.
 
 Expected candidates left after a guess = sum over feedback groups of
-group_size squared / pool size. The feedback used here is standard Wordle
-feedback (greens first, then yellows left to right, each copy consumed once);
-``analyze.pattern_codes`` over-marks yellow for guesses with a repeated
-letter, so this module scores guesses locally.
+group_size squared / pool size. Feedback comes from the shared
+``analyze.pattern_codes``; this module keeps no copy of its own.
 """
 
 import json
@@ -25,6 +23,8 @@ from collections import defaultdict
 from pathlib import Path
 
 import numpy as np
+
+from analyze import pattern_codes, sum_sq
 
 ROOT = Path(__file__).parent
 ANSWERS_PATH = ROOT / "data" / "answers.txt"
@@ -60,38 +60,6 @@ def letter_counts(codes: np.ndarray) -> np.ndarray:
     for position in range(codes.shape[1]):
         counts[np.arange(codes.shape[0]), codes[:, position]] += 1
     return counts
-
-
-def pattern_codes(
-    guess: np.ndarray, answer_codes: np.ndarray, answers_letter_counts: np.ndarray
-) -> np.ndarray:
-    """Standard Wordle feedback (base-3 code per answer) for one guess.
-
-    Unlike ``analyze.pattern_codes`` this consumes each yellow copy, so a
-    guess with a repeated letter cannot mark more yellows than the answer
-    actually contains.
-    """
-    green = answer_codes == guess
-    state = np.where(green, 2, 0).astype(np.int8)
-    available = answers_letter_counts.astype(np.int16).copy()
-    for position in range(5):
-        letter = guess[position]
-        available[green[:, position], letter] -= 1
-    for position in range(5):
-        letter = guess[position]
-        yellow = (~green[:, position]) & (available[:, letter] > 0)
-        state[yellow, position] = 1
-        available[yellow, letter] -= 1
-    return state @ (3 ** np.arange(5))
-
-
-def sum_sq(
-    guess: np.ndarray, answer_codes: np.ndarray, answers_letter_counts: np.ndarray
-) -> int:
-    """Integer numerator of expected candidates left (same denominator per pool)."""
-    patterns = pattern_codes(guess, answer_codes, answers_letter_counts)
-    _, counts = np.unique(patterns, return_counts=True)
-    return int((counts.astype(np.int64) ** 2).sum())
 
 
 def decode_pattern(code: int) -> str:

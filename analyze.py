@@ -52,25 +52,83 @@ def letter_counts(codes: np.ndarray) -> np.ndarray:
     return counts
 
 
+def _pattern_state(
+    guess_codes: np.ndarray, answer_codes: np.ndarray, answers_letter_counts: np.ndarray
+) -> np.ndarray:
+    """Shared feedback core: state[guess, answer, position] is 0/1/2."""
+    guess_codes = np.atleast_2d(guess_codes)
+    green = guess_codes[:, None, :] == answer_codes[None, :, :]
+    state = np.where(green, 2, 0).astype(np.int8)
+    available = np.broadcast_to(
+        answers_letter_counts[None, :, :],
+        (guess_codes.shape[0], answer_codes.shape[0], ALPHABET),
+    ).copy()
+    guess_index = np.arange(guess_codes.shape[0])[:, None]
+    answer_index = np.arange(answer_codes.shape[0])[None, :]
+    for position in range(POSITIONS):
+        letter = guess_codes[:, position][:, None]
+        at = (guess_index, answer_index, letter)
+        available[at] -= green[:, :, position]
+    for position in range(POSITIONS):
+        letter = guess_codes[:, position][:, None]
+        at = (guess_index, answer_index, letter)
+        yellow = (~green[:, :, position]) & (available[at] > 0)
+        state[:, :, position][yellow] = 1
+        available[at] -= yellow
+    return state
+
+
 def pattern_codes(
     guess: np.ndarray, answer_codes: np.ndarray, answers_letter_counts: np.ndarray
 ) -> np.ndarray:
-    """Return the feedback pattern (base-3 code per answer) for one guess."""
-    green = answer_codes == guess
-    state = np.where(green, 2, 0).astype(np.int8)
-    green_matches_per_letter = np.zeros(
-        (answer_codes.shape[0], ALPHABET), dtype=np.int8
-    )
-    for position in range(POSITIONS):
-        letter = guess[position]
-        green_matches_per_letter[green[:, position], letter] += 1
-    for position in range(POSITIONS):
-        letter = guess[position]
-        yellow = (~green[:, position]) & (
-            answers_letter_counts[:, letter] > green_matches_per_letter[:, letter]
+    """Return the game's feedback pattern (base-3 code per answer) for one guess.
+
+    ``guess`` may be one word (shape (5,)) or a batch (shape (guesses, 5)).
+    Greens consume their answer copy first, then yellows are assigned left to
+    right, each consuming one remaining copy. A guess that repeats a letter
+    therefore cannot mark more yellows than the answer actually contains.
+    """
+    single = guess.ndim == 1
+    guess_codes = np.atleast_2d(guess)
+    # Bound the (guesses, answers, alphabet) scratch array used by the core.
+    chunk = max(1, 4_000_000 // (answer_codes.shape[0] * ALPHABET))
+    powers = 3 ** np.arange(POSITIONS)
+    parts = [
+        _pattern_state(
+            guess_codes[start : start + chunk], answer_codes, answers_letter_counts
         )
-        state[yellow, position] = 1
-    return state @ (3 ** np.arange(POSITIONS))
+        @ powers
+        for start in range(0, guess_codes.shape[0], chunk)
+    ]
+    codes = np.concatenate(parts, axis=0)
+    return codes[0] if single else codes
+
+
+def sum_sq_batch(
+    guess_codes: np.ndarray, answer_codes: np.ndarray, answers_letter_counts: np.ndarray
+) -> np.ndarray:
+    """Integer numerators of expected remaining candidates for each guess."""
+    patterns = np.atleast_2d(
+        pattern_codes(guess_codes, answer_codes, answers_letter_counts)
+    )
+    sorted_patterns = np.sort(patterns, axis=1)
+    segment_start = np.empty_like(sorted_patterns, dtype=bool)
+    segment_start[:, 0] = True
+    segment_start[:, 1:] = sorted_patterns[:, 1:] != sorted_patterns[:, :-1]
+    starts = np.flatnonzero(segment_start)
+    ends = np.append(starts[1:], sorted_patterns.size)
+    counts = ends - starts
+    row_of_segment = starts // sorted_patterns.shape[1]
+    return np.bincount(
+        row_of_segment, weights=counts.astype(np.int64) ** 2
+    ).astype(np.int64)
+
+
+def sum_sq(
+    guess: np.ndarray, answer_codes: np.ndarray, answers_letter_counts: np.ndarray
+) -> int:
+    """Integer numerator of expected remaining candidates for one guess."""
+    return int(sum_sq_batch(guess, answer_codes, answers_letter_counts)[0])
 
 
 def score_guess(
