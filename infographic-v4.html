@@ -513,6 +513,8 @@ h1 em { font-style: normal; color: var(--accent); text-shadow: 0 0 44px color-mi
   <div class="container">
     <div class="sec-head"><span class="roman">III</span><h2 class="sec-title">Guess-3 reference</h2><span class="sec-meta">Hit-count table</span></div>
     <div class="panel">
+      <p class="chart-note" style="margin-top:0;">The rule: Count your hits to find the candidate pool, then play the word that leaves the fewest expected candidates: a candidate if that word is still possible, otherwise a split word that reuses a hit letter or a burn word that tests only fresh letters.</p>
+      <p class="chart-note" style="margin-top:var(--space-2);">Five hits pins every letter, but it is not always solved: ARISE/RAISE and RESIN/RISEN both return the same board (4 of 2,309 games), so play either — the other is your next guess.</p>
       <div class="grid-2">
         <div>
           <p class="fig-cap">Table — candidates left by hits</p>
@@ -524,16 +526,16 @@ h1 em { font-style: normal; color: var(--accent); text-shadow: 0 0 44px color-mi
                 <th class="num-col">Patterns</th>
                 <th class="num-col">Avg left</th>
                 <th class="num-col">Max left</th>
-                <th>Strategy</th>
+                <th>Actions in largest pools</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td class="big">0</td><td class="num-col">0.6%</td><td class="num-col">1</td><td class="num-col">15.0</td><td class="num-col">15</td><td class="strat">Burn word</td></tr>
-              <tr><td class="big">1</td><td class="num-col">4.5%</td><td class="num-col">19</td><td class="num-col">5.4</td><td class="num-col">16</td><td class="strat">Split candidates</td></tr>
-              <tr><td class="big">2</td><td class="num-col">20.4%</td><td class="num-col">133</td><td class="num-col">3.5</td><td class="num-col">23</td><td class="strat">Guess candidate</td></tr>
-              <tr><td class="big">3</td><td class="num-col">43.1%</td><td class="num-col">426</td><td class="num-col">2.3</td><td class="num-col">25</td><td class="strat">Guess candidate</td></tr>
-              <tr><td class="big">4</td><td class="num-col">26.9%</td><td class="num-col">420</td><td class="num-col">1.5</td><td class="num-col">9</td><td class="strat">Guess candidate</td></tr>
-              <tr><td class="big">5</td><td class="num-col">4.5%</td><td class="num-col">102</td><td class="num-col">1.0</td><td class="num-col">2</td><td class="strat">Solved</td></tr>
+              <tr><td class="big">0</td><td class="num-col">0.6%</td><td class="num-col">1</td><td class="num-col">15.0</td><td class="num-col">15</td><td class="strat">Candidate</td></tr>
+              <tr><td class="big">1</td><td class="num-col">4.5%</td><td class="num-col">19</td><td class="num-col">5.4</td><td class="num-col">16</td><td class="strat">Burn word</td></tr>
+              <tr><td class="big">2</td><td class="num-col">20.4%</td><td class="num-col">133</td><td class="num-col">3.5</td><td class="num-col">23</td><td class="strat">Candidate, Split word</td></tr>
+              <tr><td class="big">3</td><td class="num-col">43.1%</td><td class="num-col">426</td><td class="num-col">2.3</td><td class="num-col">25</td><td class="strat">Candidate, Split word, Burn word</td></tr>
+              <tr><td class="big">4</td><td class="num-col">26.9%</td><td class="num-col">420</td><td class="num-col">1.5</td><td class="num-col">9</td><td class="strat">Candidate, Split word</td></tr>
+              <tr><td class="big">5</td><td class="num-col">4.5%</td><td class="num-col">102</td><td class="num-col">1.0</td><td class="num-col">2</td><td class="strat">Candidate · anagram ties</td></tr>
             </tbody>
           </table>
         </div>
@@ -548,7 +550,7 @@ h1 em { font-style: normal; color: var(--accent); text-shadow: 0 0 44px color-mi
             <div class="dist-col"><span class="dist-bar"><i style="height:10%"></i></span><span class="dist-val">4.5%</span><span class="dist-lab">5</span></div>
           </div>
           <p class="chart-note">Share of games by number of hits after SOARE + CLINT. Bars scaled to the 43.1% mode.</p>
-          <p class="chart-note" style="margin-top:var(--space-3);">Three hits is the most common hand — and the messiest. It leaves the widest spread of candidates, so reach for the strategy, not a guess.</p>
+          <p class="chart-note" style="margin-top:var(--space-3);">Three hits is the most common hand — and the messiest. It leaves the widest spread of candidates, so follow the rule above rather than guessing a single word.</p>
         </div>
       </div>
     </div>
@@ -559,70 +561,70 @@ h1 em { font-style: normal; color: var(--accent); text-shadow: 0 0 44px color-mi
     <div class="sec-head"><span class="roman">IV</span><h2 class="sec-title">Guess-3 by pattern</h2><span class="sec-meta">X absent · G green · Y yellow</span></div>
     <div class="grid-3">
       <div class="pat-card">
-        <h3>0 hits — Burn word</h3>
+        <h3>0 hits — Candidate</h3>
         <p class="pat-sub">0.6% of games · 1 pattern</p>
         <table>
-          <thead><tr><th>G1</th><th>G2</th><th class="num-col">#</th><th>G3</th><th class="num-col">Left</th></tr></thead>
-          <tbody><tr><td class="pat">XXXXX</td><td class="pat">XXXXX</td><td class="num-col">15</td><td class="g3">DUMPY</td><td class="num-col">~1.4</td></tr></tbody>
+          <thead><tr><th>G1</th><th>G2</th><th class="num-col">#</th><th>Action</th><th>G3</th><th class="num-col">Left</th></tr></thead>
+          <tbody><tr><td class="pat">XXXXX</td><td class="pat">XXXXX</td><td class="num-col">15</td><td class="strat">Candidate</td><td class="g3">DUMPY</td><td class="num-col">~1.4</td></tr></tbody>
         </table>
       </div>
       <div class="pat-card">
-        <h3>1 hit — Split candidates</h3>
+        <h3>1 hit — Burn word</h3>
         <p class="pat-sub">4.5% of games · 19 patterns</p>
         <table>
-          <thead><tr><th>G1</th><th>G2</th><th class="num-col">#</th><th>G3</th><th class="num-col">Left</th></tr></thead>
+          <thead><tr><th>G1</th><th>G2</th><th class="num-col">#</th><th>Action</th><th>G3</th><th class="num-col">Left</th></tr></thead>
           <tbody>
-            <tr><td class="pat">XGXXX</td><td class="pat">XXXXX</td><td class="num-col">16</td><td class="g3">DEBUG</td><td class="num-col">~1.88</td></tr>
-            <tr><td class="pat">XXYXX</td><td class="pat">XXXXX</td><td class="num-col">15</td><td class="g3">PUDGY</td><td class="num-col">~1.27</td></tr>
-            <tr><td class="pat">XXXXX</td><td class="pat">XXYXX</td><td class="num-col">10</td><td class="g3">DUMPY</td><td class="num-col">~1.4</td></tr>
+            <tr><td class="pat">XGXXX</td><td class="pat">XXXXX</td><td class="num-col">16</td><td class="strat">Burn word</td><td class="g3">DEBUG</td><td class="num-col">~1.88</td></tr>
+            <tr><td class="pat">XXYXX</td><td class="pat">XXXXX</td><td class="num-col">15</td><td class="strat">Burn word</td><td class="g3">PUDGY</td><td class="num-col">~1.27</td></tr>
+            <tr><td class="pat">XXXXX</td><td class="pat">XXYXX</td><td class="num-col">10</td><td class="strat">Burn word</td><td class="g3">DUMPY</td><td class="num-col">~1.4</td></tr>
           </tbody>
         </table>
       </div>
       <div class="pat-card">
-        <h3>2 hits — Guess candidate</h3>
+        <h3>2 hits — Candidate, Split word</h3>
         <p class="pat-sub">20.4% of games · 133 patterns</p>
         <table>
-          <thead><tr><th>G1</th><th>G2</th><th class="num-col">#</th><th>G3</th><th class="num-col">Left</th></tr></thead>
+          <thead><tr><th>G1</th><th>G2</th><th class="num-col">#</th><th>Action</th><th>G3</th><th class="num-col">Left</th></tr></thead>
           <tbody>
-            <tr><td class="pat">XXXYY</td><td class="pat">XXXXX</td><td class="num-col">23</td><td class="g3">DUMPY</td><td class="num-col">~1.78</td></tr>
-            <tr><td class="pat">XXXXX</td><td class="pat">XYYXX</td><td class="num-col">14</td><td class="g3">DWELL</td><td class="num-col">~1.86</td></tr>
-            <tr><td class="pat">XGXXX</td><td class="pat">XYXXX</td><td class="num-col">14</td><td class="g3">DALLY</td><td class="num-col">~2.0</td></tr>
+            <tr><td class="pat">XXXYY</td><td class="pat">XXXXX</td><td class="num-col">23</td><td class="strat">Candidate</td><td class="g3">REEDY</td><td class="num-col">~1.7</td></tr>
+            <tr><td class="pat">XGXXX</td><td class="pat">XYXXX</td><td class="num-col">14</td><td class="strat">Candidate</td><td class="g3">DOLLY</td><td class="num-col">~2.0</td></tr>
+            <tr><td class="pat">XXXXX</td><td class="pat">XYYXX</td><td class="num-col">14</td><td class="strat">Split word</td><td class="g3">DWELL</td><td class="num-col">~1.86</td></tr>
           </tbody>
         </table>
       </div>
       <div class="pat-card">
-        <h3>3 hits — Guess candidate</h3>
+        <h3>3 hits — Candidate, Split word, Burn word</h3>
         <p class="pat-sub">43.1% of games · 426 patterns</p>
         <table>
-          <thead><tr><th>G1</th><th>G2</th><th class="num-col">#</th><th>G3</th><th class="num-col">Left</th></tr></thead>
+          <thead><tr><th>G1</th><th>G2</th><th class="num-col">#</th><th>Action</th><th>G3</th><th class="num-col">Left</th></tr></thead>
           <tbody>
-            <tr><td class="pat">XXYYY</td><td class="pat">XXXXX</td><td class="num-col">25</td><td class="g3">GAWKY</td><td class="num-col">~3.48</td></tr>
-            <tr><td class="pat">XGXYY</td><td class="pat">XXXXX</td><td class="num-col">14</td><td class="g3">WIMPY</td><td class="num-col">~3.14</td></tr>
-            <tr><td class="pat">XYYYX</td><td class="pat">XXXXX</td><td class="num-col">12</td><td class="g3">ARMOR</td><td class="num-col">~1.5</td></tr>
+            <tr><td class="pat">XXYYY</td><td class="pat">XXXXX</td><td class="num-col">25</td><td class="strat">Split word</td><td class="g3">GAWKY</td><td class="num-col">~3.48</td></tr>
+            <tr><td class="pat">XGXYY</td><td class="pat">XXXXX</td><td class="num-col">14</td><td class="strat">Burn word</td><td class="g3">WIMPY</td><td class="num-col">~3.14</td></tr>
+            <tr><td class="pat">XXYXY</td><td class="pat">XYXXX</td><td class="num-col">12</td><td class="strat">Candidate</td><td class="g3">LEGAL</td><td class="num-col">~1.33</td></tr>
           </tbody>
         </table>
       </div>
       <div class="pat-card">
-        <h3>4 hits — Guess candidate</h3>
+        <h3>4 hits — Candidate, Split word</h3>
         <p class="pat-sub">26.9% of games · 420 patterns</p>
         <table>
-          <thead><tr><th>G1</th><th>G2</th><th class="num-col">#</th><th>G3</th><th class="num-col">Left</th></tr></thead>
+          <thead><tr><th>G1</th><th>G2</th><th class="num-col">#</th><th>Action</th><th>G3</th><th class="num-col">Left</th></tr></thead>
           <tbody>
-            <tr><td class="pat">XXYYY</td><td class="pat">XXXXY</td><td class="num-col">9</td><td class="g3">MATCH</td><td class="num-col">~1.44</td></tr>
-            <tr><td class="pat">XXYYY</td><td class="pat">XYXXX</td><td class="num-col">9</td><td class="g3">BAGGY</td><td class="num-col">~1.22</td></tr>
-            <tr><td class="pat">XYYYX</td><td class="pat">XXXYX</td><td class="num-col">6</td><td class="g3">BAGGY</td><td class="num-col">~1.0</td></tr>
+            <tr><td class="pat">XXYYY</td><td class="pat">XXXXY</td><td class="num-col">9</td><td class="strat">Split word</td><td class="g3">MATCH</td><td class="num-col">~1.44</td></tr>
+            <tr><td class="pat">XXYYY</td><td class="pat">XYXXX</td><td class="num-col">9</td><td class="strat">Candidate</td><td class="g3">RELAY</td><td class="num-col">~1.22</td></tr>
+            <tr><td class="pat">XXXYY</td><td class="pat">XXYYX</td><td class="num-col">6</td><td class="strat">Candidate</td><td class="g3">DINER</td><td class="num-col">~1.33</td></tr>
           </tbody>
         </table>
       </div>
       <div class="pat-card">
-        <h3>5 hits — Solved, two ties</h3>
+        <h3>5 hits — Candidate</h3>
         <p class="pat-sub">4.5% of games · 102 patterns</p>
         <table>
-          <thead><tr><th>G1</th><th>G2</th><th class="num-col">#</th><th>G3</th><th class="num-col">Left</th></tr></thead>
+          <thead><tr><th>G1</th><th>G2</th><th class="num-col">#</th><th>Action</th><th>G3</th><th class="num-col">Left</th></tr></thead>
           <tbody>
-            <tr><td class="pat">YXYYG</td><td class="pat">XXGXX</td><td class="num-col">2</td><td class="g3">ABACK</td><td class="num-col">~1.0</td></tr>
-            <tr><td class="pat">YXXYY</td><td class="pat">XXYYX</td><td class="num-col">2</td><td class="g3">ABBEY</td><td class="num-col">~1.0</td></tr>
-            <tr><td class="pat">XYYGX</td><td class="pat">YXXYX</td><td class="num-col">1</td><td class="g3">ABACK</td><td class="num-col">~1.0</td></tr>
+            <tr><td class="pat">YXXYY</td><td class="pat">XXYYX</td><td class="num-col">2</td><td class="strat">Candidate</td><td class="g3">RESIN</td><td class="num-col">~1.0</td></tr>
+            <tr><td class="pat">YXYYG</td><td class="pat">XXGXX</td><td class="num-col">2</td><td class="strat">Candidate</td><td class="g3">ARISE</td><td class="num-col">~1.0</td></tr>
+            <tr><td class="pat">GGXXX</td><td class="pat">YXYYX</td><td class="num-col">1</td><td class="strat">Candidate</td><td class="g3">SONIC</td><td class="num-col">~1.0</td></tr>
           </tbody>
         </table>
         <p class="chart-note" style="margin-top:var(--space-4);">Four games leave a two-anagram tie instead of one answer: ARISE/RAISE and RESIN/RISEN (4 of 2,309). The two openers cannot separate a pair, so play either — the other is your next guess.</p>
