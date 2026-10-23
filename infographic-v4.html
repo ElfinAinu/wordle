@@ -220,8 +220,8 @@ h1 em { font-style: normal; color: var(--accent); text-shadow: 0 0 44px color-mi
 .mstat b { font-family: var(--font-display); font-weight: 700; font-size: 34px; letter-spacing: -0.03em; line-height: 1; color: var(--accent); font-variant-numeric: tabular-nums; }
 .mstat span { font-size: var(--text-sm); color: var(--muted); }
 
-.flow { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: clamp(28px, 4vw, 44px); border-top: 1px solid var(--border); }
-.flow-step { position: relative; padding: var(--space-5) var(--space-5) 0; border-right: 1px solid var(--border-soft); }
+.flow { display: grid; grid-template-columns: repeat(6, 1fr); margin-top: clamp(28px, 4vw, 44px); border-top: 1px solid var(--border); }
+.flow-step { position: relative; padding: var(--space-5) var(--space-4) 0; border-right: 1px solid var(--border-soft); }
 .flow-step:last-child { border-right: 0; }
 .flow-step:not(:last-child)::after { content: "\2192"; position: absolute; top: 18px; right: -7px; font-family: var(--font-mono); font-size: 13px; color: var(--accent); background: color-mix(in oklab, var(--surface) 90%, transparent); padding: 0 3px; line-height: 1; }
 .flow-num { font-family: var(--font-display); font-weight: 700; font-size: clamp(30px, 4vw, 44px); line-height: 1; letter-spacing: -0.03em; }
@@ -326,10 +326,10 @@ h1 em { font-style: normal; color: var(--accent); text-shadow: 0 0 44px color-mi
   .method-grid, .grid-2, .grid-3, .statband, .foot-top { grid-template-columns: 1fr; }
   .statband--lead { grid-template-columns: repeat(3, 1fr); }
   .method-grid { gap: var(--space-8); }
-  .flow { grid-template-columns: 1fr 1fr; }
-  .flow-step:nth-child(1), .flow-step:nth-child(2) { border-bottom: 1px solid var(--border-soft); padding-bottom: var(--space-5); }
-  .flow-step:nth-child(2) { border-right: 0; }
-  .flow-step:nth-child(3), .flow-step:nth-child(4) { padding-top: var(--space-5); }
+  .flow { grid-template-columns: repeat(3, 1fr); }
+  .flow-step:nth-child(1), .flow-step:nth-child(2), .flow-step:nth-child(3) { border-bottom: 1px solid var(--border-soft); padding-bottom: var(--space-5); }
+  .flow-step:nth-child(3) { border-right: 0; }
+  .flow-step:nth-child(4), .flow-step:nth-child(5), .flow-step:nth-child(6) { padding-top: var(--space-5); }
   .flow-step::after { display: none; }
 }
 @media (max-width: 620px) {
@@ -337,7 +337,7 @@ h1 em { font-style: normal; color: var(--accent); text-shadow: 0 0 44px color-mi
   .container { padding-inline: var(--container-gutter-phone); }
   .flow { grid-template-columns: 1fr; }
   .flow-step { border-right: 0; padding-inline: 0; }
-  .flow-step:nth-child(1), .flow-step:nth-child(2), .flow-step:nth-child(3) { border-bottom: 1px solid var(--border-soft); padding-bottom: var(--space-5); }
+  .flow-step:not(:last-child) { border-bottom: 1px solid var(--border-soft); padding-bottom: var(--space-5); }
   .opener-row { grid-template-columns: 44px repeat(5, 1fr); gap: 5px; }
   .hm-cell { font-size: 8.5px; height: 24px; }
   .hm-row, .hm-head { grid-template-columns: 20px repeat(5, 1fr); }
@@ -439,30 +439,44 @@ h1 em { font-style: normal; color: var(--accent); text-shadow: 0 0 44px color-mi
       <div class="flow">
         <div class="flow-step">
           <div class="flow-num">0</div>
-          <div class="flow-strat">Burn word</div>
+          <div class="flow-strat">Candidate</div>
           <div class="flow-ex">DUMPY</div>
-          <p class="flow-note">Test five fresh letters; abandon hitting this turn.</p>
+          <p class="flow-note">No hits: play the candidate that leaves the fewest expected.</p>
           <div class="flow-share">0.6% of games · ~15.0 left</div>
         </div>
         <div class="flow-step">
           <div class="flow-num">1</div>
-          <div class="flow-strat">Split candidates</div>
+          <div class="flow-strat">Burn word</div>
           <div class="flow-ex">DEBUG</div>
-          <p class="flow-note">Play a max-entropy word to divide the remaining pool.</p>
+          <p class="flow-note">One hit: no candidate keeps it — burn letters that carry no hit.</p>
           <div class="flow-share">4.5% of games · ~5.4 left</div>
         </div>
         <div class="flow-step">
-          <div class="flow-num">2–4</div>
-          <div class="flow-strat">Guess candidate</div>
+          <div class="flow-num">2</div>
+          <div class="flow-strat">Candidate</div>
+          <div class="flow-ex">REEDY</div>
+          <p class="flow-note">Two hits: play the candidate that leaves the fewest expected.</p>
+          <div class="flow-share">20.4% of games · ~3.5 left</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">3</div>
+          <div class="flow-strat">Split word</div>
+          <div class="flow-ex">GAWKY</div>
+          <p class="flow-note">Three hits: the widest spread — split the pool on a hit letter.</p>
+          <div class="flow-share">43.1% of games · ~2.3 left</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">4</div>
+          <div class="flow-strat">Split word</div>
           <div class="flow-ex">MATCH</div>
-          <p class="flow-note">Play the likeliest remaining word and let the board narrow.</p>
-          <div class="flow-share">90.4% of games · ~2.3 left</div>
+          <p class="flow-note">Four hits: still not solved — split on the open letter.</p>
+          <div class="flow-share">26.9% of games · ~1.5 left</div>
         </div>
         <div class="flow-step">
           <div class="flow-num">5</div>
-          <div class="flow-strat">Solved</div>
-          <div class="flow-ex">ABACK</div>
-          <p class="flow-note">Five hits pins every letter — but four games still leave a two-anagram tie.</p>
+          <div class="flow-strat">Candidate</div>
+          <div class="flow-ex">RESIN</div>
+          <p class="flow-note">Five hits usually pins it; four games leave a two-anagram tie.</p>
           <div class="flow-share">4.5% of games · ~1.0 left</div>
         </div>
       </div>

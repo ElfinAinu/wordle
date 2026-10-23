@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Ticket 01/02/03 agreement check: sections II, III and IV share one source.
+"""Ticket 01/02/03 agreement check: sections I-IV share one source.
 
-Sections II (play tree), III (hit-count reference) and IV (per-pattern cards)
-of infographic-v4.html must reproduce the strategy labels and guess-3 words in
-results/hit_tree.json. The rule printed in section III must also be true of
-every burn/split word shown: a burn word carries no hit letter, a split word
-reuses one.
+Sections I (method flow), II (play tree), III (hit-count reference) and IV
+(per-pattern cards) of infographic-v4.html must reproduce the strategy labels
+and guess-3 words in results/hit_tree.json. The rule printed in section III
+must also be true of every burn/split word shown: a burn word carries no hit
+letter, a split word reuses one.
 
 Run: python3 .scratch/poster-fixes/checks/02-guess3-rule.py
 """
@@ -19,6 +19,7 @@ ROOT = Path(__file__).resolve().parents[3]
 POSTER_PATH = ROOT / "infographic-v4.html"
 HIT_TREE_JSON = ROOT / "results" / "hit_tree.json"
 PAIR = ("soare", "clint")
+ACTION_ORDER = ["Candidate", "Split word", "Burn word"]
 
 
 def clean(text: str) -> str:
@@ -73,6 +74,34 @@ def hit_letters(pair_patterns: tuple[str, str]) -> set[str]:
             if ch != "X":
                 letters.add(guess[i])
     return letters
+
+
+def flow_field(chunk: str, name: str) -> str:
+    match = re.search(rf'<div class="flow-{name}">(.*?)</div>', chunk, re.DOTALL)
+    return clean(match.group(1)) if match else ""
+
+
+def parse_flow(section: str) -> list[dict]:
+    steps = []
+    for chunk in section.split('<div class="flow-step">')[1:]:
+        note = re.search(r'<p class="flow-note">(.*?)</p>', chunk, re.DOTALL)
+        steps.append(
+            {
+                "num": flow_field(chunk, "num"),
+                "strat": flow_field(chunk, "strat"),
+                "ex": flow_field(chunk, "ex"),
+                "share": flow_field(chunk, "share"),
+                "note": clean(note.group(1)) if note else "",
+            }
+        )
+    return steps
+
+
+def band_hits(text: str) -> list[int]:
+    parts = [as_int(part) for part in re.split(r"[–—\-]", clean(text)) if part]
+    if len(parts) == 2:
+        return list(range(parts[0], parts[1] + 1))
+    return parts
 
 
 def main() -> int:
@@ -190,6 +219,72 @@ def main() -> int:
         if row["hits"] == 5 and not re.search(r"anagram|tie", card["note"], re.IGNORECASE):
             failures.append("section IV five-hit card lost its anagram-tie caveat")
 
+    # Section I (method flow) is a summary band; every band it keeps must be
+    # true of every hit count inside it, with labels and words from hit_tree.json.
+    flow = parse_flow(get_section(html, "method"))
+    if not flow:
+        failures.append("section I has no flow bands")
+    bands = [band_hits(step["num"]) for step in flow]
+    covered = [h for band in bands for h in band]
+    if covered != list(range(len(rows))):
+        failures.append(
+            f"section I bands cover {covered}, expected {list(range(len(rows)))}"
+        )
+    for step, band in zip(flow, bands):
+        band_rows = [rows[h] for h in band]
+        common = set(band_rows[0]["actions"])
+        for band_row in band_rows[1:]:
+            common &= set(band_row["actions"])
+        shown_actions = {
+            a.strip() for a in re.split(r"[·,]", step["strat"]) if a.strip()
+        }
+        if not shown_actions <= set(ACTION_ORDER):
+            failures.append(
+                f"section I {step['num']}: label {step['strat']!r} uses words "
+                "outside the hit_tree action vocabulary"
+            )
+        if len(band) == 1:
+            if shown_actions != {band_rows[0]["strategy"]}:
+                failures.append(
+                    f"section I {step['num']}: label {step['strat']!r} != "
+                    f"{band_rows[0]['strategy']!r}"
+                )
+        elif not shown_actions or not shown_actions <= common:
+            failures.append(
+                f"section I {step['num']}: label {step['strat']!r} is not true "
+                f"of every hit count in the band (common actions {common})"
+            )
+        allowed_words = {r["top_patterns"][0]["guess3"] for r in band_rows}
+        shown_words = {
+            w.strip().lower() for w in re.split(r"[/·,]", step["ex"]) if w.strip()
+        }
+        if shown_words != allowed_words:
+            failures.append(
+                f"section I {step['num']}: examples {shown_words} != {allowed_words}"
+            )
+        pct = re.search(r"([\d.]+)%", step["share"])
+        left = re.search(r"~\s*([\d.]+)\s*left", step["share"])
+        if not pct or not left:
+            failures.append(f"section I {step['num']}: share line {step['share']!r}")
+        else:
+            total_share = sum(r["share_pct"] for r in band_rows)
+            if abs(float(pct.group(1)) - round(total_share, 1)) > 0.05:
+                failures.append(
+                    f"section I {step['num']}: share {pct.group(1)}% != "
+                    f"{round(total_share, 1)}%"
+                )
+            weighted = (
+                sum(r["share_pct"] * r["avg_candidates"] for r in band_rows)
+                / total_share
+            )
+            if abs(float(left.group(1)) - weighted) > 0.05:
+                failures.append(
+                    f"section I {step['num']}: ~{left.group(1)} left != "
+                    f"{weighted:.2f}"
+                )
+        if 5 in band and not re.search(r"anagram|tie", step["note"], re.IGNORECASE):
+            failures.append("section I five-hit band lost its anagram-tie caveat")
+
     # The printed rule must match hit_tree.json and describe what the labels do.
     rule = rows[0]["rule"]
     if clean(rule) not in clean(reference):
@@ -218,6 +313,7 @@ def main() -> int:
         return 1
 
     print("PASS")
+    print("  section I bands, labels and guess-3 words match hit_tree.json")
     print("  section II strategy labels and guess-3 words match hit_tree.json")
     print("  section III counts and action sets match hit_tree.json")
     print("  section IV pattern rows match hit_tree.json")
