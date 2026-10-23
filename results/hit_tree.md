@@ -5,14 +5,14 @@ Candidates: 2,309 past answers (`data/answers.txt`).
 
 **The rule:** Count your hits to find the candidate pool, then play the word that leaves the fewest expected candidates: a candidate if that word is still possible, otherwise a split word that reuses a hit letter or a burn word that carries no hit letter.
 
-| Hits | Share | Patterns | Avg left | Max left | Actions in largest pools |
-|---|---|---|---|---|---|
-| 0 | 0.6% | 1 | 15.0 | 15 | Candidate |
-| 1 | 4.5% | 19 | 5.4 | 16 | Burn word |
-| 2 | 20.4% | 133 | 3.5 | 23 | Candidate, Split word |
-| 3 | 43.1% | 426 | 2.3 | 25 | Candidate, Split word, Burn word |
-| 4 | 26.9% | 420 | 1.5 | 9 | Candidate, Split word |
-| 5 | 4.5% | 102 | 1.0 | 2 | Candidate |
+| Hits | Share | Patterns | Avg left | Max left | ~Left | ~After | Actions in largest pools | Strategy mix |
+|---|---|---|---|---|---|---|---|---|
+| 0 | 0.6% | 1 | 15.0 | 15 | 15.0 | 1.4 | Candidate | Candidate 100% |
+| 1 | 4.5% | 19 | 5.4 | 16 | 9.058 | 1.311 | Burn word | Burn word 57.3% · Candidate 35% · Split word 7.8% |
+| 2 | 20.4% | 133 | 3.5 | 23 | 6.6 | 1.157 | Candidate, Split word | Candidate 72.8% · Burn word 14.5% · Split word 12.8% |
+| 3 | 43.1% | 426 | 2.3 | 25 | 4.392 | 1.163 | Candidate, Split word, Burn word | Candidate 72.2% · Split word 18% · Burn word 9.8% |
+| 4 | 26.9% | 420 | 1.5 | 9 | 2.159 | 1.023 | Candidate, Split word | Candidate 85.8% · Split word 11.4% · Burn word 2.7% |
+| 5 | 4.5% | 102 | 1.0 | 2 | 1.038 | 1.0 | Candidate | Candidate 100% |
 
 ## 0 hits
 

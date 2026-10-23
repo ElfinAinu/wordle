@@ -439,43 +439,37 @@ h1 em { font-style: normal; color: var(--accent); text-shadow: 0 0 44px color-mi
       <div class="flow">
         <div class="flow-step">
           <div class="flow-num">0</div>
-          <div class="flow-strat">Candidate</div>
-          <div class="flow-ex">DUMPY</div>
+          <div class="flow-strat">Candidate — always</div>
           <p class="flow-note">No hits: play the candidate that leaves the fewest expected.</p>
           <div class="flow-share">0.6% of games · ~15.0 left</div>
         </div>
         <div class="flow-step">
           <div class="flow-num">1</div>
-          <div class="flow-strat">Burn word</div>
-          <div class="flow-ex">DEBUG</div>
-          <p class="flow-note">One hit: no candidate keeps it — burn letters that carry no hit.</p>
-          <div class="flow-share">4.5% of games · ~5.4 left</div>
+          <div class="flow-strat">Burn word 57% · Candidate 35% · Split word 8%</div>
+          <p class="flow-note">One hit: usually burn a word with no hit letter; sometimes a candidate or split word leaves fewer.</p>
+          <div class="flow-share">4.5% of games · ~9.1 left</div>
         </div>
         <div class="flow-step">
           <div class="flow-num">2</div>
-          <div class="flow-strat">Candidate</div>
-          <div class="flow-ex">REEDY</div>
-          <p class="flow-note">Two hits: play the candidate that leaves the fewest expected.</p>
-          <div class="flow-share">20.4% of games · ~3.5 left</div>
+          <div class="flow-strat">Candidate 73% · Burn word 14% · Split word 13%</div>
+          <p class="flow-note">Two hits: usually a candidate; the letters that hit decide.</p>
+          <div class="flow-share">20.4% of games · ~6.6 left</div>
         </div>
         <div class="flow-step">
           <div class="flow-num">3</div>
-          <div class="flow-strat">Split word</div>
-          <div class="flow-ex">GAWKY</div>
-          <p class="flow-note">Three hits: the widest spread — split the pool on a hit letter.</p>
-          <div class="flow-share">43.1% of games · ~2.3 left</div>
+          <div class="flow-strat">Candidate 72% · Split word 18% · Burn word 10%</div>
+          <p class="flow-note">Three hits: usually a candidate, sometimes a split word that reuses a hit letter.</p>
+          <div class="flow-share">43.1% of games · ~4.4 left</div>
         </div>
         <div class="flow-step">
           <div class="flow-num">4</div>
-          <div class="flow-strat">Split word</div>
-          <div class="flow-ex">MATCH</div>
-          <p class="flow-note">Four hits: still not solved — split on the open letter.</p>
-          <div class="flow-share">26.9% of games · ~1.5 left</div>
+          <div class="flow-strat">Candidate 86% · Split word 11% · Burn word 3%</div>
+          <p class="flow-note">Four hits: usually a candidate, occasionally a split word.</p>
+          <div class="flow-share">26.9% of games · ~2.2 left</div>
         </div>
         <div class="flow-step">
           <div class="flow-num">5</div>
-          <div class="flow-strat">Candidate</div>
-          <div class="flow-ex">RESIN</div>
+          <div class="flow-strat">Candidate — always</div>
           <p class="flow-note">Five hits usually pins it; four games leave a two-anagram tie.</p>
           <div class="flow-share">4.5% of games · ~1.0 left</div>
         </div>
@@ -496,7 +490,7 @@ h1 em { font-style: normal; color: var(--accent); text-shadow: 0 0 44px color-mi
           </div>
         </div>
         <div>
-          <p class="chart-note" style="margin-top:0;">SOARE and CLINT share no letters, so together they interrogate ten positions. After that the only decision left is how many hits you hold — the hit count, not proximity, picks the next move.</p>
+          <p class="chart-note" style="margin-top:0;">SOARE and CLINT share no letters, so together they interrogate ten positions. The hit count fixes the size of the candidate pool; the letters that hit decide between a candidate and a split word.</p>
         </div>
       </div>
       <table class="dtable" style="margin-top:var(--space-6);">
@@ -506,19 +500,19 @@ h1 em { font-style: normal; color: var(--accent); text-shadow: 0 0 44px color-mi
             <th class="num-col">Share</th>
             <th class="num-col">~Left</th>
             <th>Strategy</th>
-            <th>Guess 3</th>
-            <th class="num-col">After</th>
+            <th class="num-col">~After</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td class="big">0</td><td class="num-col">0.6%</td><td class="num-col">~15.0</td><td class="strat">Candidate</td><td class="g3">DUMPY</td><td class="num-col">~1.4</td></tr>
-          <tr><td class="big">1</td><td class="num-col">4.5%</td><td class="num-col">~5.4</td><td class="strat">Burn word</td><td class="g3">DEBUG</td><td class="num-col">~1.88</td></tr>
-          <tr><td class="big">2</td><td class="num-col">20.4%</td><td class="num-col">~3.5</td><td class="strat">Candidate</td><td class="g3">REEDY</td><td class="num-col">~1.7</td></tr>
-          <tr><td class="big">3</td><td class="num-col">43.1%</td><td class="num-col">~2.3</td><td class="strat">Split word</td><td class="g3">GAWKY</td><td class="num-col">~3.48</td></tr>
-          <tr><td class="big">4</td><td class="num-col">26.9%</td><td class="num-col">~1.5</td><td class="strat">Split word</td><td class="g3">MATCH</td><td class="num-col">~1.44</td></tr>
-          <tr><td class="big">5</td><td class="num-col">4.5%</td><td class="num-col">~1.0</td><td class="strat">Candidate</td><td class="g3">RESIN</td><td class="num-col">~1.0</td></tr>
+          <tr><td class="big">0</td><td class="num-col">0.6%</td><td class="num-col">~15.0</td><td class="strat">Candidate — always</td><td class="num-col">~1.40</td></tr>
+          <tr><td class="big">1</td><td class="num-col">4.5%</td><td class="num-col">~9.1</td><td class="strat">Burn word 57% · Candidate 35% · Split word 8%</td><td class="num-col">~1.31</td></tr>
+          <tr><td class="big">2</td><td class="num-col">20.4%</td><td class="num-col">~6.6</td><td class="strat">Candidate 73% · Burn word 14% · Split word 13%</td><td class="num-col">~1.16</td></tr>
+          <tr><td class="big">3</td><td class="num-col">43.1%</td><td class="num-col">~4.4</td><td class="strat">Candidate 72% · Split word 18% · Burn word 10%</td><td class="num-col">~1.16</td></tr>
+          <tr><td class="big">4</td><td class="num-col">26.9%</td><td class="num-col">~2.2</td><td class="strat">Candidate 86% · Split word 11% · Burn word 3%</td><td class="num-col">~1.02</td></tr>
+          <tr><td class="big">5</td><td class="num-col">4.5%</td><td class="num-col">~1.0</td><td class="strat">Candidate — always</td><td class="num-col">~1.00</td></tr>
         </tbody>
       </table>
+      <p class="chart-note" style="margin-top:var(--space-3);">Candidate: a word still possible for the answer. Split word: reuses a hit letter to divide the pool. Burn word: carries no hit letter. Each percentage is the share of that band's games whose best next move takes that action.</p>
     </div>
   </div>
 </section>
