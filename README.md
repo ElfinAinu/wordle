@@ -14,8 +14,8 @@ the write-up; this repo just produces it.
 - `results/` — generated outputs (`*.md` + `*.json`)
 - `infographic-v4.html` — the shipped poster (static, self-contained); this is the only poster
 - `publish_poster.py` — the guarded one-step deploy to the served branch (see Publish)
-- `.scratch/poster-fixes/checks/` — per-ticket acceptance checks that
-  re-derive the poster's figures from committed inputs
+- `.scratch/*/checks/` — per-ticket acceptance checks that re-derive the
+  poster's figures from committed inputs
 - `tests/` — regression checks for shared analysis code (see Test)
 
 ## Publish
