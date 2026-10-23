@@ -126,6 +126,65 @@ def label_for(word: str, in_pool: bool, letters: set[str]) -> str:
     return "Split word" if set(word) & letters else "Burn word"
 
 
+def feedback_matrix(answer_codes: np.ndarray, answer_counts: np.ndarray) -> np.ndarray:
+    matrix = np.empty((answer_codes.shape[0], answer_codes.shape[0]), dtype=np.int16)
+    for i in range(answer_codes.shape[0]):
+        matrix[i] = pattern_codes(
+            answer_codes[i], answer_codes, answer_counts
+        )
+    return matrix
+
+
+def pool_sum_sq(matrix: np.ndarray, pool_index: np.ndarray) -> np.ndarray:
+    """Squared-group-size score of every guess against one candidate pool."""
+    scores = np.zeros(matrix.shape[0], dtype=np.int32)
+    for i in pool_index:
+        column = matrix[:, i]
+        for j in pool_index:
+            scores += column == matrix[:, j]
+    return scores
+
+
+def summarise_band(
+    patterns: dict[tuple[int, int], list[str]],
+    answers: list[str],
+    index_of: dict[str, int],
+    matrix: np.ndarray,
+) -> tuple[float, float, list[dict[str, object]]]:
+    """Games-weighted pool size, expected remaining, and action mix for a band."""
+    games = sum(len(pool) for pool in patterns.values())
+    pool_total = 0
+    after_total = 0
+    mix: dict[str, int] = defaultdict(int)
+    for (p1, p2), pool in patterns.items():
+        n = len(pool)
+        pool_total += n * n
+        pool_index = np.array([index_of[word] for word in pool], dtype=np.int64)
+        scores = pool_sum_sq(matrix, pool_index)
+        best_sq = int(scores.min())
+        best_guess = min(
+            (g for g in np.flatnonzero(scores == best_sq)),
+            key=lambda g: (
+                0 if answers[g] in set(pool) else 1,
+                answers[g],
+            ),
+        )
+        word = answers[best_guess]
+        after_total += best_sq
+        mix[label_for(word, word in set(pool), hit_letters(p1, p2))] += n
+    action_mix = [
+        {
+            "action": action,
+            "games": mix[action],
+            "pct": round(100 * mix[action] / games, 1),
+        }
+        for action in ACTION_ORDER
+        if mix[action]
+    ]
+    action_mix.sort(key=lambda item: -item["pct"])
+    return pool_total / games, after_total / games, action_mix
+
+
 def best_word(
     answers: list[str],
     answer_codes: np.ndarray,
@@ -149,6 +208,8 @@ def main() -> None:
     answers = load_words(ANSWERS_PATH)
     ans_codes = encode(answers)
     ans_counts = letter_counts(ans_codes)
+    index_of = {word: i for i, word in enumerate(answers)}
+    matrix = feedback_matrix(ans_codes, ans_counts)
 
     buckets: dict[int, dict[tuple[int, int], list[str]]] = defaultdict(
         lambda: defaultdict(list)
@@ -209,6 +270,9 @@ def main() -> None:
             )
 
         actions = [tp["action"] for tp in top_patterns]
+        left_gw, after_gw, action_mix = summarise_band(
+            patterns, answers, index_of, matrix
+        )
         rows.append(
             {
                 "hits": h,
@@ -217,8 +281,11 @@ def main() -> None:
                 "patterns": len(patterns),
                 "avg_candidates": round(sum(cand_sizes) / len(cand_sizes), 1),
                 "max_candidates": max(cand_sizes),
+                "left_gw": round(left_gw, 3),
+                "after_gw": round(after_gw, 3),
                 "strategy": top_patterns[0]["action"],
                 "actions": [a for a in ACTION_ORDER if a in actions],
+                "action_mix": action_mix,
                 "rule": RULE,
                 "universe": "data/answers.txt (2,309 past answers)",
                 "top_patterns": top_patterns,
@@ -236,14 +303,19 @@ def main() -> None:
         "",
         f"**The rule:** {RULE}",
         "",
-        "| Hits | Share | Patterns | Avg left | Max left | Actions in largest pools |",
-        "|---|---|---|---|---|---|",
+        "| Hits | Share | Patterns | Avg left | Max left | ~Left | ~After "
+        "| Actions in largest pools | Strategy mix |",
+        "|---|---|---|---|---|---|---|---|---|",
     ]
     for row in rows:
+        mix = " · ".join(
+            f"{item['action']} {item['pct']:g}%" for item in row["action_mix"]
+        ) or "—"
         lines.append(
             f"| {row['hits']} | {row['share_pct']}% | {row['patterns']} "
             f"| {row['avg_candidates']} | {row['max_candidates']} "
-            f"| {', '.join(row['actions'])} |"
+            f"| {row['left_gw']} | {row['after_gw']} "
+            f"| {', '.join(row['actions'])} | {mix} |"
         )
 
     for row in rows:

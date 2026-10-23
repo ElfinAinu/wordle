@@ -6,9 +6,18 @@
     "patterns": 1,
     "avg_candidates": 15.0,
     "max_candidates": 15,
+    "left_gw": 15.0,
+    "after_gw": 1.4,
     "strategy": "Candidate",
     "actions": [
       "Candidate"
+    ],
+    "action_mix": [
+      {
+        "action": "Candidate",
+        "games": 15,
+        "pct": 100.0
+      }
     ],
     "rule": "Count your hits to find the candidate pool, then play the word that leaves the fewest expected candidates: a candidate if that word is still possible, otherwise a split word that reuses a hit letter or a burn word that carries no hit letter.",
     "universe": "data/answers.txt (2,309 past answers)",
@@ -35,9 +44,28 @@
     "patterns": 19,
     "avg_candidates": 5.4,
     "max_candidates": 16,
+    "left_gw": 9.058,
+    "after_gw": 1.311,
     "strategy": "Burn word",
     "actions": [
       "Burn word"
+    ],
+    "action_mix": [
+      {
+        "action": "Burn word",
+        "games": 59,
+        "pct": 57.3
+      },
+      {
+        "action": "Candidate",
+        "games": 36,
+        "pct": 35.0
+      },
+      {
+        "action": "Split word",
+        "games": 8,
+        "pct": 7.8
+      }
     ],
     "rule": "Count your hits to find the candidate pool, then play the word that leaves the fewest expected candidates: a candidate if that word is still possible, otherwise a split word that reuses a hit letter or a burn word that carries no hit letter.",
     "universe": "data/answers.txt (2,309 past answers)",
@@ -90,10 +118,29 @@
     "patterns": 133,
     "avg_candidates": 3.5,
     "max_candidates": 23,
+    "left_gw": 6.6,
+    "after_gw": 1.157,
     "strategy": "Candidate",
     "actions": [
       "Candidate",
       "Split word"
+    ],
+    "action_mix": [
+      {
+        "action": "Candidate",
+        "games": 342,
+        "pct": 72.8
+      },
+      {
+        "action": "Burn word",
+        "games": 68,
+        "pct": 14.5
+      },
+      {
+        "action": "Split word",
+        "games": 60,
+        "pct": 12.8
+      }
     ],
     "rule": "Count your hits to find the candidate pool, then play the word that leaves the fewest expected candidates: a candidate if that word is still possible, otherwise a split word that reuses a hit letter or a burn word that carries no hit letter.",
     "universe": "data/answers.txt (2,309 past answers)",
@@ -146,11 +193,30 @@
     "patterns": 426,
     "avg_candidates": 2.3,
     "max_candidates": 25,
+    "left_gw": 4.392,
+    "after_gw": 1.163,
     "strategy": "Split word",
     "actions": [
       "Candidate",
       "Split word",
       "Burn word"
+    ],
+    "action_mix": [
+      {
+        "action": "Candidate",
+        "games": 719,
+        "pct": 72.2
+      },
+      {
+        "action": "Split word",
+        "games": 179,
+        "pct": 18.0
+      },
+      {
+        "action": "Burn word",
+        "games": 98,
+        "pct": 9.8
+      }
     ],
     "rule": "Count your hits to find the candidate pool, then play the word that leaves the fewest expected candidates: a candidate if that word is still possible, otherwise a split word that reuses a hit letter or a burn word that carries no hit letter.",
     "universe": "data/answers.txt (2,309 past answers)",
@@ -203,10 +269,29 @@
     "patterns": 420,
     "avg_candidates": 1.5,
     "max_candidates": 9,
+    "left_gw": 2.159,
+    "after_gw": 1.023,
     "strategy": "Split word",
     "actions": [
       "Candidate",
       "Split word"
+    ],
+    "action_mix": [
+      {
+        "action": "Candidate",
+        "games": 533,
+        "pct": 85.8
+      },
+      {
+        "action": "Split word",
+        "games": 71,
+        "pct": 11.4
+      },
+      {
+        "action": "Burn word",
+        "games": 17,
+        "pct": 2.7
+      }
     ],
     "rule": "Count your hits to find the candidate pool, then play the word that leaves the fewest expected candidates: a candidate if that word is still possible, otherwise a split word that reuses a hit letter or a burn word that carries no hit letter.",
     "universe": "data/answers.txt (2,309 past answers)",
@@ -259,9 +344,18 @@
     "patterns": 102,
     "avg_candidates": 1.0,
     "max_candidates": 2,
+    "left_gw": 1.038,
+    "after_gw": 1.0,
     "strategy": "Candidate",
     "actions": [
       "Candidate"
+    ],
+    "action_mix": [
+      {
+        "action": "Candidate",
+        "games": 104,
+        "pct": 100.0
+      }
     ],
     "rule": "Count your hits to find the candidate pool, then play the word that leaves the fewest expected candidates: a candidate if that word is still possible, otherwise a split word that reuses a hit letter or a burn word that carries no hit letter.",
     "universe": "data/answers.txt (2,309 past answers)",
