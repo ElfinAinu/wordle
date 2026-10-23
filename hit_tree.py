@@ -11,7 +11,7 @@ what that word is:
 
   * Candidate  — the word is still in the pattern's candidate pool.
   * Split word — the word is not in the pool but reuses a letter already hit.
-  * Burn word  — the word is not in the pool and tests only fresh letters.
+  * Burn word  — the word is not in the pool and carries no hit letter.
 
 Expected candidates left after a guess = sum over feedback groups of
 group_size squared / pool size. The feedback used here is standard Wordle
@@ -39,7 +39,7 @@ RULE = (
     "Count your hits to find the candidate pool, then play the word that "
     "leaves the fewest expected candidates: a candidate if that word is still "
     "possible, otherwise a split word that reuses a hit letter or a burn word "
-    "that tests only fresh letters."
+    "that carries no hit letter."
 )
 
 ACTION_ORDER = ["Candidate", "Split word", "Burn word"]
@@ -220,6 +220,7 @@ def main() -> None:
                 "strategy": top_patterns[0]["action"],
                 "actions": [a for a in ACTION_ORDER if a in actions],
                 "rule": RULE,
+                "universe": "data/answers.txt (2,309 past answers)",
                 "top_patterns": top_patterns,
             }
         )
@@ -231,6 +232,7 @@ def main() -> None:
         f"# Guess-3 tree after {'+'.join(PAIR).upper()}, branched on hit count",
         "",
         "A hit = a tested letter that shows green or yellow.",
+        "Candidates: 2,309 past answers (`data/answers.txt`).",
         "",
         f"**The rule:** {RULE}",
         "",

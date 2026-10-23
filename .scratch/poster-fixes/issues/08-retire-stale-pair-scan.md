@@ -10,9 +10,9 @@ make it obvious which universe the poster's opening figures come from.
 
 **Status:** ready-for-agent
 
-- [ ] The stale output is removed or regenerated; no committed result
+- [x] The stale output is removed or regenerated; no committed result
       contradicts the poster's opening figures.
-- [ ] Regenerating the pair scan under the answers universe reproduces the
+- [x] Regenerating the pair scan under the answers universe reproduces the
       poster's figures for candidates left after two, share pinned before guess
       three, and spot rate.
-- [ ] The remaining result files each state their universe.
+- [x] The remaining result files each state their universe.

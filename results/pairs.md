@@ -1,6 +1,10 @@
 # Opener pair tree: ROATE
 
-Solved on guess 2: **0.99%** of games. Expected candidates left after guess 2: **3.16**.
+Solved on guess 2: **1.0%** of games. Expected candidates left after guess 2: **3.14**.
+
+Candidates: 2,309 past answers (`data/answers.txt`). Second guesses:
+any valid guess (answers + `data/allowed.txt`). This scan's opener is
+ROATE, not the poster's fixed SOARE+CLINT pair.
 
 ROATE
 ├─ 0 green / 2 yellow — 20.0% of games
@@ -9,21 +13,21 @@ ROATE
 │   └─ XXXYY (56 candidates) → SLEET (leaves ~2.57)
 │   └─ XXYXY (55 candidates) → GENAL (leaves ~2.82)
 │   └─ XXYYX (50 candidates) → CLINT (leaves ~3.4)
-│   └─ YXYXX (35 candidates) → CARRS (leaves ~2.71)
+│   └─ YXYXX (35 candidates) → MIRAH (leaves ~2.43)
 │   └─ XYYXX (33 candidates) → LINOS (leaves ~2.33)
 │   └─ YXXYX (29 candidates) → SCUFT (leaves ~1.62)
 │   └─ XYXYX (26 candidates) → PUNCH (leaves ~2.0)
 │   └─ XYXXY (19 candidates) → DEMON (leaves ~1.53)
 ├─ 0 green / 1 yellow — 17.7% of games
-│   └─ XXYXX (112 candidates) → LYSIN (leaves ~5.14)
-│   └─ XXXXY (106 candidates) → LENES (leaves ~3.91)
+│   └─ XXYXX (111 candidates) → LYSIN (leaves ~5.07)
+│   └─ XXXXY (105 candidates) → LENES (leaves ~3.88)
 │   └─ XYXXX (66 candidates) → SNOOL (leaves ~2.76)
 │   └─ YXXXX (63 candidates) → SCULK (leaves ~2.9)
 │   └─ XXXYX (63 candidates) → SHUNT (leaves ~3.06)
 ├─ 1 green / 1 yellow — 16.5% of games
-│   └─ YXGXX (51 candidates) → DICKS (leaves ~3.9)
-│   └─ XXYXG (45 candidates) → MAULS (leaves ~3.22)
-│   └─ YXXXG (39 candidates) → PIUMS (leaves ~2.69)
+│   └─ YXGXX (51 candidates) → SCIND (leaves ~3.24)
+│   └─ XXYXG (45 candidates) → GALIS (leaves ~3.18)
+│   └─ YXXXG (38 candidates) → PIUMS (leaves ~2.68)
 │   └─ XYXXG (30 candidates) → SLICK (leaves ~2.0)
 │   └─ XGXYX (26 candidates) → CUMIN (leaves ~1.85)
 │   └─ XXGYX (23 candidates) → SLINK (leaves ~1.78)
@@ -33,7 +37,7 @@ ROATE
 │   └─ XXYGX (18 candidates) → SNIPY (leaves ~1.78)
 │   └─ XXXYG (17 candidates) → CUISH (leaves ~1.35)
 │   └─ XGYXX (16 candidates) → LIMAN (leaves ~1.5)
-│   └─ GXYXX (15 candidates) → CHILD (leaves ~1.4)
+│   └─ GXYXX (15 candidates) → HALDI (leaves ~1.27)
 │   └─ XXXGY (12 candidates) → PLESH (leaves ~1.33)
 │   └─ XXGXY (11 candidates) → CHILD (leaves ~1.36)
 │   └─ XYXGX (8 candidates) → BUNCH (leaves ~1.0)
@@ -46,10 +50,10 @@ ROATE
 │   └─ XXGXX (71 candidates) → SLICK (leaves ~2.72)
 │   └─ XXXGX (21 candidates) → HINDS (leaves ~1.95)
 │   └─ GXXXX (4 candidates) → ABAND (leaves ~1.0)
-├─ 0 green / 3 yellow — 8.5% of games
+├─ 0 green / 3 yellow — 8.4% of games
 │   └─ YXYXY (42 candidates) → BALMS (leaves ~5.14)
 │   └─ YXXYY (29 candidates) → ENTER (leaves ~2.17)
-│   └─ YYYXX (28 candidates) → MACON (leaves ~2.71)
+│   └─ YYYXX (27 candidates) → MACON (leaves ~2.63)
 │   └─ XXYYY (25 candidates) → CLEPT (leaves ~2.12)
 │   └─ YYXYX (21 candidates) → SHUNT (leaves ~1.95)
 │   └─ XYYYX (17 candidates) → ABOIL (leaves ~1.35)
@@ -58,7 +62,7 @@ ROATE
 │   └─ XYXYY (8 candidates) → BESOT (leaves ~1.0)
 │   └─ XYYXY (4 candidates) → ABCEE (leaves ~1.0)
 ├─ 0 green / 0 yellow — 8.4% of games
-│   └─ XXXXX (195 candidates) → SLIMY (leaves ~5.63)
+│   └─ XXXXX (194 candidates) → SLIMY (leaves ~5.65)
 ├─ 1 green / 2 yellow — 7.2% of games
 │   └─ YXGYX (20 candidates) → CRIMS (leaves ~2.2)
 │   └─ YGXXY (20 candidates) → MAWKS (leaves ~3.8)
@@ -68,7 +72,7 @@ ROATE
 │   └─ YXYXG (10 candidates) → AGLUS (leaves ~1.2)
 │   └─ YGYXX (9 candidates) → BALMS (leaves ~1.0)
 │   └─ GXXYY (8 candidates) → FICUS (leaves ~1.0)
-│   └─ XGXYY (7 candidates) → MILCH (leaves ~1.0)
+│   └─ XGXYY (7 candidates) → MELCH (leaves ~1.0)
 │   └─ XYYXG (7 candidates) → ABAND (leaves ~1.0)
 │   └─ YXXYG (7 candidates) → BICES (leaves ~1.0)
 │   └─ YGXYX (6 candidates) → BOHOS (leaves ~1.0)
@@ -76,13 +80,13 @@ ROATE
 │   └─ XGYYX (5 candidates) → ALAND (leaves ~1.0)
 │   └─ XYXYG (5 candidates) → SLANK (leaves ~1.0)
 │   └─ GYYXX (3 candidates) → ABAND (leaves ~1.0)
-│   └─ XXYYG (3 candidates) → ABASH (leaves ~1.0)
+│   └─ XXYYG (3 candidates) → ABAHT (leaves ~1.0)
 │   └─ YYGXX (2 candidates) → ABACA (leaves ~1.0)
 │   └─ YYXGX (2 candidates) → ABACA (leaves ~1.0)
-│   └─ YXYGX (2 candidates) → ABAMP (leaves ~1.0)
+│   └─ YXYGX (2 candidates) → AAPAS (leaves ~1.0)
 │   └─ XXYGY (2 candidates) → AAHED (leaves ~1.0)
 ├─ 2 green / 0 yellow — 4.5% of games
-│   └─ XXGXG (42 candidates) → SLUMP (leaves ~3.67)
+│   └─ XXGXG (41 candidates) → PLISH (leaves ~3.73)
 │   └─ XGXXG (22 candidates) → GUSLI (leaves ~1.64)
 │   └─ XGXGX (12 candidates) → BUSHY (leaves ~1.17)
 │   └─ XXXGG (10 candidates) → MUILS (leaves ~1.0)
@@ -103,7 +107,7 @@ ROATE
 │   └─ YXXGG (3 candidates) → ABLOW (leaves ~1.0)
 │   └─ YGGXX (2 candidates) → AAHED (leaves ~1.0)
 │   └─ GXYXG (2 candidates) → AALII (leaves ~1.0)
-│   └─ XYXGG (2 candidates) → ABACS (leaves ~1.0)
+│   └─ XYXGG (2 candidates) → AAPAS (leaves ~1.0)
 ├─ 0 green / 4 yellow — 1.1% of games
 │   └─ YXYYY (17 candidates) → TWEEL (leaves ~2.06)
 │   └─ YYXYY (6 candidates) → ATTAR (leaves ~1.0)
@@ -112,7 +116,7 @@ ROATE
 │   └─ XXGGG (7 candidates) → BALKS (leaves ~1.29)
 │   └─ GGXXG (3 candidates) → AARGH (leaves ~1.0)
 ├─ 1 green / 3 yellow — 0.4% of games
-│   └─ YYXYG (3 candidates) → ALAPS (leaves ~1.0)
+│   └─ YYXYG (3 candidates) → AAPAS (leaves ~1.0)
 │   └─ YGXYY (2 candidates) → ABLOW (leaves ~1.0)
 │   └─ YXGYY (2 candidates) → AAHED (leaves ~1.0)
 │   └─ YYYXG (2 candidates) → AAHED (leaves ~1.0)

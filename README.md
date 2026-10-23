@@ -13,6 +13,8 @@ the write-up; this repo just produces it.
 - `*.py` — one analysis question per script
 - `results/` — generated outputs (`*.md` + `*.json`)
 - `infographic-v4.html` — the shipped poster (static, self-contained); this is the only poster
+- `.scratch/poster-fixes/checks/` — per-ticket acceptance checks that
+  re-derive the poster's figures from committed inputs
 
 ## Core pipeline
 

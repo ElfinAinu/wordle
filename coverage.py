@@ -7,11 +7,15 @@
 Two fixed guesses test 10 distinct letters, so guesses 1-2 purely spot
 which letters are in the answer. Metrics per pair:
 - expected remaining candidates after both feedbacks (information)
-- distinct-letter share (spot_rate_pct): mean share of each answer's
-  distinct letters that the openers test
+- distinct-letter share, keyed `spot_rate_pct` for backwards compatibility:
+  mean share of each answer's distinct letters that the openers test
 - tiles-lit share (tiles_lit_pct): mean share of each answer's five tiles
   the openers can actually reveal. A letter carried once lights at most
   one copy, so repeated-letter answers score lower here than above
+
+First guesses are ranked from every valid guess; second guesses are drawn
+from `data/answers.txt` only. CLINT is guess-only, so the fixed poster pair
+SOARE+CLINT is outside this scan's search space.
 """
 
 import json
@@ -64,9 +68,7 @@ def score_pair(
     _, counts = np.unique(combined, return_counts=True)
     total = answer_codes.shape[0]
     spot = float(((masks & pair_mask).sum(axis=1) / distinct_counts).mean())
-    pair_counts = np.zeros(26, dtype=np.int16)
-    for ch in first + second:
-        pair_counts[ord(ch) - 97] += 1
+    pair_counts = letter_counts(encode([first + second]))[0]
     tiles_lit = float(
         (np.minimum(answer_counts, pair_counts).sum(axis=1) / 5.0).mean()
     )
@@ -79,6 +81,11 @@ def score_pair(
         "solved_on_two_pct": round(100 * float((counts == 1).sum()) / total, 2),
         "spot_rate_pct": round(100 * spot, 1),
         "tiles_lit_pct": round(100 * tiles_lit, 1),
+        "first_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
+        "second_universe": (
+            "data/answers.txt (2,309 past answers); CLINT is guess-only, so "
+            "SOARE+CLINT is outside this scan's search space"
+        ),
     }
 
 
@@ -127,6 +134,9 @@ def main() -> None:
         "Distinct-letter share counts each answer's distinct letters; tiles-lit",
         "share counts the five board tiles a single copy of each opener letter",
         "can reveal. Every repeated-letter answer scores lower on tiles-lit.",
+        "First guesses: any valid guess. Second guesses: data/answers.txt",
+        "(2,309 past answers) only; CLINT is guess-only, so the fixed pair",
+        "SOARE+CLINT is outside this scan's search space.",
         "",
         "| # | Pair | Expected remaining after 2 | Distinct-letter share | Tiles-lit share |",
         "|---|---|---|---|---|",

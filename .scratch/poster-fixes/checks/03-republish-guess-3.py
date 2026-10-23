@@ -185,7 +185,6 @@ def main() -> int:
     reference_section = get_section(html, "reference")
     patterns_section = get_section(html, "patterns")
 
-    # --- section III: recompute summary figures ---------------------------
     ref_rows = parse_reference(html)
     if len(ref_rows) != len(buckets):
         failures.append(
@@ -251,12 +250,10 @@ def main() -> int:
     if "Solved" in reference_section:
         failures.append("section III still contains the word 'Solved'")
 
-    # --- prose states the rule -------------------------------------------
     section_text = clean(reference_section + " " + patterns_section)
     if clean(rule) not in section_text:
         failures.append("sections III/IV do not state the one-sentence rule")
 
-    # --- section IV: recompute every per-pattern row ----------------------
     cards = parse_cards(html)
     if [as_int(c["heading"].split()[0]) for c in cards] != sorted(buckets):
         failures.append("section IV cards are not one per hit count in order")

@@ -12,10 +12,10 @@ that is a finding to report, not to round away.
 
 **Status:** ready-for-agent
 
-- [ ] Average guesses, worst case, and per-guess solve share for the taught
+- [x] Average guesses, worst case, and per-guess solve share for the taught
       method, over the whole answer pool.
-- [ ] The simulated policy is the one the poster states; any place a stronger
+- [x] The simulated policy is the one the poster states; any place a stronger
       policy was substituted is named.
-- [ ] Reproducible from committed inputs, with the result written as both
+- [x] Reproducible from committed inputs, with the result written as both
       markdown and json in the results directory.
-- [ ] The share of games needing six guesses or failing is reported explicitly.
+- [x] The share of games needing six guesses or failing is reported explicitly.

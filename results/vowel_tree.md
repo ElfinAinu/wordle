@@ -1,5 +1,7 @@
 # Guess-3 tree after SOARE+CLINT, branched on vowel hits
 
+Candidates: 2,309 past answers (`data/answers.txt`).
+
 | Vowels hit | Share | Candidates | Guess 3 | Left after |
 |---|---|---|---|---|
 | AE | 14.0% | 323 | TERSE | 19.4 |

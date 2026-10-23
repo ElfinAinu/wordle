@@ -4,7 +4,7 @@
       "soare",
       "clint"
     ],
-    "guess_3_rule": "Count your hits to find the candidate pool, then play the word that leaves the fewest expected candidates: a candidate if that word is still possible, otherwise a split word that reuses a hit letter or a burn word that tests only fresh letters.",
+    "guess_3_rule": "Count your hits to find the candidate pool, then play the word that leaves the fewest expected candidates: a candidate if that word is still possible, otherwise a split word that reuses a hit letter or a burn word that carries no hit letter.",
     "continuation": "After guess 3 the same expected-candidates-minimising rule is applied each turn, excluding words already played.",
     "guess_universe": "data/answers.txt (2,309 words), the same pool hit_tree.py scores; data/allowed.txt was not used.",
     "substitutions": "None: no stronger solver or candidate-only policy was substituted. Later guesses reuse the guess-3 rule rather than playing an exact optimal policy.",
