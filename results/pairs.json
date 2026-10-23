@@ -1,7 +1,7 @@
 [
   {
     "opener": "roate",
-    "expected_remaining_after_two": 3.14,
+    "expected_remaining_after_two": 3.12,
     "solved_on_two_pct": 1.0,
     "universe": "data/answers.txt (2,309 past answers)",
     "second_guess_universe": "all valid guesses (data/answers.txt + data/allowed.txt)",
@@ -25,14 +25,14 @@
         "candidates": 105,
         "share_pct": 4.55,
         "best_second": "lenes",
-        "expected_remaining": 3.88
+        "expected_remaining": 3.69
       },
       {
         "pattern": "YXXXY",
         "candidates": 102,
         "share_pct": 4.42,
         "best_second": "feued",
-        "expected_remaining": 7.04
+        "expected_remaining": 6.94
       },
       {
         "pattern": "XXXXG",
@@ -143,8 +143,8 @@
         "pattern": "YXYXX",
         "candidates": 35,
         "share_pct": 1.52,
-        "best_second": "mirah",
-        "expected_remaining": 2.43
+        "best_second": "carrs",
+        "expected_remaining": 2.37
       },
       {
         "pattern": "XYYXX",
@@ -528,7 +528,7 @@
         "pattern": "XXGYG",
         "candidates": 5,
         "share_pct": 0.22,
-        "best_second": "glisk",
+        "best_second": "gleek",
         "expected_remaining": 1.0
       },
       {
@@ -745,7 +745,7 @@
   },
   {
     "opener": "raile",
-    "expected_remaining_after_two": 3.19,
+    "expected_remaining_after_two": 3.18,
     "solved_on_two_pct": 0.95,
     "universe": "data/answers.txt (2,309 past answers)",
     "second_guess_universe": "all valid guesses (data/answers.txt + data/allowed.txt)"
@@ -759,7 +759,7 @@
   },
   {
     "opener": "soare",
-    "expected_remaining_after_two": 3.29,
+    "expected_remaining_after_two": 3.27,
     "solved_on_two_pct": 0.95,
     "universe": "data/answers.txt (2,309 past answers)",
     "second_guess_universe": "all valid guesses (data/answers.txt + data/allowed.txt)"
@@ -773,7 +773,7 @@
   },
   {
     "opener": "raise",
-    "expected_remaining_after_two": 3.37,
+    "expected_remaining_after_two": 3.35,
     "solved_on_two_pct": 1.21,
     "universe": "data/answers.txt (2,309 past answers)",
     "second_guess_universe": "all valid guesses (data/answers.txt + data/allowed.txt)"

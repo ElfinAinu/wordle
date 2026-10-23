@@ -302,7 +302,7 @@
         "expected_remaining": 78.68644434820268
       },
       "audio": {
-        "rank": 6107,
+        "rank": 6237,
         "entropy": 4.590283746704057,
         "expected_remaining": 183.21567778258986
       },
@@ -317,12 +317,12 @@
         "expected_remaining": 60.7444781290602
       },
       "adieu": {
-        "rank": 3396,
+        "rank": 3446,
         "entropy": 4.879188954960185,
         "expected_remaining": 123.4365526201819
       },
       "louie": {
-        "rank": 725,
+        "rank": 730,
         "entropy": 5.3073806534067876,
         "expected_remaining": 91.3005630142919
       }
