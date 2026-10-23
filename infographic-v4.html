@@ -637,12 +637,12 @@ h1 em { font-style: normal; color: var(--accent); text-shadow: 0 0 44px color-mi
     <div class="sec-head"><span class="roman">V</span><h2 class="sec-title">The ladder</h2><span class="sec-meta">What good looks like</span></div>
     <div class="panel">
       <div class="chart-lad">
-        <div class="lad-row"><span class="lad-num">3.42</span><span class="lad-bar"><i class="opt" style="width:26%"></i></span><span class="lad-lab">AI-optimal · SALET exact solution <em class="star">★</em></span></div>
-        <div class="lad-row"><span class="lad-num">3.75</span><span class="lad-bar"><i style="width:47%"></i></span><span class="lad-lab">WordleBot users · ~¼ guess better than average</span></div>
-        <div class="lad-row"><span class="lad-num">4.10</span><span class="lad-bar"><i style="width:69%"></i></span><span class="lad-lab">median human · NYT, 515M games</span></div>
-        <div class="lad-row"><span class="lad-num">4.50</span><span class="lad-bar"><i style="width:94%"></i></span><span class="lad-lab">struggling — losses cluster here</span></div>
+        <div class="lad-row"><span class="lad-num">3.42</span><span class="lad-bar"><i class="opt" style="width:42%"></i></span><span class="lad-lab">AI-optimal policy · SALET exact solution (MIT/OR) — worst case 5 <em class="star">★</em></span></div>
+        <div class="lad-row"><span class="lad-num">3.61</span><span class="lad-bar"><i style="width:61%"></i></span><span class="lad-lab">Taught method · SOARE → CLINT → rule (this simulation) — worst case 6, JOKER</span></div>
+        <div class="lad-row"><span class="lad-num">3.80</span><span class="lad-bar"><i style="width:80%"></i></span><span class="lad-lab">Average player · 266k shared games (WordsRated)</span></div>
       </div>
-      <p class="chart-note">Average guesses per game. Bar length is proportional to guesses — shorter is better. Every six-guess win is a strategy failure, not a hard word; the gap to the median human is nearly three-quarters of a guess.</p>
+      <p class="chart-note">Average guesses per game; bars scale from 3.0 to 4.0 guesses — shorter is better. The 3.42 rung is the optimal policy's result, not the method taught here: the taught method averages 3.61, about a fifth of a guess behind optimal and about a fifth ahead of the average player. It needs six guesses once in 2,309 games (JOKER) and never fails. The NYT's 515-million-game analysis reports no absolute player average, only that the average WordleBot user solves a puzzle in about a quarter of a turn less than the average Wordle player. Six-guess wins are almost always a strategy failure, not a hard word: with this fixed opening exactly one of 2,309 games reaches six (JOKER).</p>
+      <p class="chart-note" style="margin-top:var(--space-2);">Sources: MIT/OR, "An Exact and Interpretable Solution to Wordle" (SALET, 3.421 average, at most five guesses). This repository's simulation of the taught method over 2,309 answers (<code>results/simulate_method.json</code>). WordsRated, "Wordle Statistics" (266,000 Reddit-shared games, 3.80 average). NYT, "Seven Things We Learned Analyzing 515 Million Wordles" (Dec. 17, 2023).</p>
     </div>
   </div>
 </section>
