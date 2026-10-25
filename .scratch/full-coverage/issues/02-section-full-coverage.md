@@ -48,15 +48,15 @@ Content, in the poster's existing idioms:
 - [x] `publish_poster.py --check` passes.
 - [x] The repeats-section check that pins the poster's section numerals is
       extended to IX; nothing is renumbered.
-- [ ] `results/full_coverage.json` exists, so the check can verify the cost
-      figures. Open until ticket 01 lands.
+- [x] `results/full_coverage.json` exists, so the check can verify the cost
+      figures.
 
-## Known state
+## Resolved
 
-The section states the coverage cost (3.61 / 4.20 / 0.58) before
-`results/full_coverage.json` exists, because the cost measurement is blocked on
-the `hit_tree.py` conflict. The acceptance check therefore fails on that one
-point and passes everything else — deliberately, so the poster cannot ship a
-figure with no committed source. The figures were verified independently with a
-throwaway harness that reproduced the committed two-opener average (3.6146)
-exactly before measuring the three-opener average (4.1953).
+The section states the coverage cost (3.61 / 4.20 / 0.58). While the
+`hit_tree.py` conflict was open, `results/full_coverage.json` could not be
+generated and the acceptance check failed on that one point and nothing else —
+deliberately, so the poster could not ship a figure with no committed source.
+Ticket 01 has since run: the file exists, the cost measured 3.6146 -> 4.1953,
+matching the throwaway harness that had reproduced the committed two-opener
+average exactly. The check passes.
