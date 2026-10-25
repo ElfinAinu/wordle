@@ -29,7 +29,7 @@ pairs). No compression for phone scrolling.
 
 ### 2. Benchmark ladder: how good is your score?
 
-- Ladder: AI-optimal (**3.42**) → WordleBot users (~quarter-guess better than
+- Ladder: AI-optimal (**3.42**) → WordleBot users (quarter-guess better than
   average) → median human (~**4.x**, from NYT's 515-million-Wordles analysis) →
   struggling (>4.5 or losses).
 - Teach reading distribution shape: front-loaded = skilled, back-loaded = lucky.
