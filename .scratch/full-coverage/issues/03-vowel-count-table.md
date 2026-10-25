@@ -9,11 +9,14 @@ above account for the 29.4% of games that show only one.
 
 - **Fig. 10** — a `dtable` with a row per vowel count (0 through 4) plus a `3+`
   roll-up, and a column per pool: the 2,309 answers and all 14,855 valid words
-  (answers plus the 12,546 allowed guesses), counted over A E I O U.
-- A card beside it for the Y convention, since section IX is the Y-inclusive
-  section: 3 or more is 14.9% of answers (16.6% of valid words) once Y counts,
-  and no answer is then left without a vowel at all — the fact the section's
-  opening claim rests on.
+  (answers plus the 12,546 allowed guesses).
+- **Both conventions in the one cell.** Each figure is the share counting
+  A E I O U, with the share that also counts Y in parentheses. Section IX is
+  the Y-inclusive section, so the Y reading belongs on this figure — but a card
+  beside it restating the same distribution wastes the row and splits one
+  table into two. In the parentheses, 3 or more is 14.9% of answers and 16.6%
+  of valid words, and no answer is left without a vowel at all, which is the
+  fact the section's opening claim rests on.
 
 Both pools belong on the poster here. The answers pool is what the reader is
 looking for; the valid pool is what they may play, and a coverage word is chosen
@@ -28,13 +31,16 @@ or more vowels against 11.3% of valid words.
       counting conventions, and writes it to `results/full_coverage.{json,md}`.
 - [x] Fig. 10 appears in section IX with a row per vowel count and a 3+ roll-up,
       one column per pool.
-- [x] The Y card states the answers and valid-pool figures for 3 or more, and
-      that no answer is left vowel-less.
+- [x] Every cell carries its Y-inclusive share in parentheses, and no Y figure
+      is stated anywhere else in the section.
 - [x] Every share names its denominator: the two pool sizes and the 12,546
       allowed guesses, not section IX's branch sizes or section VIII's counts.
-- [x] The acceptance check re-derives every cell from `data/answers.txt` and
-      `data/allowed.txt`, and verifies the 3+ row is the roll-up of the rows
-      above it rather than an independent figure that could disagree.
+- [x] The acceptance check re-derives every cell, under both conventions, from
+      `data/answers.txt` and `data/allowed.txt`, and verifies the 3+ row is the
+      roll-up of the rows above it under both rather than an independent figure
+      that could disagree.
+- [x] The check fails if a separate Y card returns, so the figures cannot drift
+      apart into two statements of the same distribution.
 - [x] The check catches a one-decimal rounding error in any cell. It found one:
       the all-valid one-vowel cell was written as 28.4% when 4,211/14,855 is
       28.3%.
