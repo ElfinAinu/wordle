@@ -234,6 +234,7 @@ h1 em { font-style: normal; color: var(--accent); text-shadow: 0 0 44px color-mi
 .dtable .pat { font-family: var(--font-mono); letter-spacing: 2px; color: var(--muted); }
 .dtable .strat { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--fg-2); }
 .dtable .g3 { font-family: var(--font-display); font-weight: 600; font-size: var(--text-base); }
+.dtable .num-col i { font-style: normal; color: var(--muted); }
 .tree { margin-bottom: var(--space-6); border-left: 2px solid var(--accent); padding-left: var(--space-5); }
 .tree-node { font-family: var(--font-display); font-weight: 600; font-size: var(--text-base); margin: 0 0 var(--space-3); display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-2); }
 .tree-node span { font-family: var(--font-body); font-weight: 400; font-size: var(--text-xs); color: var(--muted); }
@@ -865,24 +866,19 @@ h1 em { font-style: normal; color: var(--accent); text-shadow: 0 0 44px color-mi
               <tr><th>Vowels</th><th class="num-col">answers · 2,309</th><th class="num-col">all valid · 14,855</th></tr>
             </thead>
             <tbody>
-              <tr><td class="big">0</td><td class="num-col">0.5%</td><td class="num-col">0.4%</td></tr>
-              <tr><td class="big">1</td><td class="num-col">31.7%</td><td class="num-col">28.3%</td></tr>
-              <tr><td class="big">2</td><td class="num-col">57.9%</td><td class="num-col">59.9%</td></tr>
-              <tr><td class="big">3</td><td class="num-col">9.8%</td><td class="num-col">11.1%</td></tr>
-              <tr><td class="big">4</td><td class="num-col">0.1%</td><td class="num-col">0.3%</td></tr>
-              <tr><td class="big">3+</td><td class="num-col">9.9%</td><td class="num-col">11.3%</td></tr>
+              <tr><td class="big">0</td><td class="num-col">0.5% <i>(0.0%)</i></td><td class="num-col">0.4% <i>(0.0%)</i></td></tr>
+              <tr><td class="big">1</td><td class="num-col">31.7% <i>(19.5%)</i></td><td class="num-col">28.3% <i>(18.5%)</i></td></tr>
+              <tr><td class="big">2</td><td class="num-col">57.9% <i>(65.5%)</i></td><td class="num-col">59.9% <i>(64.9%)</i></td></tr>
+              <tr><td class="big">3</td><td class="num-col">9.8% <i>(14.7%)</i></td><td class="num-col">11.1% <i>(16.0%)</i></td></tr>
+              <tr><td class="big">4</td><td class="num-col">0.1% <i>(0.3%)</i></td><td class="num-col">0.3% <i>(0.6%)</i></td></tr>
+              <tr><td class="big">3+</td><td class="num-col">9.9% <i>(14.9%)</i></td><td class="num-col">11.3% <i>(16.6%)</i></td></tr>
             </tbody>
           </table>
-          <p class="chart-note">Counting A E I O U. Shares are of each pool's own size — the 2,309 answers, and all 14,855 valid words, those answers plus the 12,546 allowed guesses. No answer carries more than four.</p>
+          <p class="chart-note">Each cell counts A E I O U, with the share that also counts Y in parentheses. Shares are of each pool's own size — the 2,309 answers, and all 14,855 valid words, those answers plus the 12,546 allowed guesses. No answer carries more than four; the 3+ row folds in the three valid words that reach five once Y counts.</p>
         </div>
         <div>
-          <div class="shape-card">
-            <h3>Counting Y as well</h3>
-            <div class="shape-row"><span>answers with 3 or more vowels</span><b>14.9%</b></div>
-            <div class="shape-row"><span>valid words with 3 or more vowels</span><b>16.6%</b></div>
-            <div class="shape-row"><span>answers with no vowel at all</span><b>0</b></div>
-          </div>
-          <p class="note-line">Two vowels is the norm at nearly six in ten answers, so the six branches above cover the 29.4% of games that show a single one. A third of answers carry exactly one vowel, and a tenth carry three or more. Treating Y as a vowel moves that tenth to nearly a sixth and leaves no answer without a vowel at all, which is why full coverage never comes back empty.</p>
+          <p class="note-line" style="margin-top:0;">Two vowels is the norm at nearly six in ten answers, so the six branches above cover the 29.4% of games that show a single one. A third of answers carry exactly one vowel, and a tenth carry three or more.</p>
+          <p class="note-line">Counting Y barely touches the two-vowel middle, which is why the parentheses stay close to the plain figures there — but it moves the 3+ row from a tenth to nearly a sixth of answers, and leaves no answer without a vowel at all. That is what full coverage never coming back empty rests on.</p>
         </div>
       </div>
     </div>
