@@ -34,7 +34,7 @@ WORD_LENGTH = 5
 VOWELS = set("aeiou")
 OPENING_LETTERS = set("soareclint")
 
-ROMANS = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII"]
+ROMANS = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]
 
 # <span class="hm-cell[--mod]" style="--ink:NN%" title="A-B slots: C of D repeat
 # pairs (S.S%); touching|separated">S.S</span>
