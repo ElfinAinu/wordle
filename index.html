@@ -345,6 +345,11 @@ h1 em { font-style: normal; color: var(--accent); text-shadow: 0 0 44px color-mi
 .rg-swatch { width: 20px; height: 20px; border-radius: 4px; background: color-mix(in oklab, var(--accent) 45%, var(--surface)); border: 1px solid var(--border-soft); }
 .repeat-grid .hm-cell--touch,
 .rg-swatch--touch { border: 2px solid var(--warn); box-shadow: inset 0 0 0 2px color-mix(in oklab, var(--warn) 28%, transparent); }
+.vowel-chart { display: grid; grid-template-columns: repeat(6, 1fr); gap: clamp(6px, 1vw, 16px); max-width: 620px; margin-inline: auto; }
+.vowel-pick { font-family: var(--font-display); font-weight: 600; font-size: var(--text-sm); margin-top: var(--space-2); }
+.vowel-left { font-family: var(--font-mono); font-size: 10px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.vowel-share { font-family: var(--font-mono); font-size: 10px; color: var(--muted); }
+.vowel-chart .dist-lab { font-size: var(--text-lg); color: var(--fg); }
 </style>
 </head>
 <body>
@@ -807,6 +812,48 @@ h1 em { font-style: normal; color: var(--accent); text-shadow: 0 0 44px color-mi
             <p class="note-line">To tell one copy of a letter from two, your guess must carry that letter twice: the number of non-gray tiles among those two copies is the number of copies in the answer. Radar repeats A apart, and SOARE carries a single A, so it can only ever show one hit; guess ABACK and both A tiles come back non-gray, exposing the second copy.</p>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" id="vowels" data-od-id="full-coverage">
+  <div class="container">
+    <div class="sec-head"><span class="roman">IX</span><h2 class="sec-title">Full vowel coverage</h2><span class="sec-meta">Only if you've played it · read the vowel</span></div>
+    <div class="panel">
+      <p class="fig-cap">Fig. 07 — One vowel, six different next guesses</p>
+      <p class="chart-note" style="margin-top:0;">Sections III and IV assume you stop after SOARE and CLINT. If you spend guess 3 on a coverage word instead — DUMPY, the word those tables already recommend when both openers come back gray — the feedback decides all six of A E I O U Y. <b>No answer has zero of them</b>, so the first vowel is always found, and exactly one shows in 29.4% of games. Each of these six branches wants a different guess 4.</p>
+      <div class="vowel-chart">
+        <div class="dist-col"><span class="dist-bar"><i style="height:33%"></i></span><span class="dist-val">22.9%</span><span class="dist-lab">A</span><span class="vowel-share">7.2% of games</span><span class="vowel-pick">SLANT</span><span class="vowel-left">6.27 left</span></div>
+        <div class="dist-col"><span class="dist-bar"><i class="opt" style="height:100%"></i></span><span class="dist-val">69.3%</span><span class="dist-lab">E</span><span class="vowel-share">7.2% of games</span><span class="vowel-pick">STEER</span><span class="vowel-left">4.80 left</span></div>
+        <div class="dist-col"><span class="dist-bar"><i style="height:17%"></i></span><span class="dist-val">12.0%</span><span class="dist-lab">I</span><span class="vowel-share">5.4% of games</span><span class="vowel-pick">SKIRT</span><span class="vowel-left">5.75 left</span></div>
+        <div class="dist-col"><span class="dist-bar"><i style="height:58%"></i></span><span class="dist-val">40.3%</span><span class="dist-lab">O</span><span class="vowel-share">5.4% of games</span><span class="vowel-pick">STOOL</span><span class="vowel-left">5.94 left</span></div>
+        <div class="dist-col"><span class="dist-bar"><i style="height:8%"></i></span><span class="dist-val">5.7%</span><span class="dist-lab">U</span><span class="vowel-share">3.8% of games</span><span class="vowel-pick">CRUST</span><span class="vowel-left">3.97 left</span></div>
+        <div class="dist-col"><span class="dist-bar"><i style="height:72%"></i></span><span class="dist-val">50.0%</span><span class="dist-lab">Y</span><span class="vowel-share">0.5% of games</span><span class="vowel-pick">GLYPH</span><span class="vowel-left">1.17 left</span></div>
+      </div>
+      <p class="chart-note">Each bar is the share of that branch where the vowel appears twice or more, scaled to the tallest (E, 69.3%). The denominators are the branch sizes — 166, 166, 125, 124, 87 and 12 answers of the 2,309 — and not the repeat-pair or repeated-letter-instance counts section VIII uses. <b>E</b> carries the accent because it is the repeat vowel of the six: it doubles in 69.3% of its branch.</p>
+    </div>
+    <div class="grid-2" style="margin-top:clamp(16px,2.4vw,28px);">
+      <div class="panel">
+        <p class="fig-cap">Fig. 08 — Read the vowel</p>
+        <div class="shape-card">
+          <h3>Which branch wants a double</h3>
+          <div class="shape-row"><span>only E or O shows — the vowel doubles</span><b>STEER · STOOL</b></div>
+          <div class="shape-row"><span>only A, I, U or Y shows — five distinct</span><b>SLANT · SKIRT · CRUST · GLYPH</b></div>
+          <div class="shape-row"><span>E branch: guessing distinct costs</span><b>+2.46 left</b></div>
+          <div class="shape-row"><span>O branch: guessing distinct costs</span><b>+0.77 left</b></div>
+        </div>
+        <p class="note-line">In the E branch STEER leaves 4.80 while the best five-distinct word, CREST, leaves 7.25 — the largest penalty of the six. The Y branch is a footnote: 12 answers, the quietest corner of the list.</p>
+      </div>
+      <div class="panel">
+        <p class="fig-cap">Fig. 09 — What coverage costs</p>
+        <div class="shape-card">
+          <h3>Two coverage words or three</h3>
+          <div class="shape-row"><span>average guesses, SOARE + CLINT</span><b>3.61</b></div>
+          <div class="shape-row"><span>average guesses, SOARE + CLINT + DUMPY</span><b>4.20</b></div>
+          <div class="shape-row"><span>only E shows, U and Y undecided</span><b>301 games · TERSE · 7.66 left</b></div>
+          <div class="shape-row"><span>only E shows, every vowel decided</span><b>166 games · STEER · 4.80 left</b></div>
+        </div>
+        <p class="note-line">Coverage is not free: a third coverage word costs 0.58 guesses a game, so spend it when the two openers leave the vowel set vague rather than every time. What it buys is a branch of roughly half the size — the same only-E read drops from 301 games to 166, and its next guess improves to 4.80 left from 7.66.</p>
       </div>
     </div>
   </div>
