@@ -1,0 +1,189 @@
+{
+  "universe": {
+    "path": "data/answers.txt",
+    "words": 2309,
+    "description": "the committed Wordle answer list"
+  },
+  "coverage_words": [
+    "SOARE",
+    "CLINT",
+    "DUMPY"
+  ],
+  "full": {
+    "vowels_decided": "aeiouy",
+    "answers": 2309,
+    "shape_counts": {
+      "no_vowel": 0,
+      "one_vowel": 680,
+      "two_or_more": 1629
+    },
+    "one_vowel_pct": 29.4,
+    "rows": [
+      {
+        "vowel": "A",
+        "answers": 166,
+        "share_pct": 7.2,
+        "vowel_repeats": 38,
+        "vowel_repeat_pct": 22.9,
+        "consonant_repeats": 23,
+        "consonant_repeat_pct": 13.9,
+        "nothing_repeats_pct": 63.3,
+        "any_repeat_pct": 36.7,
+        "next_guess": "SLANT",
+        "next_guess_left": 6.27
+      },
+      {
+        "vowel": "E",
+        "answers": 166,
+        "share_pct": 7.2,
+        "vowel_repeats": 115,
+        "vowel_repeat_pct": 69.3,
+        "consonant_repeats": 13,
+        "consonant_repeat_pct": 7.8,
+        "nothing_repeats_pct": 22.9,
+        "any_repeat_pct": 77.1,
+        "next_guess": "STEER",
+        "next_guess_left": 4.8
+      },
+      {
+        "vowel": "I",
+        "answers": 125,
+        "share_pct": 5.4,
+        "vowel_repeats": 15,
+        "vowel_repeat_pct": 12.0,
+        "consonant_repeats": 30,
+        "consonant_repeat_pct": 24.0,
+        "nothing_repeats_pct": 64.0,
+        "any_repeat_pct": 36.0,
+        "next_guess": "SKIRT",
+        "next_guess_left": 5.75
+      },
+      {
+        "vowel": "O",
+        "answers": 124,
+        "share_pct": 5.4,
+        "vowel_repeats": 50,
+        "vowel_repeat_pct": 40.3,
+        "consonant_repeats": 16,
+        "consonant_repeat_pct": 12.9,
+        "nothing_repeats_pct": 46.8,
+        "any_repeat_pct": 53.2,
+        "next_guess": "STOOL",
+        "next_guess_left": 5.94
+      },
+      {
+        "vowel": "U",
+        "answers": 87,
+        "share_pct": 3.8,
+        "vowel_repeats": 5,
+        "vowel_repeat_pct": 5.7,
+        "consonant_repeats": 22,
+        "consonant_repeat_pct": 25.3,
+        "nothing_repeats_pct": 69.0,
+        "any_repeat_pct": 31.0,
+        "next_guess": "CRUST",
+        "next_guess_left": 3.97
+      },
+      {
+        "vowel": "Y",
+        "answers": 12,
+        "share_pct": 0.5,
+        "vowel_repeats": 6,
+        "vowel_repeat_pct": 50.0,
+        "consonant_repeats": 2,
+        "consonant_repeat_pct": 16.7,
+        "nothing_repeats_pct": 33.3,
+        "any_repeat_pct": 66.7,
+        "next_guess": "GLYPH",
+        "next_guess_left": 1.17
+      }
+    ]
+  },
+  "partial": {
+    "vowels_decided": "aeio",
+    "answers": 2309,
+    "shape_counts": {
+      "no_vowel": 157,
+      "one_vowel": 1086,
+      "two_or_more": 1066
+    },
+    "one_vowel_pct": 47.0,
+    "rows": [
+      {
+        "vowel": "A",
+        "answers": 301,
+        "share_pct": 13.0,
+        "vowel_repeats": 45,
+        "vowel_repeat_pct": 15.0,
+        "consonant_repeats": 64,
+        "consonant_repeat_pct": 21.3,
+        "nothing_repeats_pct": 63.8,
+        "any_repeat_pct": 36.2,
+        "next_guess": "SLANT",
+        "next_guess_left": 12.08
+      },
+      {
+        "vowel": "E",
+        "answers": 301,
+        "share_pct": 13.0,
+        "vowel_repeats": 138,
+        "vowel_repeat_pct": 45.8,
+        "consonant_repeats": 43,
+        "consonant_repeat_pct": 14.3,
+        "nothing_repeats_pct": 39.9,
+        "any_repeat_pct": 60.1,
+        "next_guess": "TERSE",
+        "next_guess_left": 7.66
+      },
+      {
+        "vowel": "I",
+        "answers": 225,
+        "share_pct": 9.7,
+        "vowel_repeats": 16,
+        "vowel_repeat_pct": 7.1,
+        "consonant_repeats": 60,
+        "consonant_repeat_pct": 26.7,
+        "nothing_repeats_pct": 66.2,
+        "any_repeat_pct": 33.8,
+        "next_guess": "SPILT",
+        "next_guess_left": 10.67
+      },
+      {
+        "vowel": "O",
+        "answers": 259,
+        "share_pct": 11.2,
+        "vowel_repeats": 64,
+        "vowel_repeat_pct": 24.7,
+        "consonant_repeats": 48,
+        "consonant_repeat_pct": 18.5,
+        "nothing_repeats_pct": 56.8,
+        "any_repeat_pct": 43.2,
+        "next_guess": "TRULY",
+        "next_guess_left": 11.82
+      }
+    ]
+  },
+  "cost": {
+    "two_openers": {
+      "openers": [
+        "SOARE",
+        "CLINT"
+      ],
+      "average_guesses": 3.6146,
+      "worst_case_guesses": 6,
+      "six_or_fail_pct": 0.04
+    },
+    "three_openers": {
+      "openers": [
+        "SOARE",
+        "CLINT",
+        "DUMPY"
+      ],
+      "average_guesses": 4.1953,
+      "worst_case_guesses": 6,
+      "six_or_fail_pct": 0.48
+    },
+    "extra_guesses": 0.5807,
+    "note": "Both openings are continued by simulate_method's expected-candidates-minimising policy over data/answers.txt."
+  }
+}
