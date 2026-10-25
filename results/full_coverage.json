@@ -163,6 +163,162 @@
       }
     ]
   },
+  "vowel_counts": {
+    "answers": {
+      "words": 2309,
+      "by_vowel_set": {
+        "aeiou": {
+          "rows": [
+            {
+              "vowels": 0,
+              "words": 12,
+              "share_pct": 0.5
+            },
+            {
+              "vowels": 1,
+              "words": 732,
+              "share_pct": 31.7
+            },
+            {
+              "vowels": 2,
+              "words": 1336,
+              "share_pct": 57.9
+            },
+            {
+              "vowels": 3,
+              "words": 226,
+              "share_pct": 9.8
+            },
+            {
+              "vowels": 4,
+              "words": 3,
+              "share_pct": 0.1
+            },
+            {
+              "vowels": 5,
+              "words": 0,
+              "share_pct": 0.0
+            }
+          ],
+          "more_than_two": 229,
+          "more_than_two_pct": 9.9
+        },
+        "aeiouy": {
+          "rows": [
+            {
+              "vowels": 0,
+              "words": 0,
+              "share_pct": 0.0
+            },
+            {
+              "vowels": 1,
+              "words": 451,
+              "share_pct": 19.5
+            },
+            {
+              "vowels": 2,
+              "words": 1513,
+              "share_pct": 65.5
+            },
+            {
+              "vowels": 3,
+              "words": 339,
+              "share_pct": 14.7
+            },
+            {
+              "vowels": 4,
+              "words": 6,
+              "share_pct": 0.3
+            },
+            {
+              "vowels": 5,
+              "words": 0,
+              "share_pct": 0.0
+            }
+          ],
+          "more_than_two": 345,
+          "more_than_two_pct": 14.9
+        }
+      }
+    },
+    "all_valid": {
+      "words": 14855,
+      "by_vowel_set": {
+        "aeiou": {
+          "rows": [
+            {
+              "vowels": 0,
+              "words": 58,
+              "share_pct": 0.4
+            },
+            {
+              "vowels": 1,
+              "words": 4211,
+              "share_pct": 28.3
+            },
+            {
+              "vowels": 2,
+              "words": 8904,
+              "share_pct": 59.9
+            },
+            {
+              "vowels": 3,
+              "words": 1644,
+              "share_pct": 11.1
+            },
+            {
+              "vowels": 4,
+              "words": 38,
+              "share_pct": 0.3
+            },
+            {
+              "vowels": 5,
+              "words": 0,
+              "share_pct": 0.0
+            }
+          ],
+          "more_than_two": 1682,
+          "more_than_two_pct": 11.3
+        },
+        "aeiouy": {
+          "rows": [
+            {
+              "vowels": 0,
+              "words": 6,
+              "share_pct": 0.0
+            },
+            {
+              "vowels": 1,
+              "words": 2747,
+              "share_pct": 18.5
+            },
+            {
+              "vowels": 2,
+              "words": 9640,
+              "share_pct": 64.9
+            },
+            {
+              "vowels": 3,
+              "words": 2375,
+              "share_pct": 16.0
+            },
+            {
+              "vowels": 4,
+              "words": 84,
+              "share_pct": 0.6
+            },
+            {
+              "vowels": 5,
+              "words": 3,
+              "share_pct": 0.0
+            }
+          ],
+          "more_than_two": 2462,
+          "more_than_two_pct": 16.6
+        }
+      }
+    }
+  },
   "cost": {
     "two_openers": {
       "openers": [

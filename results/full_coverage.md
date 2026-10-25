@@ -28,6 +28,34 @@ Decided: aeio (SOARE + CLINT). U and Y are still unknown, so each branch is larg
 | I | 225 | 9.7% | 7.1% | SPILT | 10.67 |
 | O | 259 | 11.2% | 24.7% | TRULY | 11.82 |
 
+## Vowels per word
+
+Share of each pool by vowel count, under both counting conventions. `aeiouy` is the one section IX uses, since DUMPY is played for Y as well as U.
+
+Counting `aeiou`:
+
+| vowels | answers (2309) | all_valid (14855) |
+|---|---|---|
+| 0 | 12 (0.5%) | 58 (0.4%) |
+| 1 | 732 (31.7%) | 4211 (28.3%) |
+| 2 | 1336 (57.9%) | 8904 (59.9%) |
+| 3 | 226 (9.8%) | 1644 (11.1%) |
+| 4 | 3 (0.1%) | 38 (0.3%) |
+| 5 | 0 (0.0%) | 0 (0.0%) |
+| **3 or more** | 229 (9.9%) | 1682 (11.3%) |
+
+Counting `aeiouy`:
+
+| vowels | answers (2309) | all_valid (14855) |
+|---|---|---|
+| 0 | 0 (0.0%) | 6 (0.0%) |
+| 1 | 451 (19.5%) | 2747 (18.5%) |
+| 2 | 1513 (65.5%) | 9640 (64.9%) |
+| 3 | 339 (14.7%) | 2375 (16.0%) |
+| 4 | 6 (0.3%) | 84 (0.6%) |
+| 5 | 0 (0.0%) | 3 (0.0%) |
+| **3 or more** | 345 (14.9%) | 2462 (16.6%) |
+
 ## What coverage costs
 
 | opening | average guesses | worst case | six or fail |

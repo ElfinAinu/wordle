@@ -31,6 +31,7 @@ from collections import Counter
 from pathlib import Path
 
 from analyze import (
+    ALLOWED_PATH,
     ANSWERS_PATH,
     RESULTS_DIR,
     encode,
@@ -47,12 +48,45 @@ FULL_VOWELS = set("aeiouy")
 # What SOARE + CLINT decide on their own; U and Y stay unknown.
 PARTIAL_VOWELS = set("aeio")
 
+# The two conventions a reader might count under. `aeiou` is the plain reading;
+# `aeiouy` is the one section IX uses, since DUMPY is played for Y as well.
+VOWEL_SETS = {"aeiou": set("aeiou"), "aeiouy": set("aeiouy")}
+MAX_VOWELS = 5
+
 TWO_OPENER_OPENING = ("soare", "clint")
 THREE_OPENER_OPENING = ("soare", "clint", "dumpy")
 
 
 def share(part: int, whole: int) -> float:
     return round(100 * part / whole, 1) if whole else 0.0
+
+
+def vowel_counts(pools: dict[str, list[str]]) -> dict:
+    """How many vowels each word carries, per pool and per counting convention."""
+    measured = {}
+    for label, words in pools.items():
+        total = len(words)
+        by_convention = {}
+        for name, vowels in VOWEL_SETS.items():
+            tally = Counter(sum(1 for ch in word if ch in vowels) for word in words)
+            more_than_two = sum(n for count, n in tally.items() if count > 2)
+            by_convention[name] = {
+                "rows": [
+                    {
+                        "vowels": count,
+                        "words": tally.get(count, 0),
+                        "share_pct": share(tally.get(count, 0), total),
+                    }
+                    for count in range(MAX_VOWELS + 1)
+                ],
+                "more_than_two": more_than_two,
+                "more_than_two_pct": share(more_than_two, total),
+            }
+        measured[label] = {
+            "words": total,
+            "by_vowel_set": by_convention,
+        }
+    return measured
 
 
 def present_vowels(word: str, vowels: set[str]) -> frozenset[str]:
@@ -162,6 +196,7 @@ def analyse(words: list[str]) -> dict:
     guess_codes = encode(guess_pool)
     full = single_vowel_branches(words, FULL_VOWELS, guess_pool, guess_codes)
     partial = single_vowel_branches(words, PARTIAL_VOWELS, guess_pool, guess_codes)
+    all_valid = sorted(set(words) | set(load_words(ALLOWED_PATH)))
     return {
         "universe": {
             "path": "data/answers.txt",
@@ -171,6 +206,9 @@ def analyse(words: list[str]) -> dict:
         "coverage_words": [word.upper() for word in THREE_OPENER_OPENING],
         "full": full,
         "partial": partial,
+        "vowel_counts": vowel_counts(
+            {"answers": words, "all_valid": all_valid}
+        ),
         "cost": coverage_cost(words),
     }
 
@@ -223,6 +261,37 @@ def write_markdown(stats: dict, path: Path) -> None:
         )
     lines.append("")
 
+    counts = stats["vowel_counts"]
+    pools_in_order = ("answers", "all_valid")
+    lines.append("## Vowels per word")
+    lines.append("")
+    lines.append(
+        "Share of each pool by vowel count, under both counting conventions. "
+        "`aeiouy` is the one section IX uses, since DUMPY is played for Y as well as U."
+    )
+    lines.append("")
+    for name in ("aeiou", "aeiouy"):
+        lines.append(f"Counting `{name}`:")
+        lines.append("")
+        lines.append(
+            "| vowels | "
+            + " | ".join(f"{label} ({counts[label]['words']})" for label in pools_in_order)
+            + " |"
+        )
+        lines.append("|" + "---|" * (len(pools_in_order) + 1))
+        for count in range(MAX_VOWELS + 1):
+            cells = []
+            for label in pools_in_order:
+                row = counts[label]["by_vowel_set"][name]["rows"][count]
+                cells.append(f"{row['words']} ({row['share_pct']}%)")
+            lines.append(f"| {count} | " + " | ".join(cells) + " |")
+        summary = []
+        for label in pools_in_order:
+            block = counts[label]["by_vowel_set"][name]
+            summary.append(f"{block['more_than_two']} ({block['more_than_two_pct']}%)")
+        lines.append("| **3 or more** | " + " | ".join(summary) + " |")
+        lines.append("")
+
     lines.append("## What coverage costs")
     lines.append("")
     lines.append("| opening | average guesses | worst case | six or fail |")
@@ -257,6 +326,14 @@ def main() -> None:
             f"{row['vowel_repeat_pct']:5}%, next {row['next_guess']:6} "
             f"left {row['next_guess_left']}"
         )
+    counts = stats["vowel_counts"]
+    for label in ("answers", "all_valid"):
+        for name in ("aeiou", "aeiouy"):
+            block = counts[label]["by_vowel_set"][name]
+            print(
+                f"  {label:10} counting {name:7}: 3 or more vowels "
+                f"{block['more_than_two']:5} ({block['more_than_two_pct']}%)"
+            )
     print(
         f"coverage cost: {stats['cost']['two_openers']['average_guesses']:.4f} -> "
         f"{stats['cost']['three_openers']['average_guesses']:.4f} "
